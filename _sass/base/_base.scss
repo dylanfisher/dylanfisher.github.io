@@ -1,0 +1,6 @@
+html {
+  @include font--regular;
+  font-style: normal;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
