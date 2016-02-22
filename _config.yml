@@ -19,3 +19,14 @@ github_username:  dylanfisher
 
 # Build settings
 markdown: kramdown
+
+collections:
+  projects:
+    output: true
+
+defaults:
+  - scope:
+      type: projects
+    values:
+      layout: project
+      permalink: /:collection/:title

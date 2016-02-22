@@ -4,16 +4,16 @@ layout: default
 
 <div class="home">
 
-  <h1 class="page-heading">Posts</h1>
+  <h1 class="page-heading">Work</h1>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+  <ul class="project-list">
+    {% for project in site.projects %}
+      <li class="project row">
+        <div class="project__date col-sm-2">{{ project.date | date: "%Y – %B" }}</div>
+        <h2 class="project__title col-sm-6">
+          <a class="project__title__link" href="{{ project.url | prepend: site.baseurl }}">{{ project.title }}</a>
         </h2>
+        <div class="project__date col-sm-4">with {{ project.collaborator }}</div>
       </li>
     {% endfor %}
   </ul>
