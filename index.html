@@ -4,20 +4,35 @@ layout: default
 
 <div class="home">
 
-  <h1 class="page-heading">Work</h1>
+  <section class="section--about">
+    <h2 class="section-title">About</h2>
+    <p>{{ site.description }}</p>
+  </section>
 
-  <ul class="project-list">
-    {% for project in site.projects %}
-      <li class="project row">
-        <div class="project__date col-sm-2">{{ project.date | date: "%Y – %B" }}</div>
-        <h2 class="project__title col-sm-6">
-          <a class="project__title__link" href="{{ project.url | prepend: site.baseurl }}">{{ project.title }}</a>
-        </h2>
-        <div class="project__date col-sm-4">with {{ project.collaborator }}</div>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+  <section class="section--work">
+    <h2 class="section-title">Work</h2>
+    <ul class="project-list list--blank">
+      {% for project in site.projects reversed %}
+        <li class="project row">
+          <div class="project__date col-sm-1">{{ project.date | date: "%Y" }}</div>
+          <h2 class="project__title col-sm-4">
+            <a class="project__title__link" href="{{ project.url | prepend: site.baseurl }}"><span class="emoji emoji--link">🔎</span> {{ project.title }}</a>
+          </h2>
+          <div class="col-sm-4">
+            <a class="project__link" href="{{ project.project_url }}" target="_blank">{{ project.project_url }}</a>
+          </div>
+          {% if project.collaborator %}
+            <div class="project__date col-sm-3">
+              with
+              {% if project.collaborator_url %} <a class="project__collaborator-link" href="{{ project.collaborator_url }}" target="_blank">{{ project.collaborator }}</a>
+              {% else %}
+                {{ project.collaborator }}
+              {% endif %}
+            </div>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
 
 </div>

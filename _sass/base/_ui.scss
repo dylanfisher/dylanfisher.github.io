@@ -1,0 +1,25 @@
+a {
+  text-decoration: none;
+  color: #000;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 134, 179, 0.35) 50%);
+  background-color: rgba(0, 0, 0, 0);
+  background-position: 0 93%;
+  background-repeat: repeat-x;
+  background-size: 1px 4px;
+
+  &:hover {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 134, 179, 1) 50%);
+  }
+}
+
+.link--blank {
+
+}
+
+.link--external {
+  cursor: alias;
+}
+
+.list--blank {
+  padding: 0;
+}

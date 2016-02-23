@@ -20,6 +20,9 @@ github_username:  dylanfisher
 # Build settings
 markdown: kramdown
 
+# Excludes
+exclude: ["Guardfile"]
+
 collections:
   projects:
     output: true

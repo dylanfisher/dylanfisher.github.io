@@ -1,0 +1,25 @@
+h1, h2, h3, h4, h5, h6 {
+  @include font--sans__regular;
+  margin: 0 0 0;
+  font-weight: bold;
+}
+
+
+ul, p {
+  margin: 0 0 1em;
+}
+
+pre,
+code {
+  @include font--monospace;
+}
+
+.post-content p {
+  pre,
+  code {
+    @include font--monospace__inline;
+    background: $light-gray;
+    padding: 0.25em;
+    border-radius: 4px;
+  }
+}

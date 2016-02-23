@@ -6,19 +6,43 @@
 // Font stacks
 //
 
-$font-stack__regular : sans-serif;
+$font-stack__sans  : sans-serif;
+$font-stack__serif : serif;
 
 ///////////////////////////////////////////////////
 // Typography definitions
 ///////////////////////////////////////////////////
 
-// Regular - Regular
-@mixin font--regular {
-  font-family: Georgia, Cambria, "Times New Roman", Times,serif;
-  letter-spacing: .01rem;
+// Serif
+@mixin font--serif__regular {
+  font-family: $font-stack__serif;
   font-weight: 400;
   font-style: normal;
+  font-size: 21px;
+  line-height: 1.48;
+  letter-spacing: 0;
+}
+
+// Sans-serif
+@mixin font--sans__regular {
+  font-family: $font-stack__sans;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 21px;
+  line-height: 1.48;
+  letter-spacing: 0;
+}
+
+@mixin font--monospace {
+  font-family: monaco, monospace;
   font-size: 16px;
-  line-height: 1.58;
-  letter-spacing: -.003em;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+@mixin font--monospace__inline {
+  font-family: monaco, monospace;
+  font-size: 0.8em;
+  line-height: 1;
+  letter-spacing: 0;
 }
