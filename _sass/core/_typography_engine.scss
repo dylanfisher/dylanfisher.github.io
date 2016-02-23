@@ -6,8 +6,8 @@
 // Font stacks
 //
 
-$font-stack__sans  : sans-serif;
-$font-stack__serif : serif;
+$font-stack__sans  : 'BasisGrotesque-Regular', sans-serif;
+$font-stack__serif : 'MercuryTextG2-Roman', serif;
 
 ///////////////////////////////////////////////////
 // Typography definitions
@@ -19,7 +19,7 @@ $font-stack__serif : serif;
   font-weight: 400;
   font-style: normal;
   font-size: 21px;
-  line-height: 1.48;
+  line-height: 1.58;
   letter-spacing: 0;
 }
 
@@ -28,9 +28,10 @@ $font-stack__serif : serif;
   font-family: $font-stack__sans;
   font-weight: 400;
   font-style: normal;
-  font-size: 21px;
+  font-size: 28px;
   line-height: 1.48;
   letter-spacing: 0;
+  color: rgba(0, 0, 0, 0.8);
 }
 
 @mixin font--monospace {

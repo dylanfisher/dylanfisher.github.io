@@ -4,9 +4,11 @@
 @charset "utf-8";
 
 // Core - fonts, variables, mixins, etc. These shouldn't output any CSS on their own.
+@import "core/fonts";
 @import "core/variables";
-@import "core/mixins/breakpoints";
 @import "core/typography_engine";
+@import "core/mixins/breakpoints";
+@import "core/mixins/ui";
 
 // Base - basic foundation and structural styles
 @import "base/bootstrap";

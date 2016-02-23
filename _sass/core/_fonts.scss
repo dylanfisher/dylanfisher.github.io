@@ -2,22 +2,22 @@
 
 @font-face {
   font-family: 'BasisGrotesque-Regular';
-  src: font-url('BasisGrotesque-Regular.eot');
-  src: font-url('BasisGrotesque-Regular.eot?#iefix') format('embedded-opentype'),
-       font-url('BasisGrotesque-Regular.woff') format('woff'),
-       font-url('BasisGrotesque-Regular.ttf') format('truetype'),
-       font-url('BasisGrotesque-Regular.svg#meow') format('svg');
+  src:     url('fonts/BasisGrotesque-Regular.eot');
+  src:     url('fonts/BasisGrotesque-Regular.eot?#iefix') format('embedded-opentype'),
+           url('fonts/BasisGrotesque-Regular.woff') format('woff'),
+           url('fonts/BasisGrotesque-Regular.ttf') format('truetype'),
+           url('fonts/BasisGrotesque-Regular.svg#meow') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'MercuryTextG2-Roman';
-  src: font-url('MercuryTextG2-Roman.eot');
-  src: font-url('MercuryTextG2-Roman.eot?#iefix') format('embedded-opentype'),
-       font-url('MercuryTextG2-Roman.woff') format('woff'),
-       font-url('MercuryTextG2-Roman.ttf') format('truetype'),
-       font-url('MercuryTextG2-Roman.svg#meow') format('svg');
+  src:     url('fonts/MercuryTextG2-Roman.eot');
+  src:     url('fonts/MercuryTextG2-Roman.eot?#iefix') format('embedded-opentype'),
+           url('fonts/MercuryTextG2-Roman.woff') format('woff'),
+           url('fonts/MercuryTextG2-Roman.ttf') format('truetype'),
+           url('fonts/MercuryTextG2-Roman.svg#meow') format('svg');
   font-weight: normal;
   font-style: normal;
 }

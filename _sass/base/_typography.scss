@@ -14,12 +14,9 @@ code {
   @include font--monospace;
 }
 
-.post-content p {
+p {
   pre,
   code {
-    @include font--monospace__inline;
-    background: $light-gray;
-    padding: 0.25em;
-    border-radius: 4px;
+    @include inline-code;
   }
 }

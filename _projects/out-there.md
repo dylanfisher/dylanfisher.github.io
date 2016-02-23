@@ -1,0 +1,8 @@
+---
+title:            Out There
+date:             2014-10-01 00:00:00 -0500
+project_url:      http://www.outthereww.com
+collaborator:     Out There
+collaborator_url: http://www.outthereww.com
+categories:       website
+---
