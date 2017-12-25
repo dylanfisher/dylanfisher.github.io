@@ -5,61 +5,35 @@ layout: default
 <div class="home">
 
   <section class="section--about">
-    <h2 class="section-title">about</h2>
     <p>{{ site.description }}</p>
+    <p><a href="mailto:hi@dylanfisher.com">hi@dylanfisher.com</a></p>
   </section>
 
+  <hr class="section-divider">
+
   <section class="section--notes">
-    <h2 class="section-title">notes</h2>
-    <ul class="post-list list--blank">
+    <div class="post-list list--blank">
       {% for post in site.posts %}
-        <li class="post row">
-          <div class="post__date-title col-sm-12">{{ post.date | date: "%m.%d.%Y" }} – <a class="post__title__link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></div>
-          {% if post.categories %}
-            <div class="col-sm-12">
-              <ul class="post__categories list--blank">
-                {% for category in post.categories %}
-                  <li class="post__category">{{ category }}</li>
-                {% endfor %}
-              </ul>
-            </div>
-          {% endif %}
+        <div class="post row">
+          <!-- <div class="post__date-title col-sm-12 monospace">{{ post.date | date: "%Y – %B" }}</div> -->
+          <div class="col-sm-12">
+            <h2><a class="post__title__link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+            <div class="monospace">{{ post.date | date: "%Y – %B" }}</div>
+            {% if post.project_url %}
+              <div class="monospace">
+                <a href="{{ post.project_url }}">{{ post.project_url }}</a>
+              </div>
+            {% endif %}
+          </div>
           <div class="post__summary col-sm-12">
             {{ post.excerpt }}
           </div>
-        </li>
-      {% endfor %}
-      </ul>
-  </section>
-
-  <section class="section--work">
-    <h2 class="section-title">work</h2>
-    <ul class="project-list list--blank">
-      {% for project in site.projects reversed %}
-        <li class="project row">
-          <div class="project__date col-sm-1">{{ project.date | date: "%Y" }}</div>
-          <div class="project__title col-sm-4">
-            <a class="project__title__link" href="{{ project.url | prepend: site.baseurl }}">{{ project.title }}</a>
+          <div class="post__read-more-wrapper col-sm-12">
+            <a href="{{ post.url | prepend: site.baseurl }}">Read more</a>
           </div>
-          <div class="col-sm-4">
-            <a class="project__link" href="{{ project.project_url }}" target="_blank">{{ project.project_url }}</a>
-          </div>
-          {% if project.collaborator_alt %}
-            <div class="project__date col-sm-3">
-              {{ project.collaborator_alt }}
-            </div>
-          {% elsif project.collaborator %}
-            <div class="project__date col-sm-3">
-              with
-              {% if project.collaborator_url %} <a class="project__collaborator-link" href="{{ project.collaborator_url }}" target="_blank">{{ project.collaborator }}</a>
-              {% else %}
-                {{ project.collaborator }}
-              {% endif %}
-            </div>
-          {% endif %}
-        </li>
+        </div>
+        <hr class="section-divider">
       {% endfor %}
-    </ul>
+      </div>
   </section>
-
 </div>

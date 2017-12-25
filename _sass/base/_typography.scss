@@ -1,16 +1,30 @@
-h1, h2, h3, h4, h5, h6 {
+h1 {
   @include font--sans__regular;
   margin: 0 0 0;
   font-weight: bold;
 }
 
+h2, h3, h4, h5, h6 {
+  @include font--sans__small;
+  margin: 0 0 0;
+  font-weight: bold;
+}
 
 ul, p {
-  margin: 0 0 1em;
+  margin: 1rem 0;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 pre,
-code {
+code,
+.monospace {
   @include font--monospace;
 }
 
