@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+<article class="post container-fluid" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
@@ -16,7 +16,8 @@ layout: default
         {{ page.collaborator_alt }}
       {% elsif page.collaborator %}
         With
-        {% if page.collaborator_url %} <a class="project__collaborator-link" href="{{ page.collaborator_url }}" target="_blank">{{ page.collaborator }}</a>
+        {% if page.collaborator_url %}
+          <a class="project__collaborator-link" href="{{ page.collaborator_url }}" target="_blank">{{ page.collaborator }}</a>
         {% else %}
           {{ page.collaborator }}
         {% endif %}

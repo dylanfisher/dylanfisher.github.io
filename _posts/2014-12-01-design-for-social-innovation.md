@@ -5,4 +5,5 @@ project_url:      http://dsi.sva.edu
 collaborator:     Common Name
 collaborator_url: http://common-name.com
 categories:       website
+read_only:        true
 ---

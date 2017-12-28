@@ -1,0 +1,9 @@
+---
+layout: project
+title: Josie Ng
+date: 2013-06-01 00:00:00 -0500
+categories: website rails
+collaborator: Josie Ng
+collaborator_url: https://www.josieng.com
+read_only: true
+---

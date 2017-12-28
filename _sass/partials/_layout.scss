@@ -1,7 +1,15 @@
+body {
+  margin: 0;
+}
+
 .container-fluid {
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.section--header {
+  margin-top: 15px;
 }
 
 .header {
@@ -9,8 +17,12 @@
 }
 
 .footer {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.page-content {
+  min-height: calc(100vh - 180px);
 }
 
 .post__categories {
@@ -31,7 +43,15 @@
 
 section,
 .section {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+}
+
+.section--about {
+  margin-bottom: 1.5rem;
+}
+
+.section--notes {
+  margin-top: 1.5rem;
 }
 
 .post__summary {
@@ -54,7 +74,34 @@ img {
 .post-content hr {
   max-width: 40px;
   height: 3px;
-  background-color: #e2e2e2;
-  margin: 2rem 0;
+  background-color: #eaeaea;
+  margin: 1.5rem 0;
   border: 0;
+}
+
+.image-with-caption {
+  margin-bottom: 1.5rem;
+}
+
+.caption {
+  @include font--monospace;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.archive__row {
+  margin-bottom: 10px;
+}
+
+.archive__col {
+  @include font--sans__regular;
+  font-size: 16px;
+}
+
+.post-list {
+  .section-divider {
+    &:last-child {
+      display: none;
+    }
+  }
 }

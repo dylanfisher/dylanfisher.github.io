@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<div class="home">
+<div class="home container-fluid">
 
   <section class="section--about">
     <p>{{ site.description }}</p>
@@ -14,23 +14,52 @@ layout: default
   <section class="section--notes">
     <div class="post-list list--blank">
       {% for post in site.posts %}
+        {% assign title_link = nil %}
+        {% if post.read_only and post.project_url %}
+          {% assign title_link = post.project_url %}
+        {% elsif post.read_only != true %}
+          {% assign title_link = post.url | prepend: site.baseurl %}
+        {% endif %}
         <div class="post row">
-          <!-- <div class="post__date-title col-sm-12 monospace">{{ post.date | date: "%Y – %B" }}</div> -->
           <div class="col-sm-12">
-            <h2><a class="post__title__link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
-            <div class="monospace">{{ post.date | date: "%Y – %B" }}</div>
-            {% if post.project_url %}
-              <div class="monospace">
-                <a href="{{ post.project_url }}">{{ post.project_url }}</a>
-              </div>
-            {% endif %}
+            <h2>
+              {% if title_link != nil %}
+                <a class="post__title__link" href="{{ title_link }}">{{ post.title }}</a>
+              {% else %}
+                <del title="This project is no longer online.">
+                  {{ post.title }}
+                </del>
+              {% endif %}
+            </h2>
+            <div class="post__date monospace">
+              {{ post.date | date: "%b %Y" }}
+              {% if post.project_url %}
+                  • <a href="{{ post.project_url }}">{{ post.project_url | replace: 'http://', '' | replace: 'https://', '' | replace: 'www.', '' }}</a>
+              {% endif %}
+              {% if post.read_only == true %}
+                {% if post.collaborator_alt %}
+                  • {{ post.collaborator_alt }}
+                {% elsif post.collaborator %}
+                    • With
+                    {% if post.collaborator_url %}
+                      <a class="project__collaborator-link" href="{{ post.collaborator_url }}" target="_blank">{{ post.collaborator }}</a>
+                    {% else %}
+                      {{ post.collaborator }}
+                    {% endif %}
+                {% endif %}
+              {% endif %}
+            </div>
           </div>
-          <div class="post__summary col-sm-12">
-            {{ post.excerpt }}
-          </div>
-          <div class="post__read-more-wrapper col-sm-12">
-            <a href="{{ post.url | prepend: site.baseurl }}">Read more</a>
-          </div>
+          {% if post.read_only != true %}
+            <div class="post__summary col-sm-12">
+              {{ post.excerpt }}
+            </div>
+          {% endif %}
+          {% if post.read_only != true %}
+            <div class="post__read-more-wrapper col-sm-12">
+              <a href="{{ post.url | prepend: site.baseurl }}">Read more</a>
+            </div>
+          {% endif %}
         </div>
         <hr class="section-divider">
       {% endfor %}

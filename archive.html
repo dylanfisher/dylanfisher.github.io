@@ -1,0 +1,47 @@
+---
+layout: default
+---
+
+<div class="archive container-fluid">
+  <section class="section--notes">
+    <div class="post-list list--blank">
+      {% for post in site.posts %}
+        {% assign title_link = nil %}
+        {% if post.read_only != true %}
+          {% assign title_link = post.url | prepend: site.baseurl %}
+        {% endif %}
+        <div class="post row archive__row">
+          <div class="col-sm-1 archive__col">
+            {{ post.date | date: "%Y" }}
+          </div>
+          <div class="col-sm-4 archive__col">
+            {% if title_link != nil %}
+              <a href="{{ title_link }}">{{ post.title }}</a>
+            {% else %}
+              {{ post.title }}
+            {% endif %}
+          </div>
+          <div class="col-sm-4 archive__col">
+            <div class="post__date">
+              {% if post.project_url %}
+                  <a href="{{ post.project_url }}">{{ post.project_url | replace: 'http://', '' | replace: 'https://', '' | replace: 'www.', '' }}</a>
+              {% endif %}
+            </div>
+          </div>
+          <div class="col-sm-3 archive__col">
+            {% if post.collaborator_alt %}
+              {{ post.collaborator_alt }}
+            {% elsif post.collaborator %}
+                with
+                {% if post.collaborator_url %}
+                  <a class="project__collaborator-link" href="{{ post.collaborator_url }}" target="_blank">{{ post.collaborator }}</a>
+                {% else %}
+                  {{ post.collaborator }}
+                {% endif %}
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+      </div>
+  </section>
+</div>
