@@ -16,10 +16,13 @@ url: "http://dylanfisher.github.io/"
 twitter_username: xverdxse
 github_username:  dylanfisher
 
+# Gloabl permalink settings
+permalink: /:year/:month/:day/:title
+
 # Build settings
 markdown: kramdown
 sass:
-    style: compressed
+  style: compressed
 
 # Excludes
 exclude: ["Guardfile"]

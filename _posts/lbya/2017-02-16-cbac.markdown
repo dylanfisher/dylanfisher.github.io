@@ -1,0 +1,10 @@
+---
+layout: project
+title: Columbia Books on Architecture and the City
+date: 2016-02-01 00:00:00 -0500
+categories: website rails
+collaborator: Linked by Air
+collaborator_url: http://www.linkedbyair.net
+project_url: https://www.arch.columbia.edu/books
+read_only: true
+---

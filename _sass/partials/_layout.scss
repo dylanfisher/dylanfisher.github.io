@@ -98,6 +98,22 @@ img {
   font-size: 16px;
 }
 
+.archive__col__post-link__indicator {
+  @include font--monospace;
+  border: 1px solid;
+  border-radius: 50%;
+  line-height: 1;
+  width: 1em;
+  display: inline-block;
+  text-align: center;
+  font-size: 11px;
+  padding: 1px;
+  box-sizing: content-box;
+  vertical-align: top;
+  color: #b9b9b9;
+  font-weight: bold;
+}
+
 .post-list {
   .section-divider {
     &:last-child {

@@ -1,0 +1,64 @@
+---
+layout: default
+---
+
+<div class="container-fluid">
+  {% include about.html %}
+
+  <hr class="section-divider">
+
+  <section class="section--notes">
+    <div class="post-list list--blank">
+      {% for post in site.posts %}
+        {% assign title_link = nil %}
+        {% if post.read_only and post.project_url %}
+          {% assign title_link = post.project_url %}
+        {% elsif post.read_only != true %}
+          {% assign title_link = post.url | prepend: site.baseurl %}
+        {% endif %}
+        <div class="post row">
+          <div class="col-sm-12">
+            <h2>
+              {% if title_link != nil %}
+                <a class="post__title__link" href="{{ title_link }}">{{ post.title }}</a>
+              {% else %}
+                <del title="This project is no longer online.">
+                  {{ post.title }}
+                </del>
+              {% endif %}
+            </h2>
+            <div class="post__date monospace">
+              {{ post.date | date: "%b %Y" }}
+              {% if post.project_url %}
+                  • <a href="{{ post.project_url }}">{{ post.project_url | replace: 'http://', '' | replace: 'https://', '' | replace: 'www.', '' }}</a>
+              {% endif %}
+              {% if post.read_only == true %}
+                {% if post.collaborator_alt %}
+                  • {{ post.collaborator_alt }}
+                {% elsif post.collaborator %}
+                    • With
+                    {% if post.collaborator_url %}
+                      <a class="project__collaborator-link" href="{{ post.collaborator_url }}" target="_blank">{{ post.collaborator }}</a>
+                    {% else %}
+                      {{ post.collaborator }}
+                    {% endif %}
+                {% endif %}
+              {% endif %}
+            </div>
+          </div>
+          {% if post.read_only != true %}
+            <div class="post__summary col-sm-12">
+              {{ post.excerpt }}
+            </div>
+          {% endif %}
+          {% if post.read_only != true %}
+            <div class="post__read-more-wrapper col-sm-12">
+              <a href="{{ post.url | prepend: site.baseurl }}">Read more</a>
+            </div>
+          {% endif %}
+        </div>
+        <hr class="section-divider">
+      {% endfor %}
+      </div>
+  </section>
+</div>
