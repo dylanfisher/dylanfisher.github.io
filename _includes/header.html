@@ -1,12 +1,18 @@
 <section class="section--header">
   <header class="header container-fluid">
     <div class="row">
-      <div class="col-xs-6">
+      <div class="col-sm-6">
         <h1>
           <a class="site-title link--blank" href="{{ site.baseurl }}/">{{ site.title }}</a>
         </h1>
       </div>
-      <div class="col-xs-6 text-right monospace">
+      <div class="header__col-details col-sm-6 monospace">
+        {% if page.path == 'detail-view.html' %}
+          <a href="/">List view</a>
+        {% else %}
+          <a href="/detail-view">Detail view</a>
+        {% endif %}
+        •
         <a href="https://github.com/dylanfisher">GitHub</a>
       </div>
     </div>

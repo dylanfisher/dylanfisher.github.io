@@ -16,6 +16,12 @@ body {
   margin-bottom: 1em;
 }
 
+.header__col-details {
+  @include breakpoint(sm) {
+    text-align: right;
+  }
+}
+
 .footer {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
@@ -110,6 +116,7 @@ img {
   padding: 1px;
   box-sizing: content-box;
   vertical-align: top;
+  margin-top: 4px;
   color: #b9b9b9;
   font-weight: bold;
 }

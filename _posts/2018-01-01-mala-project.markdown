@@ -5,6 +5,7 @@ date: 2017-12-01 00:00:00 -0500
 categories: website rails forest
 collaborator: Abby Chen, Ben Grandgenett
 project_url: http://malaproject.nyc
+published: false
 ---
 
 Abby Chen approached me to develop a website for MáLà Project, a Michelin Bib Gourmand recommended Chinese restaurant located in New York City's East Village. The site is more than just a typical restaurant website–it manages multiple locations, menus, news items, press releases, a glossary, a photo gallery, form submissions, and more.

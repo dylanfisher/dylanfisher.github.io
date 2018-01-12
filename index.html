@@ -36,7 +36,7 @@ layout: default
           <div class="col-sm-4 archive__col">
             <div class="post__date">
               {% if post.project_url %}
-                  <a href="{{ post.project_url }}">{{ post.project_url | replace: 'http://', '' | replace: 'https://', '' | replace: 'www.', '' }}</a>
+                <a href="{{ post.project_url }}">{{ post.project_url | replace: 'http://', '' | replace: 'https://', '' | replace: 'www.', '' }}</a>
               {% endif %}
             </div>
           </div>
