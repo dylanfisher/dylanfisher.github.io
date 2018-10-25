@@ -1,29 +1,19 @@
-$(function() {
-  // Open external links in a new tab
-  $(document).on('click', 'a', function(e) {
-    var $link = $(this);
+(function() {
+  var documentHost = document.location.href.split('/')[2];
 
-    if(isExternalLink($link)) {
-      window.open(this.href);
-      return false;
-    }
-  });
+  var isExternalLink = function(el) {
+    var link = el.getAttribute('href');
+    var linkHost = link.split('/')[2];
 
-  // Add an link--external class
-  $('a').each(function() {
-    var $link = $(this);
-
-    if(isExternalLink($link)) {
-      $link.addClass('link--external');
-    }
-  });
-
-  function isExternalLink($el) {
-    var href = $el.attr('href');
-    var link = $el.get(0).href;
-    var link_host = link.split('/')[2];
-    var document_host = document.location.href.split('/')[2];
-
-    return link_host != document_host && !link.indexOf('mailto:').length;
+    return linkHost != documentHost && !link.indexOf('mailto:').length;
   };
-});
+
+  var links = document.getElementsByTagName('a');
+
+  for (var i = links.length - 1; i >= 0; i--) {
+    if ( isExternalLink(links[i]) ) {
+      links[i].classList.add('link--external');
+      links[i].setAttribute('target', '_blank');
+    }
+  }
+})();
