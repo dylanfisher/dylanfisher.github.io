@@ -2,7 +2,7 @@
   var documentHost = document.location.href.split('/')[2];
 
   var isExternalLink = function(el) {
-    var link = el.getAttribute('href');
+    var link = el.href;
     var linkHost = link.split('/')[2];
 
     return linkHost != documentHost && !link.indexOf('mailto:').length;

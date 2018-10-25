@@ -128,3 +128,19 @@ img {
     }
   }
 }
+
+.labud-link-wrapper {
+  $ratio: 0.9166;
+  $height: 0.8em;
+  $width: $height * $ratio;
+
+  &:after {
+    content: '';
+    background-image: url('../assets/images/labud-logo.svg');
+    display: inline-block;
+    width: $width;
+    height: $height;
+    background-size: $width $height;
+    margin-left: 0.3em;
+  }
+}
