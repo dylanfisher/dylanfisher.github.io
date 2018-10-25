@@ -10,7 +10,7 @@ title: Dylan Fisher
 email: hi@dylanfisher.com
 description: >
   Dylan Fisher is a full stack Ruby on Rails developer based in New York City.
-  He is a partner at <a href='http://labud.nyc/'>Labud</a> and teaches Core Interaction
+  He is a partner at <span class='labud-link-wrapper'><a href='http://labud.nyc/'>Labud</a></span> and teaches Core Interaction
   at Parsons School of Design.
 baseurl: ""
 url: "http://dylanfisher.github.io/"
