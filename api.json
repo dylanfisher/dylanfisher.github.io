@@ -1,0 +1,16 @@
+{
+  "name": "Dylan",
+  "hometown": "Seattle",
+  "country": "United States",
+  "favorites": {
+    "shows": [
+      "Game of Thrones",
+      "Ozark"
+    ],
+    "artists": [
+      "Casino Versus Japan",
+      "Aphex Twin",
+      "Vladislav Delay"
+    ]
+  }  
+}
