@@ -1,16 +1,19 @@
 {
-  "name": "Dylan",
-  "hometown": "Seattle",
-  "country": "United States",
-  "favorites": {
-    "shows": [
-      "Game of Thrones",
-      "Ozark"
-    ],
-    "artists": [
-      "Casino Versus Japan",
-      "Aphex Twin",
-      "Vladislav Delay"
-    ]
-  }  
+  "adjective1": "",
+  "adjective2": "",
+  "artSupply": "",
+  "computerSoftware": "",
+  "websiteName": "",
+  "artistName": "",
+  "celebrityName": "",
+  "noun1": "",
+  "noun2": "",
+  "pluralNoun1": "",
+  "pluralNoun2": "",
+  "pluralNoun3": "",
+  "verbEndingInIng": "",
+  "placeInNewYork": "",
+  "bodyPart": "",
+  "numbers": [],
+  "foods": []
 }
