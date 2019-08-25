@@ -6,6 +6,7 @@ categories: website jekyll teaching
 collaborator: Nika Simovich
 collaborator_url: http://nikasimovich.com
 project_url: http://ci.nikasimovich.com
+read_only: true
 ---
 
 For our Core Interaction website, I chose to use [Jekyll](https://jekyllrb.com/), the static site generator written in Ruby, to manage the site's content. The website is hosted for free on [GitHub Pages](https://pages.github.com/), which automatically compiles and serves Jekyll websites. This setup is similar to what we teach our students, where they also host their websites for the semester on GitGub Pages.

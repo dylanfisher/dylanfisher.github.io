@@ -6,6 +6,7 @@ categories: website wordpress
 collaborator: Richard The
 collaborator_url: http://richardthe.com
 project_url: http://midnightcommercial.com
+read_only: true
 ---
 
 Richard The approached me to develop Midnight Commercial's new portfolio website. The overall design was straightforward, but there were a few interactions and layout requirements that made this website unique and technically challenging.
