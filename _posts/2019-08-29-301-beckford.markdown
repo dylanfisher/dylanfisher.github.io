@@ -1,0 +1,10 @@
+---
+layout: project
+title: Beckford House & Tower
+date: 2019-10-10 00:00:00 -0500
+categories: website
+collaborator: Noë & Associates
+collaborator_url: http://noeassociates.com
+project_url: https://www.beckfordresidences.com
+read_only: true
+---
