@@ -1,10 +1,10 @@
 ---
 layout: project
-title: Atelier AM
-date: 2018-01-01 00:00:00 -0500
-categories: website rails
+title: Studio Volpe
+date: 2021-05-05 00:00:00 -0500
+categories: website
 collaborator: Hoffman Creative
 collaborator_url: https://www.hoffmancreative.com
-project_url: https://www.atelieram.com
+project_url: https://www.stevenvolpe.com
 read_only: true
 ---
