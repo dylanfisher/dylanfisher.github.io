@@ -1,10 +1,10 @@
 ---
 layout: project
-title: Waldorf Astoria Residences | New York
-date: 2020-03-01 00:00:00 -0500
+title: Hotel Angst | Bordighera
+date: 2020-05-01 00:00:00 -0500
 categories: website
 collaborator: Noë & Associates
 collaborator_url: http://noeassociates.com
-project_url: https://www.waldorftowers.nyc
+project_url: https://www.angst-bordighera.it
 read_only: true
 ---

@@ -5,7 +5,6 @@ date: 2017-01-01 00:00:00 -0500
 categories: website jekyll teaching
 collaborator: Nika Simovich
 collaborator_url: http://nikasimovich.com
-project_url: http://ci.nikasimovich.com
 read_only: true
 ---
 
