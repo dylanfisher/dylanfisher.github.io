@@ -1,0 +1,10 @@
+---
+layout: project
+title: Leverone Design
+date: 2023-11-16 00:00:00 -0500
+categories: website
+collaborator: Hoffman Creative
+collaborator_url: https://www.hoffmancreative.com
+project_url: https://leveronedesign.com
+read_only: true
+---
