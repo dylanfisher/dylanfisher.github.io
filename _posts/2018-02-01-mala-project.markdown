@@ -4,7 +4,6 @@ title: MáLà Project
 date: 2018-02-01 00:00:00 -0500
 categories: website rails forest
 collaborator: <a href="https://abbychen.me/">Abby Chen</a> & <a href="https://bengrandgenett.com/">Ben Grandgenett</a>
-project_url: https://www.malaproject.nyc
 read_only: true
 ---
 

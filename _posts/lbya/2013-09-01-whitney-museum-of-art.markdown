@@ -5,6 +5,5 @@ date: 2013-09-01 00:00:00 -0500
 categories: website
 collaborator: Linked by Air
 collaborator_url: http://www.linkedbyair.net
-project_url: http://whitney.org
 read_only: true
 ---

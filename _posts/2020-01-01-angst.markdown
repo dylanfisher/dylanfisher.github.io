@@ -5,6 +5,5 @@ date: 2020-05-01 00:00:00 -0500
 categories: website
 collaborator: Noë & Associates
 collaborator_url: http://noeassociates.com
-project_url: https://www.angst-bordighera.it
 read_only: true
 ---
