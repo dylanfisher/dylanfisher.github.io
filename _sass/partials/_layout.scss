@@ -16,6 +16,29 @@ body {
   margin-bottom: 1em;
 }
 
+.header__row {
+  display: flex;
+
+  @include breakpoint(xs) {
+    flex-direction: column;
+  }
+
+  @include breakpoint(sm) {
+    align-items: center;
+  }
+}
+
+.header__primary-col {
+  display: inline-flex;
+  align-items: center;
+}
+
+.header__headshot {
+  border-radius: 50%;
+  width: 2em;
+  margin-right: 0.5rem;
+}
+
 .header__col-details {
   @include breakpoint(sm) {
     text-align: right;
