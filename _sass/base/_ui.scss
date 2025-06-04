@@ -17,6 +17,11 @@ a {
   background-image: none;
 }
 
+.link--blank-no-hover {
+  background-image: none !important;
+  text-decoration: inherit !important;
+}
+
 .link--external {
   cursor: alias;
 }

@@ -16,6 +16,11 @@ body {
   margin-bottom: 1em;
 }
 
+.header__headshot-link {
+  text-decoration: none;
+  display: inline-flex;
+}
+
 .header__row {
   display: flex;
 
