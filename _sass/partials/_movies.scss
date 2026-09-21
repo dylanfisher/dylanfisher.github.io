@@ -511,7 +511,7 @@ $movies-list-thumb: 32px;
 // ---- dialog --------------------------------------------------------------
 
 .movie-dialog {
-  width: min(720px, calc(100vw - 2 * #{$gutter}));
+  width: unquote("min(720px, calc(100vw - 2 * #{$gutter}))");
   max-height: calc(100vh - 2 * #{$gutter});
   padding: 0;
   border: 0;
@@ -556,7 +556,7 @@ $movies-list-thumb: 32px;
 // Prev/next sit at the vertical center of the viewport, just outside the
 // dialog's edges (fixed, since the dialog itself scrolls). The caret is a
 // CSS border triangle so it centers exactly regardless of font metrics.
-$movie-dialog-half: min(360px, 50vw - #{$gutter});
+$movie-dialog-half: unquote("min(360px, 50vw - #{$gutter})");
 $movie-dialog-nav-size: 32px;
 $movie-dialog-nav-offset: 8px;
 
