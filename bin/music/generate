@@ -1,0 +1,213 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+#
+# Generate the artists + albums data for /music/.
+#
+#   bin/music/generate [SWINSIAN_DB]
+#
+# Reads Swinsian's SQLite library (default
+# ~/Library/Application Support/Swinsian/Library.sqlite, override with
+# SWINSIAN_DB or first arg) instead of walking the music volume: one query
+# returns every track's tags in a second or two, where scanning tens of
+# thousands of files over the network takes minutes.
+#
+# Only tracks under the library folder count (/Volumes/music/library, or
+# any stale mount alias such as /Volumes/music-1). Artists and albums are
+# grouped by their folders, library/<Artist>/<Album>/, which is how the
+# collection is organised on disk; tags supply album titles, years and
+# genres, and Swinsian's Grouping field (the label) marks an album as
+# "tagged", matching its "- Tagged" smart playlist. Songs are not included. Writes _data/music.json.
+#
+# Local-only: the `bin` dir is excluded from the Jekyll build. Requires the
+# `sqlite3` CLI (ships with macOS). Runs with plain Ruby, no bundler.
+
+require "json"
+require "date"
+require "fileutils"
+require "open3"
+require_relative "../lib/slug"
+
+ROOT      = File.expand_path("../..", __dir__)
+DB_FILE   = ARGV[0] || ENV["SWINSIAN_DB"] ||
+            File.expand_path("~/Library/Application Support/Swinsian/Library.sqlite")
+DATA_FILE = File.join(ROOT, "_data/music.json")
+LIBRARY   = %r{\A/Volumes/music(-\d+)?/library/}
+CORE_DATA_EPOCH = Time.utc(2001, 1, 1)   # Swinsian stores dates as seconds since 2001
+
+abort "Swinsian library not found: #{DB_FILE}" unless File.file?(DB_FILE)
+abort "`sqlite3` not found on PATH" unless system("which sqlite3 >/dev/null 2>&1")
+
+FileUtils.mkdir_p(File.dirname(DATA_FILE))
+
+SQL = <<~SQL
+  SELECT path, album, year, originalreleasedate, genre, grouping, filesize, length, dateadded
+  FROM track
+  WHERE path LIKE '/Volumes/music%/library/%'
+SQL
+
+out, err, st = Open3.capture3("sqlite3", "-json", "-readonly", DB_FILE, SQL)
+abort "sqlite3 failed: #{err.strip}" unless st.success?
+rows = out.empty? ? [] : JSON.parse(out)
+
+# A few folder names carry stray C0/C1 control bytes (MacRoman mojibake);
+# Jekyll's YAML loader refuses them, so drop them everywhere in the output.
+def clean(value)
+  case value
+  when String then value.gsub(/[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f-\u009f]/, "")
+  when Array  then value.map { |v| clean(v) }
+  when Hash   then value.transform_values { |v| clean(v) }
+  else value
+  end
+end
+
+# Most common non-empty value; ties broken by first appearance.
+def mode(values)
+  values.reject { |v| v.nil? || v.to_s.strip.empty? }.tally.max_by { |_v, n| n }&.first
+end
+
+# "Electronic - Dub Techno" -> "Electronic"; used for the genre facet so
+# thousands of sub-genre spellings collapse into a short list.
+def primary_genre(genre)
+  return nil unless genre
+  g = genre.split(%r{\s+-\s+|\s*[/,;]\s*}).first.to_s.strip
+  g.empty? ? nil : g
+end
+
+def sort_key(name)
+  slugify(name.sub(/\A(the|a|an)\s+/i, "")).tr("-", " ")
+end
+
+# Group tracks by their folders. rel = "<Artist>/<Album>/<file>" (or
+# "<Artist>/<file>" for loose tracks, which count towards the artist but
+# aren't an album).
+artists  = Hash.new { |h, k| h[k] = { "tracks" => [], "albums" => Hash.new { |ah, ak| ah[ak] = [] } } }
+seen     = {}
+warnings = []
+loose_tracks = 0
+
+rows.each do |r|
+  next unless r["path"].match?(LIBRARY)   # the SQL LIKE above is looser than the regex
+  rel = r["path"].sub(LIBRARY, "")
+  next if seen[rel]   # same file indexed under two mount names
+  seen[rel] = true
+
+  parts = rel.split("/")
+  next if parts.size < 2
+  artist_folder = parts[0]
+  album_folder  = parts.size >= 3 ? parts[1] : nil
+
+  artists[artist_folder]["tracks"] << r
+  artists[artist_folder]["albums"][album_folder] << r if album_folder
+end
+
+# Tags carry typos like 20, 900 or 3010; only plausible years count.
+YEAR_RANGE = (1900..Date.today.year + 1)
+
+def album_year(tracks)
+  years = tracks.map { |t| t["year"].to_i }.select { |y| YEAR_RANGE.cover?(y) }
+  years = tracks.map { |t| t["originalreleasedate"].to_s[0, 4].to_i }.select { |y| YEAR_RANGE.cover?(y) } if years.empty?
+  mode(years) || 0
+end
+
+def added_at(tracks)
+  t = tracks.map { |x| x["dateadded"].to_f }.reject(&:zero?).min
+  t ? (CORE_DATA_EPOCH + t).strftime("%Y-%m-%d") : nil
+end
+
+list = artists.map do |folder, a|
+  tracks = a["tracks"]
+  name = folder
+  slug = slugify(folder)
+  slug = "artist-#{artists.keys.index(folder)}" if slug.empty?
+
+  albums = a["albums"].map do |album_folder, ts|
+    year  = album_year(ts)
+    genre = mode(ts.map { |t| t["genre"] })
+    # Swinsian's "- Tagged" smart playlist is "Grouping is not empty"; the
+    # Grouping field holds the label. An album is tagged once every track is.
+    labels = ts.map { |t| t["grouping"].to_s.strip }
+    {
+      "title"  => mode(ts.map { |t| t["album"] }) || album_folder,
+      "year"   => year,
+      "decade" => year.zero? ? nil : (year / 10) * 10,
+      "genre"  => genre,
+      "facet"  => primary_genre(genre),
+      "label"  => mode(labels),
+      "tagged" => labels.none?(&:empty?),
+      "tracks" => ts.size,
+      "added"  => added_at(ts),
+    }
+  end
+  albums.sort_by! { |al| [al["year"].zero? ? 9999 : al["year"], sort_key(al["title"])] }
+  # Loose tracks live directly in the artist folder: counted, not listed.
+  loose_tracks += tracks.size - albums.sum { |al| al["tracks"] }
+
+  {
+    "slug"    => slug,
+    "name"    => name,
+    "sort"    => sort_key(name),
+    "genres"  => albums.filter_map { |al| al["facet"] }.uniq.sort,
+    "labels"  => albums.filter_map { |al| al["label"] }.uniq.sort,
+    "tagged"  => albums.count { |al| al["tagged"] },
+    "decades" => albums.filter_map { |al| al["decade"] }.uniq.sort,
+    "tracks"  => tracks.size,
+    "bytes"   => tracks.sum { |t| t["filesize"].to_i },
+    "seconds" => tracks.sum { |t| t["length"].to_f }.round,
+    "added"   => added_at(tracks),
+    "albums"  => albums,
+  }
+end
+
+# Folder names that differ only in case/punctuation collide on slug. They
+# stay separate (that's how the disk has them); the warning is a hint to
+# merge the folders.
+by_slug = list.group_by { |ar| ar["slug"] }
+by_slug.each do |slug, dupes|
+  next if dupes.size == 1
+  warnings << "slug collision #{slug}: #{dupes.map { |d| d["name"] }.join(" / ")}"
+  dupes.each_with_index { |d, i| d["slug"] = "#{slug}-#{i + 1}" if i.positive? }
+end
+
+list.sort_by! { |ar| [ar["sort"], ar["name"]] }
+all_albums = list.flat_map { |ar| ar["albums"] }
+
+count = ->(values) {
+  values.compact.tally.sort_by { |name, n| [-n, name.to_s.downcase] }
+        .map { |name, n| { "name" => name, "count" => n } }
+}
+
+total_bytes = list.sum { |ar| ar["bytes"] }
+data = {
+  "generated_at" => Date.today.iso8601,
+  "count"        => list.size,
+  "album_count"  => all_albums.size,
+  "track_count"  => list.sum { |ar| ar["tracks"] },
+  "total_bytes"  => total_bytes,
+  "total_tb"     => (total_bytes / 1e12).round(1),
+  "total_hours"  => (list.sum { |ar| ar["seconds"] } / 3600.0).round,
+  "tagged_count" => all_albums.count { |al| al["tagged"] },
+  "genres"       => count.call(all_albums.map { |al| al["facet"] }),
+  "labels"       => count.call(all_albums.map { |al| al["label"] }),
+  # "Most collected" strip: artists by album count. "Various (Artists)"
+  # folders are compilations, not an artist, so they're left out.
+  "top_artists"  => list.reject { |ar| ar["name"] =~ /\Avarious\b/i || ar["albums"].empty? }
+                        .sort_by { |ar| [-ar["albums"].size, ar["sort"]] }
+                        .first(24)
+                        .map { |ar| { "name" => ar["name"], "value" => ar["slug"], "count" => ar["albums"].size } },
+  "decades"      => all_albums.filter_map { |al| al["decade"] }.tally.sort
+                              .map { |dec, n| { "name" => dec, "count" => n } },
+  "artists"      => list,
+}
+
+File.write(DATA_FILE, JSON.pretty_generate(clean(data)) + "\n")
+
+puts "Parsed #{rows.size} tracks from #{DB_FILE}"
+puts "#{list.size} artists, #{all_albums.size} albums (#{data["total_tb"]} TB, #{data["total_hours"]} hours)"
+puts "#{data["tagged_count"]} albums tagged (Swinsian's \"- Tagged\": every track has a Grouping/label)"
+puts "Wrote #{DATA_FILE}"
+puts "#{loose_tracks} loose tracks sit outside album folders (counted per artist, not listed)" if loose_tracks.positive?
+unless warnings.empty?
+  puts "\nWarnings (#{warnings.size}):"
+  warnings.first(40).each { |w| puts "  - #{w}" }
+  puts "  ... #{warnings.size - 40} more" if warnings.size > 40
+end

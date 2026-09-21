@@ -1,0 +1,9 @@
+{%- comment -%}
+Tail of a list page's toolbar: the Clear button (shown while a filter is
+active) and the count of items currently shown, e.g. "591 films".
+  include.url   — the page's URL, for the no-JS clear link
+  include.total — total item count
+  include.noun  — plural noun; JS may swap it when the view changes
+{%- endcomment -%}
+<a href="{{ include.url }}" class="lists-toolbar__clear" id="lists-clear" hidden><svg class="lists-toolbar__clear-icon" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 1l8 8M9 1l-8 8"/></svg>Clear</a>
+<span class="lists-toolbar__count" id="lists-count"><span>{{ include.total }}</span> <span>{{ include.noun }}</span></span>

@@ -15,6 +15,7 @@
 require "csv"
 require "json"
 require "date"
+require_relative "../lib/slug"
 
 ROOT      = File.expand_path("../..", __dir__)
 DATA_FILE = File.join(ROOT, "_data/movies_watched.json")
@@ -29,11 +30,6 @@ ALIASES = {
   "the-castle-of-cagliostro-1979" => "lupin-the-third-the-castle-of-cagliostro-1979",
   "the-french-dispatch-of-the-liberty-kansas-evening-sun-2021" => "the-french-dispatch-2021",
 }.freeze
-
-def slugify(name)
-  s = name.unicode_normalize(:nfkd).encode("ASCII", replace: "").downcase
-  s.gsub(/[^a-z0-9]+/, "-").gsub(/^-|-$/, "")
-end
 
 films = {}
 CSV.foreach(csv_path, headers: true, encoding: "bom|utf-8") do |row|

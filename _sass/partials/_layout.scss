@@ -173,3 +173,71 @@ img {
     margin-right: 0.2em;
   }
 }
+
+// "Lists" dropdown in the header nav. A <details> so it works without JS;
+// main.js closes it on outside clicks.
+.nav-dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.nav-dropdown__toggle {
+  display: inline;
+  cursor: pointer;
+  list-style: none;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  &::after {
+    content: '';
+    display: inline-block;
+    margin-left: 4px;
+    vertical-align: 2px;
+    border-style: solid;
+    border-width: 4px 3.5px 0;
+    border-color: currentColor transparent transparent;
+  }
+
+  &:focus-visible {
+    outline: 1px solid blue;
+    outline-offset: 3px;
+  }
+}
+
+.nav-dropdown__menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 10;
+  margin-top: 4px;
+  padding: 6px 12px;
+  background: $white;
+  border: 1px solid $black;
+  text-align: left;
+  white-space: nowrap;
+
+  // No underline here: site links draw theirs as a background gradient.
+  a {
+    display: block;
+    background-image: none;
+
+    &:hover {
+      background-image: none;
+    }
+
+    &.is-current {
+      opacity: 0.5;
+    }
+  }
+
+  a + a {
+    margin-top: 4px;
+  }
+
+  @include breakpoint(xs) {
+    right: auto;
+    left: 0;
+  }
+}

@@ -1,0 +1,18 @@
+{%- comment -%}
+"Most collected" facet in the stats strip: the top few values as filter buttons.
+  include.label — heading
+  include.items — [{ name, count, value? }] (value defaults to name)
+  include.field — form field the button sets
+  include.limit — how many to show
+  include.columns — optional; a column count ("3") or width ("11em"). With a
+                    width the group stretches to fill the strip and adds
+                    columns as the viewport widens.
+{%- endcomment -%}
+<div class="lists-stats__group{% if include.columns %} lists-stats__group--columns{% endif %}">
+  <span class="lists-stats__label">{{ include.label }}</span>
+  <ul class="lists-stats__list list--blank"{% if include.columns %} style="--cols: {{ include.columns }}"{% endif %}>
+    {%- for i in include.items limit: include.limit %}
+    <li><button type="button" class="lists-stats__link" data-filter="{{ include.field }}" data-value="{{ i.value | default: i.name | escape }}">{{ i.name | escape }}</button> <span class="lists-stats__n">{{ i.count }}</span></li>
+    {%- endfor %}
+  </ul>
+</div>

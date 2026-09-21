@@ -18,6 +18,7 @@ require "json"
 require "fileutils"
 require "open3"
 require "date"
+require_relative "../lib/slug"
 
 ROOT        = File.expand_path("../..", __dir__)
 MOVIES_DIR  = ARGV[0] || ENV["MOVIES_DIR"] || "/Volumes/docker/radarr/movies"
@@ -32,11 +33,6 @@ abort "`vips` not found on PATH (brew install vips)" unless system("which vips >
 
 FileUtils.mkdir_p(POSTER_DIR)
 FileUtils.mkdir_p(File.dirname(DATA_FILE))
-
-def slugify(name)
-  s = name.unicode_normalize(:nfkd).encode("ASCII", replace: "").downcase
-  s.gsub(/[^a-z0-9]+/, "-").gsub(/^-|-$/, "")
-end
 
 def text(el, path)
   node = el.elements[path]
@@ -158,7 +154,8 @@ data = {
   "total_tb"     => (total_bytes / 1e12).round(1),
   "directors"    => count.call("directors"),
   "genres"       => count.call("genres"),
-  "decades"      => movies.map { |mv| mv["decade"] }.uniq.sort,
+  "decades"      => movies.map { |mv| mv["decade"] }.tally.sort
+                          .map { |dec, n| { "name" => dec, "count" => n } },
   "movies"       => movies,
 }
 

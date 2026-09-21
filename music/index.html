@@ -1,0 +1,60 @@
+---
+layout: default
+title: Music
+permalink: /music/
+---
+{% assign data = site.data.music %}
+
+<div class="lists music">
+  <div class="lists-head container-fluid">
+  <p class="lists-intro">This is my digital music library – {{ data.count }} artists, {{ data.album_count | default: 0 }} albums and {{ data.total_tb }} TB of data, kept on a home media server and cataloged in Swinsian. Albums in full black have been carefully tagged to match their metadata to Discogs. Last updated {{ data.generated_at | date: "%B %-d, %Y" }}.</p>
+
+  <div class="lists-stats monospace">
+    {% include lists/facet.html label="Most Collected" items=data.top_artists field="artist" limit=24 columns="11em" %}
+    <div class="lists-stats__group lists-view" id="lists-view" role="group" aria-label="view">
+      <label class="lists-view__option">
+        <input type="radio" name="view" value="names" form="lists-toolbar" checked>
+        <span><svg class="lists-view__icon" viewBox="0 0 12 12" aria-hidden="true"><rect x="0" y="0" width="5" height="5"/><rect x="7" y="0" width="5" height="5"/><rect x="0" y="7" width="5" height="5"/><rect x="7" y="7" width="5" height="5"/></svg>Artists</span>
+      </label>
+      <label class="lists-view__option">
+        <input type="radio" name="view" value="albums" form="lists-toolbar">
+        <span><svg class="lists-view__icon" viewBox="0 0 12 12" aria-hidden="true"><rect x="0" y="0.5" width="12" height="2"/><rect x="2" y="5" width="10" height="2"/><rect x="2" y="9.5" width="10" height="2"/></svg>Albums</span>
+      </label>
+      <label class="lists-view__option" title="Only albums tagged to match Discogs">
+        <input type="checkbox" name="tagged" value="1" form="lists-toolbar">
+        <span><svg class="lists-view__icon" viewBox="0 0 12 12" aria-hidden="true"><path d="M0 0h5.5L12 6.5 6.5 12 0 5.5z"/><circle cx="2.75" cy="2.75" r="1.1" fill="#fff"/></svg>Tagged</span>
+      </label>
+    </div>
+  </div>
+
+  <form class="lists-toolbar monospace" id="lists-toolbar" autocomplete="off">
+    <input type="hidden" name="artist" value="">
+    {% include lists/toolbar-end.html url="/music/" total=data.count noun="artists" %}
+  </form>
+  </div>
+
+  <ul class="music-artists list--blank" id="lists-items">
+    {%- for a in data.artists %}
+    <li class="artist{% if a.tagged > 0 %} artist--tagged{% endif %}" data-slug="{{ a.slug }}">
+      <span class="artist__name" role="button" tabindex="0" data-filter="artist" data-value="{{ a.slug }}">{{ a.name | escape }}</span><span class="artist__count">{{ a.albums | size }}</span>
+      {%- if a.albums.size > 0 %}
+      <ul class="artist__albums list--blank">
+        {%- for al in a.albums %}
+        <li class="album{% if al.tagged %} album--tagged{% endif %}"{% if al.label %} title="{{ al.label | escape }}"{% endif %}>
+          <span class="album__title">{{ al.title | escape }}</span>
+          {%- if al.year > 0 %}<span class="album__year">{{ al.year }}</span>{% endif %}
+          {%- if al.genre %}<span class="album__genre" title="{{ al.genre | escape }}">{{ al.genre | escape }}</span>{% endif %}
+          {%- if al.label %}<span class="album__label">{{ al.label | escape }}</span>{% endif %}
+        </li>
+        {%- endfor %}
+      </ul>
+      {%- endif %}
+    </li>
+    {%- endfor %}
+  </ul>
+
+  {% include lists/empty.html %}
+</div>
+
+<script src="/js/lists.js"></script>
+<script src="/js/music.js"></script>

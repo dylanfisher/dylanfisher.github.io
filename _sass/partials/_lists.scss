@@ -1,0 +1,330 @@
+// Shared chrome for the list pages (/movies/, /music/): intro, stats
+// strip, view toggle, toolbar, empty state. Page-specific layouts live in
+// _movies.scss and _music.scss.
+
+// ---- intro ---------------------------------------------------------------
+
+.lists-intro {
+  // @include font--sans__small;
+  // font-size: 18px;
+  opacity: 0.5;
+  margin: 0 0 1.5rem;
+}
+
+// ---- stats strip ---------------------------------------------------------
+
+.lists-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 3rem;
+  margin: 0 0 2rem;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.lists-stats__group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.lists-stats__label {
+  opacity: 0.6;
+}
+
+// How many entries a columned facet keeps on phones.
+$lists-facet-mobile: 6;
+
+.lists-stats__list {
+  margin: 0;
+  padding: 0;
+
+  // Multi-column facet (--cols on the list: a count or a column width).
+  // Items fill down each column in rank order, so the top entries stay
+  // in the first column.
+  &[style*="--cols"] {
+    columns: var(--cols);
+    column-gap: 2rem;
+
+    li {
+      break-inside: avoid;
+    }
+
+    // Phones: a single column, trimmed to the top few.
+    @include breakpoint(xs) {
+      columns: 1;
+
+      li:nth-child(n + #{$lists-facet-mobile + 1}) {
+        display: none;
+      }
+    }
+  }
+}
+
+// A columned facet takes whatever width the strip has left, so a column
+// width yields more columns on wider screens.
+.lists-stats__group--columns {
+  flex: 1 1 0;
+  min-width: 0;
+
+  // Movies: on phones the facet sits between the decades and the view
+  // toggle, so give it a row of its own instead of squeezing beside them.
+  .movies & {
+    @include breakpoint(xs) {
+      flex-basis: 100%;
+    }
+  }
+}
+
+.lists-stats__n {
+  opacity: 0.5;
+}
+
+.lists-stats__link {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+
+  &:hover,
+  &:focus-visible,
+  &.is-active {
+    text-decoration: underline;
+    outline: none;
+  }
+}
+
+// Decade histogram: one thin column per decade, scaled to the largest.
+$lists-stats-bar-h: 48px;
+
+.lists-stats__bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+}
+
+.lists-stats__bar .lists-stats__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 22px;
+
+  &:hover .lists-stats__bar-fill,
+  &:focus-visible .lists-stats__bar-fill,
+  &.is-active .lists-stats__bar-fill {
+    background: $black;
+  }
+
+  &.is-active .lists-stats__bar-label {
+    opacity: 1;
+  }
+}
+
+.lists-stats__bar-count {
+  font-size: 10px;
+  opacity: 0.5;
+}
+
+.lists-stats__bar-track {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  height: $lists-stats-bar-h;
+}
+
+.lists-stats__bar-fill {
+  display: block;
+  width: 100%;
+  min-height: 1px;
+  background: #b9b9b9;
+  transition: background $tt ease;
+}
+
+.lists-stats__bar-label {
+  font-size: 10px;
+  opacity: 0.6;
+}
+
+// View toggle: sits at the right end of the stats strip. Radios are
+// visually hidden; the labels (icon + word) act as text buttons.
+.lists-view {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px 14px;
+  margin-left: auto;
+  align-self: flex-start;
+}
+
+// A third option (e.g. Rows) sits on its own line beneath the first two.
+.lists-view__option--rows {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.lists-view__option {
+  position: relative;
+
+  &[hidden] {
+    display: none;
+  }
+  margin: 0;
+  font-weight: normal;
+  cursor: pointer;
+
+  input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  input + span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    opacity: 0.5;
+    transition: opacity $tt ease;
+  }
+
+  input:checked + span,
+  &:hover input + span {
+    opacity: 1;
+  }
+
+  input:focus-visible + span {
+    outline: 1px solid blue;
+    outline-offset: 3px;
+  }
+}
+
+.lists-view__icon {
+  width: 10px;
+  height: 10px;
+  fill: currentColor;
+}
+
+// ---- toolbar -------------------------------------------------------------
+
+.lists-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 18px;
+  margin-bottom: 1.5rem;
+  font-size: 14px;
+
+  input,
+  select {
+    font: inherit;
+    color: inherit;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #b9b9b9;
+    border-radius: 0;
+    padding: 2px 0;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    max-width: 14em;
+
+    &:focus {
+      outline: none;
+      border-bottom-color: blue;
+    }
+  }
+
+  @include breakpoint(xs) {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+
+    input,
+    select {
+      max-width: none;
+      width: 100%;
+    }
+  }
+}
+
+.lists-toolbar__field {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  margin: 0;
+  font-weight: normal;
+
+  > span {
+    opacity: 0.6;
+  }
+}
+
+// Only shown while a filter is active.
+.lists-toolbar__clear {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: auto;   // pushes right, next to the count
+  padding: 3px 8px;
+  border: 1px solid $black;
+  border-radius: 2px;
+  color: $black;
+  text-decoration: none;
+  line-height: 1.2;
+  background: none;   // the site's links draw their underline as a background gradient
+  transition: background-color $tt ease, color $tt ease;
+
+  &:hover,
+  &:focus-visible {
+    background: $black;
+    color: $white;
+    outline: none;
+  }
+
+  &[hidden] {
+    display: none;
+  }
+
+  @include breakpoint(xs) {
+    margin-left: 0;
+    align-self: flex-start;
+  }
+}
+
+.lists-toolbar__clear-icon {
+  width: 8px;
+  height: 8px;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  fill: none;
+}
+
+.lists-toolbar__count {
+  opacity: 0.6;
+  margin-left: auto;
+
+  // When the clear button is showing it takes the auto margin instead.
+  .lists-toolbar__clear:not([hidden]) + & {
+    margin-left: 0;
+  }
+
+  @include breakpoint(xs) {
+    margin-left: 0;
+  }
+}
+
+
+.lists-empty {
+  font-size: 14px;
+  opacity: 0.6;
+  padding: 0 $gutter;
+}

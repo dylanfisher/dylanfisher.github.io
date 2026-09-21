@@ -1,19 +1,20 @@
+{%- comment -%}
+Previous/next post links. Hidden on the home page and the list pages.
+{%- endcomment -%}
+{%- assign list_urls = site.data.lists | map: "url" -%}
 <footer class="footer container-fluid">
   <div class="row">
-    {% if page.url != "/" and page.url != "/movies/" %}
-      <div class="col-sm-4 monospace">
+    {% unless page.url == "/" or list_urls contains page.url %}
+      <div class="col-sm-6 monospace">
         {% if page.previous.url %}
           <a class="prev" href="{{page.previous.url}}" title="{{page.previous.title}}">&laquo;</a>
         {% endif %}
       </div>
-      <div class="col-sm-4 monospace text-center">
-        <a href="/">Home</a>
-      </div>
-      <div class="col-sm-4 monospace text-right">
+      <div class="col-sm-6 monospace text-right">
         {% if page.next.url %}
           <a class="next" href="{{page.next.url}}" title="{{page.next.title}}">&raquo;</a>
         {% endif %}
       </div>
-    {% endif %}
+    {% endunless %}
   </div>
 </footer>

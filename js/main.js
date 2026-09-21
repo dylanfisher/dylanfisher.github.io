@@ -17,3 +17,10 @@
     }
   }
 })();
+
+// Close any open nav dropdown when clicking elsewhere.
+document.addEventListener('click', function(e) {
+  Array.prototype.forEach.call(document.querySelectorAll('.nav-dropdown[open]'), function(d) {
+    if (!d.contains(e.target)) d.removeAttribute('open');
+  });
+});

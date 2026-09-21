@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-20",
-  "count": 585,
-  "total_bytes": 27368751980918,
-  "total_tb": 27.4,
+  "generated_at": "2026-09-21",
+  "count": 591,
+  "total_bytes": 27589800550759,
+  "total_tb": 27.6,
   "directors": [
     {
       "name": "Hayao Miyazaki",
@@ -41,6 +41,10 @@
       "count": 7
     },
     {
+      "name": "John Woo",
+      "count": 7
+    },
+    {
       "name": "Andrei Tarkovsky",
       "count": 6
     },
@@ -54,10 +58,6 @@
     },
     {
       "name": "Joel Coen",
-      "count": 6
-    },
-    {
-      "name": "John Woo",
       "count": 6
     },
     {
@@ -298,6 +298,10 @@
     },
     {
       "name": "John Lasseter",
+      "count": 2
+    },
+    {
+      "name": "Johnnie To",
       "count": 2
     },
     {
@@ -553,6 +557,10 @@
       "count": 1
     },
     {
+      "name": "Chen Chi-Hwa",
+      "count": 1
+    },
+    {
       "name": "Chen Kaige",
       "count": 1
     },
@@ -582,6 +590,10 @@
     },
     {
       "name": "Clint Bentley",
+      "count": 1
+    },
+    {
+      "name": "Corey Yuen",
       "count": 1
     },
     {
@@ -1073,6 +1085,10 @@
       "count": 1
     },
     {
+      "name": "Mark L. Lester",
+      "count": 1
+    },
+    {
       "name": "Mary Bronstein",
       "count": 1
     },
@@ -1496,27 +1512,27 @@
   "genres": [
     {
       "name": "Drama",
-      "count": 357
+      "count": 359
     },
     {
       "name": "Comedy",
-      "count": 143
+      "count": 144
     },
     {
       "name": "Crime",
-      "count": 141
+      "count": 142
     },
     {
       "name": "Action",
-      "count": 134
+      "count": 140
     },
     {
       "name": "Thriller",
-      "count": 123
+      "count": 125
     },
     {
       "name": "Adventure",
-      "count": 91
+      "count": 93
     },
     {
       "name": "Animation",
@@ -1528,11 +1544,11 @@
     },
     {
       "name": "Science Fiction",
-      "count": 60
+      "count": 61
     },
     {
       "name": "Fantasy",
-      "count": 57
+      "count": 58
     },
     {
       "name": "Mystery",
@@ -1572,17 +1588,50 @@
     }
   ],
   "decades": [
-    1920,
-    1930,
-    1940,
-    1950,
-    1960,
-    1970,
-    1980,
-    1990,
-    2000,
-    2010,
-    2020
+    {
+      "name": 1920,
+      "count": 2
+    },
+    {
+      "name": 1930,
+      "count": 1
+    },
+    {
+      "name": 1940,
+      "count": 8
+    },
+    {
+      "name": 1950,
+      "count": 28
+    },
+    {
+      "name": 1960,
+      "count": 31
+    },
+    {
+      "name": 1970,
+      "count": 71
+    },
+    {
+      "name": 1980,
+      "count": 91
+    },
+    {
+      "name": 1990,
+      "count": 100
+    },
+    {
+      "name": 2000,
+      "count": 110
+    },
+    {
+      "name": 2010,
+      "count": 82
+    },
+    {
+      "name": 2020,
+      "count": 67
+    }
   ],
   "movies": [
     {
@@ -4245,6 +4294,30 @@
       "fanart": "https://image.tmdb.org/t/p/w1280/kV73hJI6YUidib2OFKPUaKKwt4m.jpg"
     },
     {
+      "slug": "commando-1985",
+      "title": "Commando",
+      "sorttitle": "commando",
+      "year": 1985,
+      "decade": 1980,
+      "runtime": 90,
+      "size": 20330301466,
+      "plot": "John Matrix, the former leader of a special commando strike force that always got the toughest jobs done, is forced back into action when his young daughter is kidnapped. To find her, Matrix has to fight his way through an array of punks, killers, one of his former commandos, and a fully equipped private army. With the help of a feisty stewardess and an old friend, Matrix has only a few hours to overcome his greatest challenge: finding his daughter before she's killed.",
+      "tagline": "",
+      "directors": [
+        "Mark L. Lester"
+      ],
+      "genres": [
+        "Action",
+        "Adventure",
+        "Thriller"
+      ],
+      "tmdb_id": "10999",
+      "imdb_id": "tt0088944",
+      "rating": 6.7,
+      "poster": "/assets/images/movies/commando-1985.webp",
+      "fanart": "https://image.tmdb.org/t/p/w1280/gvao0WZchzudp2oMF5sjgzwHY0q.jpg"
+    },
+    {
       "slug": "conclave-2024",
       "title": "Conclave",
       "sorttitle": "conclave",
@@ -6430,6 +6503,29 @@
       "fanart": "https://image.tmdb.org/t/p/w1280/sofHRGQgG6LvKYJWpaxQRFKe4or.jpg"
     },
     {
+      "slug": "half-a-loaf-of-kung-fu-1978",
+      "title": "Half a Loaf of Kung Fu",
+      "sorttitle": "half a loaf of kung fu",
+      "year": 1978,
+      "decade": 1970,
+      "runtime": 97,
+      "size": 30075902216,
+      "plot": "A young daydreamer  assumes the identity of a dead martial arts hero and quickly finds himself caught up in a plot by several clans to steal famous martial arts artifacts being transported by an escort company.",
+      "tagline": "",
+      "directors": [
+        "Chen Chi-Hwa"
+      ],
+      "genres": [
+        "Comedy",
+        "Action"
+      ],
+      "tmdb_id": "18867",
+      "imdb_id": "tt0080623",
+      "rating": 5.6,
+      "poster": "/assets/images/movies/half-a-loaf-of-kung-fu-1978.webp",
+      "fanart": "https://image.tmdb.org/t/p/w1280/9LhDEiMxCsuJe2zGsd3l0yuUJwd.jpg"
+    },
+    {
       "slug": "hamnet-2025",
       "title": "Hamnet",
       "sorttitle": "hamnet",
@@ -6726,6 +6822,32 @@
       "rating": 7.9,
       "poster": "/assets/images/movies/hero-2002.webp",
       "fanart": "https://image.tmdb.org/t/p/w1280/jDz6RYN3nKYtlo7J9IMvGoJit7B.jpg"
+    },
+    {
+      "slug": "the-heroic-trio-1993",
+      "title": "The Heroic Trio",
+      "sorttitle": "heroic trio",
+      "year": 1993,
+      "decade": 1990,
+      "runtime": 88,
+      "size": 57660006737,
+      "plot": "While one tough woman with an invisible robe has stolen 18 babies for her powerful master, two other tough women and the cops try to stop her.",
+      "tagline": "",
+      "directors": [
+        "Johnnie To"
+      ],
+      "genres": [
+        "Science Fiction",
+        "Action",
+        "Adventure",
+        "Fantasy",
+        "Thriller"
+      ],
+      "tmdb_id": "43636",
+      "imdb_id": "tt0105619",
+      "rating": 6.6,
+      "poster": "/assets/images/movies/the-heroic-trio-1993.webp",
+      "fanart": "https://image.tmdb.org/t/p/w1280/2eA6zc0rk4AiWuEFKRni4sW1OqO.jpg"
     },
     {
       "slug": "high-and-low-1963",
@@ -8143,6 +8265,29 @@
       "rating": 6.7,
       "poster": "/assets/images/movies/last-and-first-men-2020.webp",
       "fanart": "https://image.tmdb.org/t/p/w1280/m76YNtzkO7G7NzQAosmu6pN1AWf.jpg"
+    },
+    {
+      "slug": "last-hurrah-for-chivalry-1979",
+      "title": "Last Hurrah for Chivalry",
+      "sorttitle": "last hurrah for chivalry",
+      "year": 1979,
+      "decade": 1970,
+      "runtime": 106,
+      "size": 28974765534,
+      "plot": "Kao has purchased a new wife, but an enemy has paid her more money to kill him. Kao must recruit a pair of swordsmen to help defend himself and his family from his ruthless enemy. But Kao has his dark side as well.",
+      "tagline": "",
+      "directors": [
+        "John Woo"
+      ],
+      "genres": [
+        "Action",
+        "Drama"
+      ],
+      "tmdb_id": "13514",
+      "imdb_id": "tt0077655",
+      "rating": 7.0,
+      "poster": "/assets/images/movies/last-hurrah-for-chivalry-1979.webp",
+      "fanart": "https://image.tmdb.org/t/p/w1280/4Hy25pG6hJhvNhdxCI3z3kiDJzj.jpg"
     },
     {
       "slug": "the-last-movie-1971",
@@ -12823,6 +12968,29 @@
       "fanart": "https://image.tmdb.org/t/p/w1280/lMRX4cLx4hxYth3iQ96c0E1RHGB.jpg"
     },
     {
+      "slug": "she-shoots-straight-1990",
+      "title": "She Shoots Straight",
+      "sorttitle": "she shoots straight",
+      "year": 1990,
+      "decade": 1990,
+      "runtime": 92,
+      "size": 27233516051,
+      "plot": "Hong Kong police officer Mina Kao marries Huang Tsung-Pao, who is a member of a law enforcement dynasty. His father and his many sisters are also officers, and the eldest sister Chia-Ling is one of the highest ranking women in the police department. When a Vietnamese gang begins a rampage through the city, the women must overcome their suspicion of one another to bring the criminals to justice.",
+      "tagline": "",
+      "directors": [
+        "Corey Yuen"
+      ],
+      "genres": [
+        "Action",
+        "Crime"
+      ],
+      "tmdb_id": "45447",
+      "imdb_id": "tt0099809",
+      "rating": 6.8,
+      "poster": "/assets/images/movies/she-shoots-straight-1990.webp",
+      "fanart": "https://image.tmdb.org/t/p/w1280/cK1e6u74LP4FZm0OYVn87JNnNmi.jpg"
+    },
+    {
       "slug": "short-cuts-1993",
       "title": "Short Cuts",
       "sorttitle": "short cuts",
@@ -14102,6 +14270,29 @@
       "rating": 8.0,
       "poster": "/assets/images/movies/throne-of-blood-1957.webp",
       "fanart": "https://image.tmdb.org/t/p/w1280/rohRr9XqTRF8YwLMGAnTprg3GnL.jpg"
+    },
+    {
+      "slug": "throw-down-2004",
+      "title": "Throw Down",
+      "sorttitle": "throw down",
+      "year": 2004,
+      "decade": 2000,
+      "runtime": 96,
+      "size": 56774077837,
+      "plot": "A former Judo champion is given the chance to redeem himself after he befriends a competitor and an aspiring singer.",
+      "tagline": "",
+      "directors": [
+        "Johnnie To"
+      ],
+      "genres": [
+        "Drama",
+        "Action"
+      ],
+      "tmdb_id": "25664",
+      "imdb_id": "tt0415380",
+      "rating": 6.9,
+      "poster": "/assets/images/movies/throw-down-2004.webp",
+      "fanart": "https://image.tmdb.org/t/p/w1280/zXzIHuQ7UEluQrRlpp6bMvXvLR8.jpg"
     },
     {
       "slug": "to-be-or-not-to-be-1942",

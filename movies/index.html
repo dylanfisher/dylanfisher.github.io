@@ -5,60 +5,32 @@ permalink: /movies/
 ---
 {% assign data = site.data.movies %}
 {% assign watched = site.data.movies_watched.films %}
-{% assign years = data.movies | map: "year" | sort %}
 
-<div class="movies">
-  <div class="movies-head container-fluid">
-  <p class="movies-intro">This is my current digital movie library – {{ data.count }} films and {{ data.total_tb }} TB of data, kept on a home media server. Posters in color are films I've watched since I started logging. Last updated {{ data.generated_at | date: "%B %-d, %Y" }}.</p>
+<div class="lists movies">
+  <div class="lists-head container-fluid">
+  <p class="lists-intro">This is my digital movie library – {{ data.count }} films and {{ data.total_tb }} TB of data, kept on a home media server and served through CoreELEC. Posters in color are films I've watched since I started logging. Last updated {{ data.generated_at | date: "%B %-d, %Y" }}.</p>
 
-  <div class="movies-stats monospace">
-    <div class="movies-stats__group">
-      <span class="movies-stats__label">By Decade</span>
-      <ul class="movies-stats__bars list--blank">
-        {% assign max_count = 0 %}
-        {% for dec in data.decades %}
-          {% assign n = data.movies | where: "decade", dec | size %}
-          {% if n > max_count %}{% assign max_count = n %}{% endif %}
-        {% endfor %}
-        {% for dec in data.decades %}
-          {% assign n = data.movies | where: "decade", dec | size %}
-          {% assign pct = n | times: 100.0 | divided_by: max_count | round: 1 %}
-          <li class="movies-stats__bar">
-            <button type="button" class="movies-stats__link" data-filter="decade" data-value="{{ dec }}" title="{{ n }} {% if n == 1 %}film{% else %}films{% endif %} from the {{ dec }}s">
-              <span class="movies-stats__bar-label">{{ dec | slice: 2, 2 }}s</span>
-              <span class="movies-stats__bar-track"><span class="movies-stats__bar-fill" style="height: {{ pct }}%"></span></span>
-              <span class="movies-stats__bar-count">{{ n }}</span>
-            </button>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
-    <div class="movies-stats__group">
-      <span class="movies-stats__label">Most Collected</span>
-      <ul class="movies-stats__list list--blank">
-        {% for d in data.directors limit: 6 %}
-        <li><button type="button" class="movies-stats__link" data-filter="director" data-value="{{ d.name | escape }}">{{ d.name | escape }}</button> <span class="movies-stats__n">{{ d.count }}</span></li>
-        {% endfor %}
-      </ul>
-    </div>
-    <div class="movies-stats__group movies-view" id="movies-view" role="group" aria-label="view">
-      <label class="movies-view__option">
-        <input type="radio" name="view" value="grid" form="movies-toolbar" checked>
-        <span><svg class="movies-view__icon" viewBox="0 0 12 12" aria-hidden="true"><rect x="0" y="0" width="5" height="5"/><rect x="7" y="0" width="5" height="5"/><rect x="0" y="7" width="5" height="5"/><rect x="7" y="7" width="5" height="5"/></svg>Grid</span>
+  <div class="lists-stats monospace">
+    {% include lists/decades.html decades=data.decades noun="film" %}
+    {% include lists/facet.html label="Most Collected" items=data.directors field="director" limit=18 columns="3 14em" %}
+    <div class="lists-stats__group lists-view" id="lists-view" role="group" aria-label="view">
+      <label class="lists-view__option">
+        <input type="radio" name="view" value="grid" form="lists-toolbar" checked>
+        <span><svg class="lists-view__icon" viewBox="0 0 12 12" aria-hidden="true"><rect x="0" y="0" width="5" height="5"/><rect x="7" y="0" width="5" height="5"/><rect x="0" y="7" width="5" height="5"/><rect x="7" y="7" width="5" height="5"/></svg>Grid</span>
       </label>
-      <label class="movies-view__option">
-        <input type="radio" name="view" value="list" form="movies-toolbar">
-        <span><svg class="movies-view__icon" viewBox="0 0 12 12" aria-hidden="true"><rect x="0" y="0.5" width="12" height="2"/><rect x="0" y="5" width="12" height="2"/><rect x="0" y="9.5" width="12" height="2"/></svg>List</span>
+      <label class="lists-view__option">
+        <input type="radio" name="view" value="list" form="lists-toolbar">
+        <span><svg class="lists-view__icon" viewBox="0 0 12 12" aria-hidden="true"><rect x="0" y="0.5" width="12" height="2"/><rect x="0" y="5" width="12" height="2"/><rect x="0" y="9.5" width="12" height="2"/></svg>List</span>
       </label>
-      <label class="movies-view__option movies-view__option--rows" id="movies-rows" hidden>
-        <input type="checkbox" name="rows" value="1" form="movies-toolbar">
-        <span><svg class="movies-view__icon" viewBox="0 0 12 12" aria-hidden="true"><rect x="0" y="0" width="12" height="5"/><rect x="0" y="7" width="5" height="5"/><rect x="7" y="7" width="5" height="5"/></svg>Rows</span>
+      <label class="lists-view__option lists-view__option--rows" id="movies-rows" hidden>
+        <input type="checkbox" name="rows" value="1" form="lists-toolbar">
+        <span><svg class="lists-view__icon" viewBox="0 0 12 12" aria-hidden="true"><rect x="0" y="0" width="12" height="5"/><rect x="0" y="7" width="5" height="5"/><rect x="7" y="7" width="5" height="5"/></svg>Rows</span>
       </label>
     </div>
   </div>
 
-  <form class="movies-toolbar monospace" id="movies-toolbar" autocomplete="off">
-    <label class="movies-toolbar__field">
+  <form class="lists-toolbar monospace" id="lists-toolbar" autocomplete="off">
+    <label class="lists-toolbar__field">
       <span>Sort</span>
       <select name="sort">
         <option value="year-desc">Year ↓</option>
@@ -67,14 +39,14 @@ permalink: /movies/
         <option value="director">Director</option>
       </select>
     </label>
-    <label class="movies-toolbar__field">
+    <label class="lists-toolbar__field">
       <span>Director</span>
       <select name="director">
         <option value="">All</option>
         {% for d in data.directors %}<option value="{{ d.name | escape }}">{{ d.name | escape }} ({{ d.count }})</option>{% endfor %}
       </select>
     </label>
-    <label class="movies-toolbar__field">
+    <label class="lists-toolbar__field">
       <span>Genre</span>
       <select name="genre">
         <option value="">All</option>
@@ -82,12 +54,11 @@ permalink: /movies/
       </select>
     </label>
     <input type="hidden" name="decade" value="">
-    <a href="/movies/" class="movies-toolbar__clear" id="movies-clear" hidden><svg class="movies-toolbar__clear-icon" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 1l8 8M9 1l-8 8"/></svg>Clear</a>
-    <span class="movies-toolbar__count" id="movies-count"><span>{{ data.count }}</span> / {{ data.count }}</span>
+    {% include lists/toolbar-end.html url="/movies/" total=data.count noun="films" %}
   </form>
   </div>
 
-  <ul class="movies-grid list--blank" id="movies-grid">
+  <ul class="movies-grid list--blank" id="lists-items">
     {% for m in data.movies %}
     {% assign w = watched[m.slug] %}
     <li class="movie{% if w %} movie--watched{% endif %}"
@@ -124,7 +95,7 @@ permalink: /movies/
     {% endfor %}
   </ul>
 
-  <p class="movies-empty monospace" id="movies-empty" hidden>Nothing matches</p>
+  {% include lists/empty.html %}
 </div>
 
 <dialog class="movie-dialog" id="movie-dialog">
@@ -139,4 +110,5 @@ permalink: /movies/
   </div>
 </dialog>
 
+<script src="/js/lists.js"></script>
 <script src="/js/movies.js"></script>

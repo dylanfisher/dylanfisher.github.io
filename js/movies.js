@@ -1,21 +1,12 @@
 (function() {
-  var grid = document.getElementById('movies-grid');
+  var grid = document.getElementById('lists-items');
   if (!grid) return;
 
-  var form     = document.getElementById('movies-toolbar');
-  var countEl  = document.getElementById('movies-count').firstElementChild;
-  var emptyEl  = document.getElementById('movies-empty');
-  var clearEl  = document.getElementById('movies-clear');
-  var dialog   = document.getElementById('movie-dialog');
+  var dialog = document.getElementById('movie-dialog');
+  var rowsEl = document.getElementById('movies-rows');
+  var cmp    = ListPage.cmp;
 
   var items = Array.prototype.slice.call(grid.children);
-  var fields = ['sort', 'director', 'genre', 'decade', 'view', 'rows'];
-  var defaults = { sort: 'year-desc', view: 'grid' };
-  var VIEW_KEY = 'movies-view';
-  var layoutFields = ['sort', 'view', 'rows'];
-  var filterFields = fields.filter(function(f) { return layoutFields.indexOf(f) === -1; });
-  var rowsEl = document.getElementById('movies-rows');
-
   items.forEach(function(li) {
     li._directors = li.dataset.directors ? li.dataset.directors.split('|') : [];
     li._genres = li.dataset.genres ? li.dataset.genres.split('|') : [];
@@ -39,15 +30,6 @@
 
   // ---- filtering & sorting -------------------------------------------------
 
-  function state() {
-    var s = {};
-    fields.forEach(function(f) {
-      var el = form.elements[f];
-      s[f] = el.type === 'checkbox' ? (el.checked ? el.value : '') : el.value;
-    });
-    return s;
-  }
-
   var sorters = {
     'year-desc': function(a, b) { return b._year - a._year || cmp(a.dataset.sort, b.dataset.sort); },
     'year-asc':  function(a, b) { return a._year - b._year || cmp(a.dataset.sort, b.dataset.sort); },
@@ -60,40 +42,33 @@
     }
   };
 
-  function cmp(a, b) { return a < b ? -1 : a > b ? 1 : 0; }
+  ListPage({
+    fields: ['sort', 'director', 'genre', 'decade', 'view', 'rows'],
+    defaults: { sort: 'year-desc', view: 'grid' },
+    layoutFields: ['sort', 'view', 'rows'],
+    storageKey: 'movies-view',
+    onFilter: function() { if (dialog.open) dialog.close(); },
+    apply: function(s) {
+      var shown = 0;
+      items.forEach(function(li) {
+        var ok = (!s.director || li._directors.indexOf(s.director) !== -1) &&
+                 (!s.genre || li._genres.indexOf(s.genre) !== -1) &&
+                 (!s.decade || li.dataset.decade === s.decade);
+        li.hidden = !ok;
+        if (ok) shown++;
+      });
 
-  function apply() {
-    var s = state();
-    var shown = 0;
+      items.sort(sorters[s.sort] || sorters['year-desc']);
+      items.forEach(function(li) { grid.appendChild(li); });
+      groupByDirector(s.sort === 'director');
 
-    items.forEach(function(li) {
-      var ok = (!s.director || li._directors.indexOf(s.director) !== -1) &&
-               (!s.genre || li._genres.indexOf(s.genre) !== -1) &&
-               (!s.decade || li.dataset.decade === s.decade);
-      li.hidden = !ok;
-      if (ok) shown++;
-    });
-
-    items.sort(sorters[s.sort] || sorters['year-desc']);
-    items.forEach(function(li) { grid.appendChild(li); });
-    groupByDirector(s.sort === 'director');
-
-    grid.classList.toggle('movies-grid--list', s.view === 'list');
-    // "Rows" (each director on its own row) only means something in director order.
-    rowsEl.hidden = s.sort !== 'director';
-    grid.classList.toggle('movies-grid--rows', s.sort === 'director' && !!s.rows);
-    try { localStorage.setItem(VIEW_KEY, s.view); } catch (err) {}
-
-    // Highlight the active decade bar in the stats strip.
-    Array.prototype.forEach.call(document.querySelectorAll('.movies-stats__link[data-filter="decade"]'), function(b) {
-      b.classList.toggle('is-active', b.dataset.value === s.decade);
-    });
-
-    countEl.textContent = shown;
-    emptyEl.hidden = shown > 0;
-    clearEl.hidden = !filterFields.some(function(f) { return s[f]; });
-    writeUrl(s);
-  }
+      grid.classList.toggle('movies-grid--list', s.view === 'list');
+      // "Rows" (each director on its own row) only means something in director order.
+      rowsEl.hidden = s.sort !== 'director';
+      grid.classList.toggle('movies-grid--rows', s.sort === 'director' && !!s.rows);
+      return shown;
+    }
+  });
 
   // In director order, drop a title card in front of each director's run of
   // visible films. Cards are rebuilt on every apply so filters stay in sync.
@@ -128,75 +103,6 @@
       grid.insertBefore(card, g.first);
     });
   }
-
-  function writeUrl(s) {
-    var params = new URLSearchParams();
-    fields.forEach(function(f) {
-      var def = defaults[f] || '';
-      if (s[f] && s[f] !== def) params.set(f, s[f]);
-    });
-    var qs = params.toString();
-    history.replaceState(null, '', location.pathname + (qs ? '?' + qs : ''));
-  }
-
-  function readUrl() {
-    var params = new URLSearchParams(location.search);
-    fields.forEach(function(f) {
-      if (!params.has(f)) return;
-      var el = form.elements[f];
-      if (el.type === 'checkbox') el.checked = params.get(f) === el.value;
-      else el.value = params.get(f);
-    });
-    // View isn't a filter, so remember it across visits when the URL is silent.
-    if (!params.has('view')) {
-      try {
-        var saved = localStorage.getItem(VIEW_KEY);
-        if (saved) form.elements.view.value = saved;
-      } catch (err) {}
-    }
-    if (!form.elements.view.value) form.elements.view.value = defaults.view;
-  }
-
-  form.addEventListener('change', apply);
-  // The view radios live outside the form (linked via form=""), so their
-  // change events don't bubble to it.
-  document.getElementById('movies-view').addEventListener('change', apply);
-  form.addEventListener('submit', function(e) { e.preventDefault(); });
-  clearEl.addEventListener('click', function(e) {
-    e.preventDefault();
-    var view = form.elements.view.value;
-    var rows = form.elements.rows.checked;
-    form.reset();
-    clearFilters();   // form.reset() skips hidden inputs
-    form.elements.view.value = view;   // keep the chosen view
-    form.elements.rows.checked = rows;
-    apply();
-  });
-
-  function clearFilters() {
-    filterFields.forEach(function(f) { form.elements[f].value = ''; });
-  }
-
-  // Apply a single filter, replacing any others (sort is left alone).
-  function setFilter(field, value) {
-    var el = form.elements[field];
-    if (!el) return;
-    clearFilters();
-    el.value = value;
-    if (el.value !== value) el.value = '';   // option not present
-    apply();
-  }
-
-  document.addEventListener('click', function(e) {
-    var btn = e.target.closest('[data-filter]');
-    if (!btn) return;
-    e.preventDefault();
-    if (dialog.open) dialog.close();
-    setFilter(btn.dataset.filter, btn.dataset.value);
-  });
-
-  readUrl();
-  apply();
 
   // ---- detail dialog -------------------------------------------------------
 
@@ -244,7 +150,7 @@
       parts.push([w]);
     }
     parts.forEach(function(nodes, i) {
-      if (i) meta.appendChild(document.createTextNode(' \u00b7 '));
+      if (i) meta.appendChild(document.createTextNode(' · '));
       nodes.forEach(function(n) { meta.appendChild(n); });
     });
 

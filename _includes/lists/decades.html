@@ -1,0 +1,22 @@
+{%- comment -%}
+Decade histogram for a list page's stats strip. Each bar is a decade filter.
+  include.decades — [{ name, count }] from the generator
+  include.noun    — "film" / "album"
+{%- endcomment -%}
+{%- assign max_count = 0 -%}
+{%- for d in include.decades -%}{%- if d.count > max_count -%}{%- assign max_count = d.count -%}{%- endif -%}{%- endfor -%}
+<div class="lists-stats__group">
+  <span class="lists-stats__label">By Decade</span>
+  <ul class="lists-stats__bars list--blank">
+    {%- for d in include.decades %}
+    {%- assign pct = d.count | times: 100.0 | divided_by: max_count | round: 1 %}
+    <li class="lists-stats__bar">
+      <button type="button" class="lists-stats__link" data-filter="decade" data-value="{{ d.name }}" title="{{ d.count }} {{ include.noun }}{% if d.count != 1 %}s{% endif %} from the {{ d.name }}s">
+        <span class="lists-stats__bar-label">{{ d.name | slice: 2, 2 }}s</span>
+        <span class="lists-stats__bar-track"><span class="lists-stats__bar-fill" style="height: {{ pct }}%"></span></span>
+        <span class="lists-stats__bar-count">{{ d.count }}</span>
+      </button>
+    </li>
+    {%- endfor %}
+  </ul>
+</div>

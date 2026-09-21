@@ -1,0 +1,192 @@
+// /music/ — artists and albums packed into newspaper-style columns so
+// thousands of entries fit on screen. Shared chrome is in _lists.scss.
+
+$music-col: 240px;
+$music-col-names: 170px;
+
+.music-artists {
+  @include font--monospace;
+  columns: $music-col;
+  column-gap: 24px;
+  margin: 0;
+  padding: 0 $gutter;
+  font-size: 12px;
+  line-height: 1.4;
+
+  // Names only: narrower columns, no album lists.
+  &--names {
+    columns: $music-col-names;
+
+    .artist__albums {
+      display: none;
+    }
+  }
+
+  @include breakpoint(xs) {
+    columns: 2;
+    column-gap: 16px;
+  }
+
+  // Filtered to one artist: no columns, each album a full-width row with
+  // the whole genre string and the label.
+  &--single {
+    columns: auto;
+    font-size: 14px;
+
+    .artist__name {
+      font-size: 18px;
+      cursor: default;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    .artist__count {
+      font-size: 12px;
+    }
+
+    .artist__albums {
+      margin-top: 8px;
+    }
+
+    // Fixed columns so years line up; a missing value leaves its cell empty.
+    .album {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) 4ch minmax(0, 2fr) minmax(0, 2fr);
+      gap: 0 16px;
+      padding: 4px 0;
+      border-bottom: 1px solid #f3f3f3;
+
+      &[hidden] {
+        display: none;
+      }
+    }
+
+    .album__title { grid-column: 1; }
+    .album__year  { grid-column: 2; }
+    .album__genre { grid-column: 3; }
+    .album__label { grid-column: 4; }
+
+    .album__year,
+    .album__genre,
+    .album__label {
+      font-size: 12px;
+    }
+
+    .album__genre,
+    .album__label {
+      display: block;
+      max-width: none;
+      overflow: visible;
+      white-space: normal;
+    }
+
+    @include breakpoint(xs) {
+      .album {
+        grid-template-columns: minmax(0, 1fr) 4ch;
+      }
+
+      .album__genre,
+      .album__label {
+        grid-column: 1 / -1;
+        opacity: 0.6;
+      }
+    }
+  }
+}
+
+// Tagged (label filled in, per Swinsian) reads in full black; untagged is
+// muted. An artist is muted only when none of their albums are tagged.
+$music-muted: 0.55;
+
+.artist {
+  break-inside: avoid;
+  margin: 0;
+  opacity: $music-muted;
+
+  &--tagged {
+    opacity: 1;
+  }
+
+  &[hidden] {
+    display: none;
+  }
+}
+
+// The name filters to that artist on click (handled by lists.js). A span
+// with role=button rather than a <button>: there are thousands of them.
+.artist__name {
+  display: inline;
+  overflow-wrap: break-word;
+  cursor: pointer;
+
+  &:hover,
+  &:focus-visible {
+    text-decoration: underline;
+    outline: none;
+  }
+}
+
+// Album count after the name; the artist filter button in the meta.
+.artist__count {
+  opacity: 0.5;
+  font-size: 10px;
+  margin-left: 4px;
+  white-space: nowrap;
+}
+
+.artist__albums {
+  margin: 0;
+  padding: 0;
+}
+
+.album {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  padding-left: 10px;
+  min-width: 0;
+  opacity: $music-muted;
+
+  &--tagged {
+    opacity: 1;
+  }
+
+  &[hidden] {
+    display: none;
+  }
+}
+
+.album__title {
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
+.album__year,
+.album__genre {
+  flex-shrink: 0;
+  font-size: 10px;
+  opacity: 0.6;
+  white-space: nowrap;
+}
+
+// Label only appears in the single-artist view.
+.album__label {
+  display: none;
+  flex-shrink: 0;
+  font-size: 10px;
+  opacity: 0.6;
+  white-space: nowrap;
+}
+
+// Genre shown only on wide screens; it's a title tooltip otherwise.
+.album__genre {
+  max-width: 9em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @media (max-width: 1100px) {
+    display: none;
+  }
+}
