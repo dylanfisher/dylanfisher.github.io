@@ -1,0 +1,173 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+#
+# Generate the movies data + poster thumbnails for /movies/.
+#
+#   bin/movies/generate [MOVIES_DIR]
+#
+# Reads each "<Title> (<Year>)" folder in the Radarr library (default
+# /Volumes/docker/radarr/movies, override with MOVIES_DIR or first arg),
+# parses the Kodi .nfo, writes a 400px WebP poster to
+# assets/images/movies/<slug>.webp and writes _data/movies.json.
+#
+# Local-only: the `bin` dir is excluded from the Jekyll build. Requires
+# `vips` on PATH (brew install vips). Runs with plain Ruby, no bundler.
+
+require "rexml/document"
+require "json"
+require "fileutils"
+require "open3"
+require "date"
+
+ROOT        = File.expand_path("../..", __dir__)
+MOVIES_DIR  = ARGV[0] || ENV["MOVIES_DIR"] || "/Volumes/docker/radarr/movies"
+POSTER_DIR  = File.join(ROOT, "assets/images/movies")
+DATA_FILE   = File.join(ROOT, "_data/movies.json")
+POSTER_W    = 400
+POSTER_Q    = 78
+VIDEO_EXTS  = %w[.mkv .mp4 .m4v .avi .mov .ts .m2ts .iso .wmv .webm].freeze
+
+abort "Movies dir not found (is the volume mounted?): #{MOVIES_DIR}" unless File.directory?(MOVIES_DIR)
+abort "`vips` not found on PATH (brew install vips)" unless system("which vips >/dev/null 2>&1")
+
+FileUtils.mkdir_p(POSTER_DIR)
+FileUtils.mkdir_p(File.dirname(DATA_FILE))
+
+def slugify(name)
+  s = name.unicode_normalize(:nfkd).encode("ASCII", replace: "").downcase
+  s.gsub(/[^a-z0-9]+/, "-").gsub(/^-|-$/, "")
+end
+
+def text(el, path)
+  node = el.elements[path]
+  node ? node.text.to_s.strip : ""
+end
+
+def texts(el, path)
+  el.elements.to_a(path).map { |n| n.text.to_s.strip }.reject(&:empty?).uniq
+end
+
+def tmdb_size(url, size)
+  url.sub(%r{/t/p/[^/]+/}, "/t/p/#{size}/")
+end
+
+movies   = []
+warnings = []
+written  = 0
+skipped  = 0
+
+Dir.children(MOVIES_DIR).sort.each do |folder|
+  dir = File.join(MOVIES_DIR, folder)
+  next unless File.directory?(dir)
+
+  nfos = Dir.glob(File.join(dir, "*.nfo"))
+  if nfos.size != 1
+    warnings << "#{folder}: expected 1 .nfo, found #{nfos.size}"
+    next
+  end
+
+  doc = begin
+    REXML::Document.new(File.read(nfos.first, encoding: "UTF-8"))
+  rescue REXML::ParseException => e
+    warnings << "#{folder}: bad XML (#{e.message.lines.first.strip})"
+    next
+  end
+  m = doc.elements["movie"]
+  unless m
+    warnings << "#{folder}: no <movie> element"
+    next
+  end
+
+  slug     = slugify(folder)
+  title    = text(m, "title")
+  year     = text(m, "year").to_i
+  year     = text(m, "premiered")[0, 4].to_i if year.zero?
+  year     = folder[/\((\d{4})\)\s*$/, 1].to_i if year.zero?
+  fanart   = text(m, "fanart/thumb")
+  fanart   = text(m, "thumb[@aspect='fanart']") if fanart.empty?
+  dirs     = texts(m, "director")
+  rating   = text(m, "ratings/rating[@name='imdb']/value")
+  rating   = text(m, "rating") if rating.empty?
+
+  size     = Dir.children(dir)
+                .select { |f| VIDEO_EXTS.include?(File.extname(f).downcase) }
+                .sum { |f| File.size(File.join(dir, f)) }
+
+  warnings << "#{folder}: no video file" if size.zero?
+  warnings << "#{folder}: no director" if dirs.empty?
+  warnings << "#{folder}: no fanart URL" if fanart.empty?
+
+  # Poster thumbnail (incremental: skip when up to date).
+  src = File.join(dir, "poster.jpg")
+  out = File.join(POSTER_DIR, "#{slug}.webp")
+  if File.file?(src)
+    if File.file?(out) && File.mtime(out) >= File.mtime(src)
+      skipped += 1
+    else
+      _o, err, st = Open3.capture3("vips", "thumbnail", src, "#{out}[Q=#{POSTER_Q},strip]", POSTER_W.to_s)
+      if st.success?
+        written += 1
+      else
+        warnings << "#{folder}: vips failed: #{err.strip}"
+      end
+    end
+  else
+    warnings << "#{folder}: no poster.jpg"
+  end
+
+  movies << {
+    "slug"      => slug,
+    "title"     => title,
+    "sorttitle" => (text(m, "sorttitle").empty? ? title : text(m, "sorttitle")),
+    "year"      => year,
+    "decade"    => (year / 10) * 10,
+    "runtime"   => text(m, "runtime").to_i,
+    "size"      => size,
+    "plot"      => text(m, "plot"),
+    "tagline"   => text(m, "tagline"),
+    "directors" => dirs,
+    "genres"    => texts(m, "genre"),
+    "tmdb_id"   => text(m, "uniqueid[@type='tmdb']"),
+    "imdb_id"   => text(m, "uniqueid[@type='imdb']"),
+    "rating"    => (rating.empty? ? nil : rating.to_f),
+    "poster"    => (File.file?(out) ? "/assets/images/movies/#{slug}.webp" : nil),
+    "fanart"    => (fanart.empty? ? nil : tmdb_size(fanart, "w1280")),
+  }
+end
+
+# Remove orphaned posters.
+keep = movies.map { |mv| "#{mv["slug"]}.webp" }
+removed = Dir.children(POSTER_DIR).reject { |f| keep.include?(f) }
+removed.each { |f| File.delete(File.join(POSTER_DIR, f)) }
+
+movies.sort_by! { |mv| [mv["sorttitle"].downcase, mv["year"]] }
+
+# Facets sorted by number of films (desc), then name.
+count = ->(key) {
+  movies.flat_map { |mv| mv[key] }.tally
+        .sort_by { |name, n| [-n, name.downcase] }
+        .map { |name, n| { "name" => name, "count" => n } }
+}
+
+total_bytes = movies.sum { |mv| mv["size"] }
+
+data = {
+  "generated_at" => Date.today.iso8601,
+  "count"        => movies.size,
+  "total_bytes"  => total_bytes,
+  "total_tb"     => (total_bytes / 1e12).round(1),
+  "directors"    => count.call("directors"),
+  "genres"       => count.call("genres"),
+  "decades"      => movies.map { |mv| mv["decade"] }.uniq.sort,
+  "movies"       => movies,
+}
+
+File.write(DATA_FILE, JSON.pretty_generate(data) + "\n")
+
+puts "Parsed #{movies.size} movies from #{MOVIES_DIR} (#{data["total_tb"]} TB)"
+puts "Posters: #{written} written, #{skipped} up to date, #{removed.size} removed"
+puts "Wrote #{DATA_FILE}"
+unless warnings.empty?
+  puts "\nWarnings (#{warnings.size}):"
+  warnings.each { |w| puts "  - #{w}" }
+end

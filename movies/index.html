@@ -1,0 +1,142 @@
+---
+layout: default
+title: Movies
+permalink: /movies/
+---
+{% assign data = site.data.movies %}
+{% assign watched = site.data.movies_watched.films %}
+{% assign years = data.movies | map: "year" | sort %}
+
+<div class="movies">
+  <div class="movies-head container-fluid">
+  <p class="movies-intro">This is my current digital movie library – {{ data.count }} films and {{ data.total_tb }} TB of data, kept on a home media server. Posters in color are films I've watched since I started logging. Last updated {{ data.generated_at | date: "%B %-d, %Y" }}.</p>
+
+  <div class="movies-stats monospace">
+    <div class="movies-stats__group">
+      <span class="movies-stats__label">By Decade</span>
+      <ul class="movies-stats__bars list--blank">
+        {% assign max_count = 0 %}
+        {% for dec in data.decades %}
+          {% assign n = data.movies | where: "decade", dec | size %}
+          {% if n > max_count %}{% assign max_count = n %}{% endif %}
+        {% endfor %}
+        {% for dec in data.decades %}
+          {% assign n = data.movies | where: "decade", dec | size %}
+          {% assign pct = n | times: 100.0 | divided_by: max_count | round: 1 %}
+          <li class="movies-stats__bar">
+            <button type="button" class="movies-stats__link" data-filter="decade" data-value="{{ dec }}" title="{{ n }} {% if n == 1 %}film{% else %}films{% endif %} from the {{ dec }}s">
+              <span class="movies-stats__bar-label">{{ dec | slice: 2, 2 }}s</span>
+              <span class="movies-stats__bar-track"><span class="movies-stats__bar-fill" style="height: {{ pct }}%"></span></span>
+              <span class="movies-stats__bar-count">{{ n }}</span>
+            </button>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="movies-stats__group">
+      <span class="movies-stats__label">Most Collected</span>
+      <ul class="movies-stats__list list--blank">
+        {% for d in data.directors limit: 6 %}
+        <li><button type="button" class="movies-stats__link" data-filter="director" data-value="{{ d.name | escape }}">{{ d.name | escape }}</button> <span class="movies-stats__n">{{ d.count }}</span></li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="movies-stats__group movies-view" id="movies-view" role="group" aria-label="view">
+      <label class="movies-view__option">
+        <input type="radio" name="view" value="grid" form="movies-toolbar" checked>
+        <span><svg class="movies-view__icon" viewBox="0 0 12 12" aria-hidden="true"><rect x="0" y="0" width="5" height="5"/><rect x="7" y="0" width="5" height="5"/><rect x="0" y="7" width="5" height="5"/><rect x="7" y="7" width="5" height="5"/></svg>Grid</span>
+      </label>
+      <label class="movies-view__option">
+        <input type="radio" name="view" value="list" form="movies-toolbar">
+        <span><svg class="movies-view__icon" viewBox="0 0 12 12" aria-hidden="true"><rect x="0" y="0.5" width="12" height="2"/><rect x="0" y="5" width="12" height="2"/><rect x="0" y="9.5" width="12" height="2"/></svg>List</span>
+      </label>
+      <label class="movies-view__option movies-view__option--rows" id="movies-rows" hidden>
+        <input type="checkbox" name="rows" value="1" form="movies-toolbar">
+        <span><svg class="movies-view__icon" viewBox="0 0 12 12" aria-hidden="true"><rect x="0" y="0" width="12" height="5"/><rect x="0" y="7" width="5" height="5"/><rect x="7" y="7" width="5" height="5"/></svg>Rows</span>
+      </label>
+    </div>
+  </div>
+
+  <form class="movies-toolbar monospace" id="movies-toolbar" autocomplete="off">
+    <label class="movies-toolbar__field">
+      <span>Sort</span>
+      <select name="sort">
+        <option value="year-desc">Year ↓</option>
+        <option value="year-asc">Year ↑</option>
+        <option value="title">Title A–Z</option>
+        <option value="director">Director</option>
+      </select>
+    </label>
+    <label class="movies-toolbar__field">
+      <span>Director</span>
+      <select name="director">
+        <option value="">All</option>
+        {% for d in data.directors %}<option value="{{ d.name | escape }}">{{ d.name | escape }} ({{ d.count }})</option>{% endfor %}
+      </select>
+    </label>
+    <label class="movies-toolbar__field">
+      <span>Genre</span>
+      <select name="genre">
+        <option value="">All</option>
+        {% for g in data.genres %}<option value="{{ g.name | escape }}">{{ g.name | escape }} ({{ g.count }})</option>{% endfor %}
+      </select>
+    </label>
+    <input type="hidden" name="decade" value="">
+    <a href="/movies/" class="movies-toolbar__clear" id="movies-clear" hidden><svg class="movies-toolbar__clear-icon" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 1l8 8M9 1l-8 8"/></svg>Clear</a>
+    <span class="movies-toolbar__count" id="movies-count"><span>{{ data.count }}</span> / {{ data.count }}</span>
+  </form>
+  </div>
+
+  <ul class="movies-grid list--blank" id="movies-grid">
+    {% for m in data.movies %}
+    {% assign w = watched[m.slug] %}
+    <li class="movie{% if w %} movie--watched{% endif %}"
+        data-slug="{{ m.slug }}"
+        {% if w %}data-watched="{{ w.date }}" data-letterboxd="{{ w.url }}"{% endif %}
+        data-title="{{ m.title | escape }}"
+        data-sort="{{ m.sorttitle | downcase | escape }}"
+        data-year="{{ m.year }}"
+        data-decade="{{ m.decade }}"
+        data-directors="{{ m.directors | join: '|' | escape }}"
+        data-genres="{{ m.genres | join: '|' | escape }}"
+        data-runtime="{{ m.runtime }}"
+        data-tmdb="{{ m.tmdb_id }}"
+        {% if m.fanart %}data-fanart="{{ m.fanart }}"{% endif %}>
+      <button type="button" class="movie__poster" aria-label="{{ m.title | escape }} ({{ m.year }})">
+        {% if m.poster %}
+        <img src="{{ m.poster }}" width="400" height="600" loading="lazy" decoding="async" alt="">
+        {% else %}
+        <span class="movie__poster-fallback">{{ m.title | escape }}</span>
+        {% endif %}
+      </button>
+      <div class="movie__caption monospace">
+        <span class="movie__title">{{ m.title | escape }}</span>
+        <span class="movie__year">{{ m.year }}</span>
+        <span class="movie__directors">{{ m.directors | join: ", " | escape }}</span>
+        <span class="movie__runtime">{% if m.runtime > 0 %}{{ m.runtime }} min{% endif %}</span>
+        <span class="movie__genres">{{ m.genres | join: ", " | escape }}</span>
+      </div>
+      <template class="movie__details">
+        {% if m.tagline != "" %}<p class="movie-dialog__tagline">{{ m.tagline | escape }}</p>{% endif %}
+        {% if m.plot != "" %}<p class="movie-dialog__plot">{{ m.plot | escape }}</p>{% endif %}
+      </template>
+    </li>
+    {% endfor %}
+  </ul>
+
+  <p class="movies-empty monospace" id="movies-empty" hidden>Nothing matches</p>
+</div>
+
+<dialog class="movie-dialog" id="movie-dialog">
+  <button type="button" class="movie-dialog__nav movie-dialog__nav--prev monospace" id="movie-dialog-prev" aria-label="Previous movie"></button>
+  <button type="button" class="movie-dialog__nav movie-dialog__nav--next monospace" id="movie-dialog-next" aria-label="Next movie"></button>
+  <img class="movie-dialog__hero" id="movie-dialog-hero" alt="">
+  <div class="movie-dialog__body">
+    <h2 class="movie-dialog__title" id="movie-dialog-title"></h2>
+    <div class="movie-dialog__meta monospace" id="movie-dialog-meta"></div>
+    <div class="movie-dialog__text" id="movie-dialog-text"></div>
+    <div class="movie-dialog__links monospace" id="movie-dialog-links"></div>
+  </div>
+</dialog>
+
+<script src="/js/movies.js"></script>

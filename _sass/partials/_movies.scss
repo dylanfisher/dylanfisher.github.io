@@ -1,0 +1,667 @@
+// /movies/ — poster grid.
+
+$movies-poster-min: 110px;
+$movies-gap: 12px;
+
+// ---- intro ---------------------------------------------------------------
+
+.movies-intro {
+  // @include font--sans__small;
+  // font-size: 18px;
+  opacity: 0.5;
+  margin: 0 0 1.5rem;
+}
+
+// ---- stats strip ---------------------------------------------------------
+
+.movies-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 3rem;
+  margin: 0 0 2rem;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.movies-stats__group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.movies-stats__label {
+  opacity: 0.6;
+}
+
+.movies-stats__list {
+  margin: 0;
+  padding: 0;
+}
+
+.movies-stats__n {
+  opacity: 0.5;
+}
+
+.movies-stats__link {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+
+  &:hover,
+  &:focus-visible {
+    text-decoration: underline;
+    outline: none;
+  }
+}
+
+// Decade histogram: one thin column per decade, scaled to the largest.
+$movies-stats-bar-h: 48px;
+
+.movies-stats__bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+}
+
+.movies-stats__bar .movies-stats__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 22px;
+
+  &:hover .movies-stats__bar-fill,
+  &:focus-visible .movies-stats__bar-fill,
+  &.is-active .movies-stats__bar-fill {
+    background: $black;
+  }
+
+  &.is-active .movies-stats__bar-label {
+    opacity: 1;
+  }
+}
+
+.movies-stats__bar-count {
+  font-size: 10px;
+  opacity: 0.5;
+}
+
+.movies-stats__bar-track {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  height: $movies-stats-bar-h;
+}
+
+.movies-stats__bar-fill {
+  display: block;
+  width: 100%;
+  min-height: 1px;
+  background: #b9b9b9;
+  transition: background $tt ease;
+}
+
+.movies-stats__bar-label {
+  font-size: 10px;
+  opacity: 0.6;
+}
+
+// Grid/list toggle: sits at the right end of the stats strip. Radios are
+// visually hidden; the labels (icon + word) act as text buttons.
+.movies-view {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px 14px;
+  margin-left: auto;
+  align-self: flex-start;
+}
+
+// The Rows toggle sits on its own line beneath Grid/List.
+.movies-view__option--rows {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.movies-view__option {
+  position: relative;
+
+  &[hidden] {
+    display: none;
+  }
+  margin: 0;
+  font-weight: normal;
+  cursor: pointer;
+
+  input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  input + span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    opacity: 0.5;
+    transition: opacity $tt ease;
+  }
+
+  input:checked + span,
+  &:hover input + span {
+    opacity: 1;
+  }
+
+  input:focus-visible + span {
+    outline: 1px solid blue;
+    outline-offset: 3px;
+  }
+}
+
+.movies-view__icon {
+  width: 10px;
+  height: 10px;
+  fill: currentColor;
+}
+
+// ---- toolbar -------------------------------------------------------------
+
+.movies-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 18px;
+  margin-bottom: 1.5rem;
+  font-size: 14px;
+
+  input,
+  select {
+    font: inherit;
+    color: inherit;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #b9b9b9;
+    border-radius: 0;
+    padding: 2px 0;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    max-width: 14em;
+
+    &:focus {
+      outline: none;
+      border-bottom-color: blue;
+    }
+  }
+
+  @include breakpoint(xs) {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+
+    input,
+    select {
+      max-width: none;
+      width: 100%;
+    }
+  }
+}
+
+.movies-toolbar__field {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  margin: 0;
+  font-weight: normal;
+
+  > span {
+    opacity: 0.6;
+  }
+}
+
+// Only shown while a director/genre/decade filter is active.
+.movies-toolbar__clear {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: auto;   // pushes right, next to the count
+  padding: 3px 8px;
+  border: 1px solid $black;
+  border-radius: 2px;
+  color: $black;
+  text-decoration: none;
+  line-height: 1.2;
+  background: none;   // the site's links draw their underline as a background gradient
+  transition: background-color $tt ease, color $tt ease;
+
+  &:hover,
+  &:focus-visible {
+    background: $black;
+    color: $white;
+    outline: none;
+  }
+
+  &[hidden] {
+    display: none;
+  }
+
+  @include breakpoint(xs) {
+    margin-left: 0;
+    align-self: flex-start;
+  }
+}
+
+.movies-toolbar__clear-icon {
+  width: 8px;
+  height: 8px;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  fill: none;
+}
+
+.movies-toolbar__count {
+  opacity: 0.6;
+  margin-left: auto;
+
+  // When the clear button is showing it takes the auto margin instead.
+  .movies-toolbar__clear:not([hidden]) + & {
+    margin-left: 0;
+  }
+
+  @include breakpoint(xs) {
+    margin-left: 0;
+  }
+}
+
+// ---- grid ----------------------------------------------------------------
+
+// The grid sits outside the 1100px site container and runs edge to edge,
+// keeping only the standard gutter as side padding.
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($movies-poster-min, 1fr));
+  gap: $movies-gap * 1.5 $movies-gap;
+  margin: 0;
+  padding: 0 $gutter;
+
+  @include breakpoint(xs) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.movie {
+  min-width: 0;
+
+  &[hidden] {
+    display: none;
+  }
+}
+
+// Director title card: a poster-sized tile leading each group in director
+// sort, so it sits in the grid like one of the films.
+.movies-group {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 4px;
+  aspect-ratio: 2 / 3;
+  padding: 10px;
+  background: #242424;
+  color: $white;
+  font-size: 14px;
+  line-height: 1.2;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+}
+
+// Rows mode: every director card starts a fresh grid row.
+.movies-grid--rows .movies-group {
+  grid-column-start: 1;
+}
+
+.movies-group__count {
+  font-size: 11px;
+  opacity: 0.6;
+  white-space: nowrap;
+}
+
+.movie__poster {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: $light-gray;
+  cursor: pointer;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  transition: transform $tt ease, box-shadow $tt ease;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: filter $tt ease, opacity $tt ease;
+  }
+
+  // Unwatched films are shown dimmed in grayscale; watched ones in color.
+  .movie:not(.movie--watched) & img {
+    filter: grayscale(1);
+    opacity: 0.8;
+  }
+
+  &:hover,
+  &:focus-visible {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    outline: none;
+  }
+}
+
+.movie__poster-fallback {
+  @include font--monospace;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 6px;
+  font-size: 11px;
+  text-align: center;
+  color: #888;
+}
+
+.movie__caption {
+  font-size: 11px;
+  line-height: 1.3;
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+}
+
+.movie__title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.movie__year {
+  opacity: 0.6;
+}
+
+// Row-only cells; hidden in the poster grid.
+.movie__directors,
+.movie__runtime,
+.movie__genres {
+  display: none;
+}
+
+// ---- list mode -----------------------------------------------------------
+
+// Each film becomes one row: thumbnail, title, year, director, runtime, genres.
+$movies-list-thumb: 32px;
+
+.movies-grid--list {
+  display: block;
+  max-width: 1100px;   // match .container-fluid; the poster grid runs wider
+  margin-left: auto;
+  margin-right: auto;
+
+  .movie {
+    display: grid;
+    grid-template-columns: $movies-list-thumb minmax(0, 3fr) 4ch minmax(0, 2fr) 7ch minmax(0, 2fr);
+    gap: 0 16px;
+    align-items: center;
+    padding: 6px 0;
+    border-bottom: 1px solid $light-gray;
+    cursor: pointer;
+
+    &:hover .movie__title {
+      text-decoration: underline;
+    }
+  }
+
+  .movie__poster {
+    width: $movies-list-thumb;
+    transition: none;
+
+    &:hover,
+    &:focus-visible {
+      transform: none;
+      box-shadow: none;
+    }
+
+    &:focus-visible {
+      outline: 1px solid blue;
+      outline-offset: 2px;
+    }
+  }
+
+  .movie__poster-fallback {
+    display: none;
+  }
+
+  .movie__caption {
+    display: contents;
+    font-size: 12px;
+  }
+
+  .movie__caption > span {
+    font-size: 12px;
+    line-height: 1.3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .movie__directors,
+  .movie__runtime,
+  .movie__genres {
+    display: block;
+    opacity: 0.6;
+  }
+
+  @include breakpoint(xs) {
+    .movie {
+      grid-template-columns: $movies-list-thumb minmax(0, 1fr) 4ch;
+    }
+
+    .movie__directors,
+    .movie__runtime,
+    .movie__genres {
+      display: none;
+    }
+  }
+}
+
+// In list view the card falls back to a divider row.
+.movies-grid--list .movies-group {
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  aspect-ratio: auto;
+  margin-top: $movies-gap * 1.5;
+  padding: 0 0 6px;
+  background: none;
+  color: inherit;
+  border-bottom: 1px solid $black;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.movies-empty {
+  font-size: 14px;
+  opacity: 0.6;
+  padding: 0 $gutter;
+}
+
+// ---- dialog --------------------------------------------------------------
+
+.movie-dialog {
+  width: min(720px, calc(100vw - 2 * #{$gutter}));
+  max-height: calc(100vh - 2 * #{$gutter});
+  padding: 0;
+  border: 0;
+  background: $white;
+  color: $black;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  overflow: auto;
+
+  &::backdrop {
+    background: rgba(0, 0, 0, 0.6);
+  }
+}
+
+.movie-dialog__hero {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: $light-gray;
+
+  &[hidden] {
+    display: none;
+  }
+}
+
+.movie-dialog__nav {
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  color: $white;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+
+  &:hover:not(:disabled) {
+    background: rgba(0, 0, 0, 0.8);
+  }
+}
+
+// Prev/next sit at the vertical center of the viewport, just outside the
+// dialog's edges (fixed, since the dialog itself scrolls). The caret is a
+// CSS border triangle so it centers exactly regardless of font metrics.
+$movie-dialog-half: min(360px, 50vw - #{$gutter});
+$movie-dialog-nav-size: 32px;
+$movie-dialog-nav-offset: 8px;
+
+.movie-dialog__nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  padding: 0;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    margin: 0 auto;
+    border-style: solid;
+    border-color: transparent;
+  }
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+
+  // Narrow screens: no room outside the dialog, so hug the viewport edges.
+  @media (max-width: 830px) {
+    &--prev { left: 4px; }
+    &--next { right: 4px; }
+  }
+}
+
+.movie-dialog__nav--prev {
+  left: calc(50vw - #{$movie-dialog-half} - #{$movie-dialog-nav-size + $movie-dialog-nav-offset});
+
+  &::before {
+    border-width: 6px 8px 6px 0;
+    border-right-color: $white;
+    margin-left: 11px;
+  }
+}
+
+.movie-dialog__nav--next {
+  right: calc(50vw - #{$movie-dialog-half} - #{$movie-dialog-nav-size + $movie-dialog-nav-offset});
+
+  &::before {
+    border-width: 6px 0 6px 8px;
+    border-left-color: $white;
+    margin-left: 13px;
+  }
+}
+
+.movie-dialog__body {
+  padding: $gutter * 1.5;
+}
+
+.movie-dialog__title {
+  @include font--sans__regular;
+  margin: 0 0 0.25rem;
+}
+
+.movie-dialog__meta {
+  font-size: 12px;
+  opacity: 0.7;
+  margin-bottom: 1rem;
+}
+
+// Directors and genres in the meta line are buttons that close the dialog
+// and apply that filter to the grid.
+.movie-dialog__filter {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: rgba(0, 0, 0, 0.25);
+  text-underline-offset: 2px;
+
+  &:hover,
+  &:focus-visible {
+    text-decoration-color: currentColor;
+    outline: none;
+  }
+}
+
+.movie-dialog__text {
+  @include font--serif__regular;
+  font-size: 17px;
+
+  p {
+    margin: 0 0 1em;
+  }
+}
+
+.movie-dialog__tagline {
+  font-style: italic;
+  opacity: 0.7;
+}
+
+.movie-dialog__links {
+  font-size: 12px;
+
+  a + a {
+    margin-left: 12px;
+  }
+}

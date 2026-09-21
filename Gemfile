@@ -1,8 +1,6 @@
-# A sample Gemfile
 source "https://rubygems.org"
 
-gem 'jekyll'
-gem 'guard'
-gem 'guard-jekyll-plus'
-gem 'guard-livereload'
-gem 'rb-readline'
+gem "jekyll", "~> 4.4"
+
+# `jekyll serve` needs webrick explicitly on Ruby 3+.
+gem "webrick", "~> 1.9"

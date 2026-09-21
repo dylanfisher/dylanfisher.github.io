@@ -1,0 +1,114 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+#
+# Import a Letterboxd "watched.csv" export into _data/movies_watched.json.
+#
+#   bin/movies/watched ~/Downloads/letterboxd-export/watched.csv
+#
+# The CSV (Date,Name,Year,Letterboxd URI) has no TMDB ids, so films are keyed
+# by the same slug bin/movies/generate derives from the Radarr folder name,
+# "<Title> (<Year>)". /movies/ looks each film up by slug to mark it watched.
+# Films not in the library are kept too, so the file is a complete watch log.
+#
+# Local-only: the `bin` dir is excluded from the Jekyll build.
+
+require "csv"
+require "json"
+require "date"
+
+ROOT      = File.expand_path("../..", __dir__)
+DATA_FILE = File.join(ROOT, "_data/movies_watched.json")
+LIB_FILE  = File.join(ROOT, "_data/movies.json")
+
+csv_path = ARGV[0] or abort "usage: bin/movies/watched <letterboxd watched.csv>"
+abort "File not found: #{csv_path}" unless File.file?(csv_path)
+
+# Letterboxd slug => library slug, for films the two services name differently.
+ALIASES = {
+  "lupin-the-3rd-goemon-s-blood-spray-2017" => "lupin-the-iiird-goemon-s-blood-spray-2017",
+  "the-castle-of-cagliostro-1979" => "lupin-the-third-the-castle-of-cagliostro-1979",
+  "the-french-dispatch-of-the-liberty-kansas-evening-sun-2021" => "the-french-dispatch-2021",
+}.freeze
+
+def slugify(name)
+  s = name.unicode_normalize(:nfkd).encode("ASCII", replace: "").downcase
+  s.gsub(/[^a-z0-9]+/, "-").gsub(/^-|-$/, "")
+end
+
+films = {}
+CSV.foreach(csv_path, headers: true, encoding: "bom|utf-8") do |row|
+  name = row["Name"].to_s.strip
+  year = row["Year"].to_i
+  next if name.empty?
+
+  slug  = slugify("#{name} (#{year})")
+  slug  = ALIASES.fetch(slug, slug)
+  entry = {
+    "title" => name,
+    "year"  => year,
+    "date"  => row["Date"].to_s.strip,
+    "url"   => row["Letterboxd URI"].to_s.strip,
+  }
+  # Keep the earliest watch date if a film appears more than once.
+  films[slug] = entry if !films[slug] || entry["date"] < films[slug]["date"]
+end
+
+library = nil
+shifted = []
+# Cross-reference with the library. Letterboxd and TMDB sometimes disagree on
+# a film's year (festival premiere vs. release), so when a slug doesn't match
+# exactly, fall back to the same title one year either side and re-key the
+# entry under the library slug so /movies/ picks it up.
+if File.file?(LIB_FILE)
+  library = JSON.parse(File.read(LIB_FILE))["movies"]
+  lib_by_slug = library.to_h { |m| [m["slug"], m] }
+  title_key = ->(title, year) { "#{slugify(title)}|#{year}" }
+  lib_by_title = library.to_h { |m| [title_key.call(m["title"], m["year"]), m] }
+
+  shifted = []
+  films.keys.each do |slug|
+    next if lib_by_slug.key?(slug)
+    f = films[slug]
+    cand = [-1, 1].filter_map { |d| lib_by_title[title_key.call(f["title"], f["year"] + d)] }.first
+    next unless cand
+    next if films.key?(cand["slug"])
+    films[cand["slug"]] = films.delete(slug)
+    shifted << "#{f["title"]} (#{f["year"]}) -> #{cand["slug"]}"
+  end
+end
+
+data = {
+  "generated_at" => Date.today.iso8601,
+  "count"        => films.size,
+  "films"        => films.sort.to_h,
+}
+File.write(DATA_FILE, JSON.pretty_generate(data) + "\n")
+puts "Imported #{films.size} watched films from #{csv_path}"
+puts "Wrote #{DATA_FILE}"
+
+if library
+  matched = library.count { |m| films.key?(m["slug"]) }
+  puts "Library: #{matched} of #{library.size} films marked watched"
+
+  unless shifted.empty?
+    puts "\nMatched by title with a one-year difference (#{shifted.size}):"
+    shifted.each { |n| puts "  - #{n}" }
+  end
+
+  # Watched films that still don't match but share a year with a library film
+  # whose title contains (or is contained by) theirs: probably a naming
+  # difference between Letterboxd and Radarr worth adding to ALIASES.
+  by_year = library.group_by { |m| m["year"] }
+  near = films.reject { |slug, _| lib_by_slug.key?(slug) }
+              .filter_map do |slug, f|
+    cand = (by_year[f["year"]] || []).find do |m|
+      a = slugify(m["title"]); b = slugify(f["title"])
+      a.include?(b) || b.include?(a)
+    end
+    cand && "#{f["title"]} (#{f["year"]}) ~ library slug #{cand["slug"]}"
+  end
+  unless near.empty?
+    puts "\nPossible near-misses (#{near.size}):"
+    near.each { |n| puts "  - #{n}" }
+  end
+end

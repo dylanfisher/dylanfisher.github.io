@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Start the Jekyll dev server with live reload.
+# Any extra arguments are passed through to `jekyll serve` (e.g. bin/dev --port 4001).
+set -euo pipefail
+cd "$(dirname "$0")/.."
+
+if ! bundle check >/dev/null 2>&1; then
+  bundle install
+fi
+
+exec bundle exec jekyll serve --livereload "$@"

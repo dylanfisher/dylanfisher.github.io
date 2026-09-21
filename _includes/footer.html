@@ -1,6 +1,6 @@
 <footer class="footer container-fluid">
   <div class="row">
-    {% if page.url != "/" %}
+    {% if page.url != "/" and page.url != "/movies/" %}
       <div class="col-sm-4 monospace">
         {% if page.previous.url %}
           <a class="prev" href="{{page.previous.url}}" title="{{page.previous.title}}">&laquo;</a>

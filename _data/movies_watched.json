@@ -1,0 +1,2502 @@
+{
+  "generated_at": "2026-09-20",
+  "count": 416,
+  "films": {
+    "2001-a-space-odyssey-1968": {
+      "title": "2001: A Space Odyssey",
+      "year": 1968,
+      "date": "2026-09-15",
+      "url": "https://boxd.it/2bf0"
+    },
+    "25th-hour-2002": {
+      "title": "25th Hour",
+      "year": 2002,
+      "date": "2026-05-10",
+      "url": "https://boxd.it/28LC"
+    },
+    "28-days-later-2002": {
+      "title": "28 Days Later",
+      "year": 2002,
+      "date": "2026-09-07",
+      "url": "https://boxd.it/2aXU"
+    },
+    "300-2007": {
+      "title": "300",
+      "year": 2006,
+      "date": "2026-05-03",
+      "url": "https://boxd.it/28XI"
+    },
+    "a-brighter-summer-day-1991": {
+      "title": "A Brighter Summer Day",
+      "year": 1991,
+      "date": "2026-09-12",
+      "url": "https://boxd.it/1Luy"
+    },
+    "a-few-good-men-1992": {
+      "title": "A Few Good Men",
+      "year": 1992,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/29nw"
+    },
+    "a-serious-man-2009": {
+      "title": "A Serious Man",
+      "year": 2009,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/1RFW"
+    },
+    "a-touch-of-sin-2013": {
+      "title": "A Touch of Sin",
+      "year": 2013,
+      "date": "2026-04-10",
+      "url": "https://boxd.it/5Fvo"
+    },
+    "a-touch-of-zen-1970": {
+      "title": "A Touch of Zen",
+      "year": 1970,
+      "date": "2026-01-04",
+      "url": "https://boxd.it/SFm"
+    },
+    "adaptation-2002": {
+      "title": "Adaptation.",
+      "year": 2002,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/26mA"
+    },
+    "after-hours-1985": {
+      "title": "After Hours",
+      "year": 1985,
+      "date": "2026-03-02",
+      "url": "https://boxd.it/1VfS"
+    },
+    "aguirre-the-wrath-of-god-1972": {
+      "title": "Aguirre, the Wrath of God",
+      "year": 1972,
+      "date": "2026-02-17",
+      "url": "https://boxd.it/27Fe"
+    },
+    "akira-1988": {
+      "title": "Akira",
+      "year": 1988,
+      "date": "2025-12-26",
+      "url": "https://boxd.it/2b1i"
+    },
+    "aladdin-1992": {
+      "title": "Aladdin",
+      "year": 1992,
+      "date": "2026-09-14",
+      "url": "https://boxd.it/29yE"
+    },
+    "alien-1979": {
+      "title": "Alien",
+      "year": 1979,
+      "date": "2026-05-14",
+      "url": "https://boxd.it/2awY"
+    },
+    "all-that-jazz-1979": {
+      "title": "All That Jazz",
+      "year": 1979,
+      "date": "2026-03-25",
+      "url": "https://boxd.it/1JB8"
+    },
+    "all-the-president-s-men-1976": {
+      "title": "All the President's Men",
+      "year": 1976,
+      "date": "2026-04-20",
+      "url": "https://boxd.it/29lU"
+    },
+    "amadeus-1984": {
+      "title": "Amadeus",
+      "year": 1984,
+      "date": "2026-06-30",
+      "url": "https://boxd.it/2aH8"
+    },
+    "american-gangster-2007": {
+      "title": "American Gangster",
+      "year": 2007,
+      "date": "2026-05-16",
+      "url": "https://boxd.it/23wi"
+    },
+    "american-history-x-1998": {
+      "title": "American History X",
+      "year": 1998,
+      "date": "2026-03-24",
+      "url": "https://boxd.it/2bdo"
+    },
+    "american-psycho-2000": {
+      "title": "American Psycho",
+      "year": 2000,
+      "date": "2026-09-12",
+      "url": "https://boxd.it/28Vs"
+    },
+    "anchorman-the-legend-of-ron-burgundy-2004": {
+      "title": "Anchorman: The Legend of Ron Burgundy",
+      "year": 2004,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/1ZVo"
+    },
+    "anora-2024": {
+      "title": "Anora",
+      "year": 2024,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/Egcw"
+    },
+    "antichrist-2009": {
+      "title": "Antichrist",
+      "year": 2009,
+      "date": "2026-04-30",
+      "url": "https://boxd.it/1Inu"
+    },
+    "armageddon-1998": {
+      "title": "Armageddon",
+      "year": 1998,
+      "date": "2026-03-08",
+      "url": "https://boxd.it/2b9Q"
+    },
+    "arrival-2016": {
+      "title": "Arrival",
+      "year": 2016,
+      "date": "2026-09-15",
+      "url": "https://boxd.it/aNGk"
+    },
+    "babel-2006": {
+      "title": "Babel",
+      "year": 2006,
+      "date": "2026-03-12",
+      "url": "https://boxd.it/292o"
+    },
+    "bad-company-1972": {
+      "title": "Bad Company",
+      "year": 1972,
+      "date": "2026-05-14",
+      "url": "https://boxd.it/1iLg"
+    },
+    "bad-lieutenant-1992": {
+      "title": "Bad Lieutenant",
+      "year": 1992,
+      "date": "2026-08-04",
+      "url": "https://boxd.it/1Src"
+    },
+    "bad-lieutenant-port-of-call-new-orleans-2009": {
+      "title": "Bad Lieutenant: Port of Call – New Orleans",
+      "year": 2009,
+      "date": "2026-03-14",
+      "url": "https://boxd.it/1TcW"
+    },
+    "badlands-1973": {
+      "title": "Badlands",
+      "year": 1973,
+      "date": "2026-04-29",
+      "url": "https://boxd.it/25Fm"
+    },
+    "barry-lyndon-1975": {
+      "title": "Barry Lyndon",
+      "year": 1975,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/25A2"
+    },
+    "ben-hur-1959": {
+      "title": "Ben-Hur",
+      "year": 1959,
+      "date": "2026-02-20",
+      "url": "https://boxd.it/29RQ"
+    },
+    "benedetta-2021": {
+      "title": "Benedetta",
+      "year": 2021,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/gdNQ"
+    },
+    "best-in-show-2000": {
+      "title": "Best in Show",
+      "year": 2000,
+      "date": "2025-12-18",
+      "url": "https://boxd.it/1Pqq"
+    },
+    "birdman-or-the-unexpected-virtue-of-ignorance-2014": {
+      "title": "Birdman or (The Unexpected Virtue of Ignorance)",
+      "year": 2014,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/5RFA"
+    },
+    "blade-runner-2049-2017": {
+      "title": "Blade Runner 2049",
+      "year": 2017,
+      "date": "2025-12-18",
+      "url": "https://boxd.it/b8wK"
+    },
+    "blood-simple-1985": {
+      "title": "Blood Simple",
+      "year": 1984,
+      "date": "2026-01-27",
+      "url": "https://boxd.it/1U16"
+    },
+    "blow-out-1981": {
+      "title": "Blow Out",
+      "year": 1981,
+      "date": "2025-12-18",
+      "url": "https://boxd.it/1TlE"
+    },
+    "body-double-1984": {
+      "title": "Body Double",
+      "year": 1984,
+      "date": "2026-03-13",
+      "url": "https://boxd.it/1TGW"
+    },
+    "body-heat-1981": {
+      "title": "Body Heat",
+      "year": 1981,
+      "date": "2026-05-23",
+      "url": "https://boxd.it/1O9S"
+    },
+    "bone-tomahawk-2015": {
+      "title": "Bone Tomahawk",
+      "year": 2015,
+      "date": "2026-04-19",
+      "url": "https://boxd.it/9kiw"
+    },
+    "boogie-nights-1997": {
+      "title": "Boogie Nights",
+      "year": 1997,
+      "date": "2026-06-16",
+      "url": "https://boxd.it/23um"
+    },
+    "borat-cultural-learnings-of-america-for-make-benefit-glorious-nation-of-kazakhstan-2006": {
+      "title": "Borat: Cultural Learnings of America for Make Benefit Glorious Nation of Kazakhstan",
+      "year": 2006,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/2agQ"
+    },
+    "bound-1996": {
+      "title": "Bound",
+      "year": 1996,
+      "date": "2026-05-16",
+      "url": "https://boxd.it/1Z1g"
+    },
+    "boyz-n-the-hood-1991": {
+      "title": "Boyz n the Hood",
+      "year": 1991,
+      "date": "2026-03-01",
+      "url": "https://boxd.it/29Ug"
+    },
+    "brazil-1985": {
+      "title": "Brazil",
+      "year": 1985,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/2be2"
+    },
+    "bringing-out-the-dead-1999": {
+      "title": "Bringing Out the Dead",
+      "year": 1999,
+      "date": "2026-07-28",
+      "url": "https://boxd.it/1ZZK"
+    },
+    "buffalo-66-1998": {
+      "title": "Buffalo '66",
+      "year": 1998,
+      "date": "2026-08-30",
+      "url": "https://boxd.it/1YC6"
+    },
+    "bugonia-2025": {
+      "title": "Bugonia",
+      "year": 2025,
+      "date": "2025-12-28",
+      "url": "https://boxd.it/qeWY"
+    },
+    "burden-of-dreams-1982": {
+      "title": "Burden of Dreams",
+      "year": 1982,
+      "date": "2026-02-27",
+      "url": "https://boxd.it/XGk"
+    },
+    "burn-after-reading-2008": {
+      "title": "Burn After Reading",
+      "year": 2008,
+      "date": "2026-06-13",
+      "url": "https://boxd.it/23BW"
+    },
+    "cannibal-holocaust-1980": {
+      "title": "Cannibal Holocaust",
+      "year": 1980,
+      "date": "2026-03-20",
+      "url": "https://boxd.it/1ZWQ"
+    },
+    "carrie-1976": {
+      "title": "Carrie",
+      "year": 1976,
+      "date": "2026-07-23",
+      "url": "https://boxd.it/20ZQ"
+    },
+    "cars-2006": {
+      "title": "Cars",
+      "year": 2006,
+      "date": "2026-07-07",
+      "url": "https://boxd.it/29ho"
+    },
+    "casablanca-1942": {
+      "title": "Casablanca",
+      "year": 1942,
+      "date": "2026-05-11",
+      "url": "https://boxd.it/2aG0"
+    },
+    "casino-1995": {
+      "title": "Casino",
+      "year": 1995,
+      "date": "2025-12-18",
+      "url": "https://boxd.it/2ads"
+    },
+    "cave-of-forgotten-dreams-2010": {
+      "title": "Cave of Forgotten Dreams",
+      "year": 2010,
+      "date": "2026-04-22",
+      "url": "https://boxd.it/hWK"
+    },
+    "chainsaw-man-the-movie-reze-arc-2025": {
+      "title": "Chainsaw Man – The Movie: Reze Arc",
+      "year": 2025,
+      "date": "2025-12-17",
+      "url": "https://boxd.it/Kgyu"
+    },
+    "chinatown-1974": {
+      "title": "Chinatown",
+      "year": 1974,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/29vU"
+    },
+    "chungking-express-1994": {
+      "title": "Chungking Express",
+      "year": 1994,
+      "date": "2026-03-17",
+      "url": "https://boxd.it/1UDa"
+    },
+    "city-of-god-2002": {
+      "title": "City of God",
+      "year": 2002,
+      "date": "2026-05-11",
+      "url": "https://boxd.it/2a2a"
+    },
+    "collateral-2004": {
+      "title": "Collateral",
+      "year": 2004,
+      "date": "2026-01-29",
+      "url": "https://boxd.it/28F0"
+    },
+    "come-drink-with-me-1966": {
+      "title": "Come Drink with Me",
+      "year": 1966,
+      "date": "2026-05-30",
+      "url": "https://boxd.it/1uf2"
+    },
+    "conclave-2024": {
+      "title": "Conclave",
+      "year": 2024,
+      "date": "2025-12-18",
+      "url": "https://boxd.it/AO8q"
+    },
+    "cool-hand-luke-1967": {
+      "title": "Cool Hand Luke",
+      "year": 1967,
+      "date": "2026-04-30",
+      "url": "https://boxd.it/29jY"
+    },
+    "crash-1996": {
+      "title": "Crash",
+      "year": 1996,
+      "date": "2025-12-18",
+      "url": "https://boxd.it/29n2"
+    },
+    "crouching-tiger-hidden-dragon-2000": {
+      "title": "Crouching Tiger, Hidden Dragon",
+      "year": 2000,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/2b1M"
+    },
+    "cure-1997": {
+      "title": "Cure",
+      "year": 1997,
+      "date": "2025-12-26",
+      "url": "https://boxd.it/1blA"
+    },
+    "dances-with-wolves-1990": {
+      "title": "Dances with Wolves",
+      "year": 1990,
+      "date": "2026-04-28",
+      "url": "https://boxd.it/2a4K"
+    },
+    "das-boot-1981": {
+      "title": "Das Boot",
+      "year": 1981,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/2av2"
+    },
+    "dead-man-1995": {
+      "title": "Dead Man",
+      "year": 1995,
+      "date": "2026-05-11",
+      "url": "https://boxd.it/29h4"
+    },
+    "dead-poets-society-1989": {
+      "title": "Dead Poets Society",
+      "year": 1989,
+      "date": "2026-09-14",
+      "url": "https://boxd.it/2aSg"
+    },
+    "death-proof-2007": {
+      "title": "Death Proof",
+      "year": 2007,
+      "date": "2026-04-13",
+      "url": "https://boxd.it/27GG"
+    },
+    "district-9-2009": {
+      "title": "District 9",
+      "year": 2009,
+      "date": "2026-05-11",
+      "url": "https://boxd.it/1Iik"
+    },
+    "do-the-right-thing-1989": {
+      "title": "Do the Right Thing",
+      "year": 1989,
+      "date": "2026-04-07",
+      "url": "https://boxd.it/29gA"
+    },
+    "dog-day-afternoon-1975": {
+      "title": "Dog Day Afternoon",
+      "year": 1975,
+      "date": "2026-05-11",
+      "url": "https://boxd.it/29bg"
+    },
+    "dogtooth-2009": {
+      "title": "Dogtooth",
+      "year": 2009,
+      "date": "2026-03-19",
+      "url": "https://boxd.it/158K"
+    },
+    "don-t-look-now-1973": {
+      "title": "Don't Look Now",
+      "year": 1973,
+      "date": "2026-07-10",
+      "url": "https://boxd.it/29fC"
+    },
+    "donnie-darko-2001": {
+      "title": "Donnie Darko",
+      "year": 2001,
+      "date": "2026-08-16",
+      "url": "https://boxd.it/2b2A"
+    },
+    "double-team-1997": {
+      "title": "Double Team",
+      "year": 1997,
+      "date": "2026-05-21",
+      "url": "https://boxd.it/1YLs"
+    },
+    "dr-strangelove-or-how-i-learned-to-stop-worrying-and-love-the-bomb-1964": {
+      "title": "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb",
+      "year": 1964,
+      "date": "2026-05-11",
+      "url": "https://boxd.it/29eY"
+    },
+    "dragon-inn-1967": {
+      "title": "Dragon Inn",
+      "year": 1967,
+      "date": "2026-06-01",
+      "url": "https://boxd.it/3xGa"
+    },
+    "drive-2011": {
+      "title": "Drive",
+      "year": 2011,
+      "date": "2026-03-10",
+      "url": "https://boxd.it/IG"
+    },
+    "drive-my-car-2021": {
+      "title": "Drive My Car",
+      "year": 2021,
+      "date": "2026-09-18",
+      "url": "https://boxd.it/sv94"
+    },
+    "duel-to-the-death-1983": {
+      "title": "Duel to the Death",
+      "year": 1983,
+      "date": "2026-09-21",
+      "url": "https://boxd.it/Dky"
+    },
+    "dune-2021": {
+      "title": "Dune",
+      "year": 2021,
+      "date": "2026-02-28",
+      "url": "https://boxd.it/fA7G"
+    },
+    "dune-part-two-2024": {
+      "title": "Dune: Part Two",
+      "year": 2024,
+      "date": "2025-12-18",
+      "url": "https://boxd.it/pUfA"
+    },
+    "eat-drink-man-woman-1994": {
+      "title": "Eat Drink Man Woman",
+      "year": 1994,
+      "date": "2026-07-18",
+      "url": "https://boxd.it/1Wem"
+    },
+    "el-topo-1970": {
+      "title": "El Topo",
+      "year": 1970,
+      "date": "2026-04-05",
+      "url": "https://boxd.it/1QYS"
+    },
+    "enter-the-dragon-1973": {
+      "title": "Enter the Dragon",
+      "year": 1973,
+      "date": "2025-12-26",
+      "url": "https://boxd.it/1YCA"
+    },
+    "enter-the-void-2010": {
+      "title": "Enter the Void",
+      "year": 2009,
+      "date": "2025-12-23",
+      "url": "https://boxd.it/1dy2"
+    },
+    "everything-everywhere-all-at-once-2022": {
+      "title": "Everything Everywhere All at Once",
+      "year": 2022,
+      "date": "2025-12-15",
+      "url": "https://boxd.it/jUk4"
+    },
+    "eyes-wide-shut-1999": {
+      "title": "Eyes Wide Shut",
+      "year": 1999,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/2axs"
+    },
+    "face-off-1997": {
+      "title": "Face/Off",
+      "year": 1997,
+      "date": "2026-08-31",
+      "url": "https://boxd.it/29I0"
+    },
+    "fallen-angels-1995": {
+      "title": "Fallen Angels",
+      "year": 1995,
+      "date": "2026-03-17",
+      "url": "https://boxd.it/1UkW"
+    },
+    "fantastic-mr-fox-2009": {
+      "title": "Fantastic Mr. Fox",
+      "year": 2009,
+      "date": "2025-12-27",
+      "url": "https://boxd.it/1WyQ"
+    },
+    "farewell-my-concubine-1993": {
+      "title": "Farewell My Concubine",
+      "year": 1993,
+      "date": "2026-04-29",
+      "url": "https://boxd.it/1UTM"
+    },
+    "fargo-1996": {
+      "title": "Fargo",
+      "year": 1996,
+      "date": "2026-04-08",
+      "url": "https://boxd.it/2aHM"
+    },
+    "fear-and-loathing-in-las-vegas-1998": {
+      "title": "Fear and Loathing in Las Vegas",
+      "year": 1998,
+      "date": "2026-04-30",
+      "url": "https://boxd.it/27Xs"
+    },
+    "ferris-bueller-s-day-off-1986": {
+      "title": "Ferris Bueller's Day Off",
+      "year": 1986,
+      "date": "2025-12-18",
+      "url": "https://boxd.it/1YPY"
+    },
+    "fight-club-1999": {
+      "title": "Fight Club",
+      "year": 1999,
+      "date": "2026-05-19",
+      "url": "https://boxd.it/2a9q"
+    },
+    "fitzcarraldo-1982": {
+      "title": "Fitzcarraldo",
+      "year": 1982,
+      "date": "2026-02-26",
+      "url": "https://boxd.it/1YV8"
+    },
+    "free-solo-2018": {
+      "title": "Free Solo",
+      "year": 2018,
+      "date": "2026-03-23",
+      "url": "https://boxd.it/iEEq"
+    },
+    "from-dusk-till-dawn-1996": {
+      "title": "From Dusk Till Dawn",
+      "year": 1996,
+      "date": "2026-04-08",
+      "url": "https://boxd.it/29HQ"
+    },
+    "full-metal-jacket-1987": {
+      "title": "Full Metal Jacket",
+      "year": 1987,
+      "date": "2025-12-06",
+      "url": "https://boxd.it/2a1Q"
+    },
+    "ghost-dog-the-way-of-the-samurai-1999": {
+      "title": "Ghost Dog: The Way of the Samurai",
+      "year": 1999,
+      "date": "2026-05-12",
+      "url": "https://boxd.it/23Ne"
+    },
+    "ghost-in-the-shell-1995": {
+      "title": "Ghost in the Shell",
+      "year": 1995,
+      "date": "2025-12-26",
+      "url": "https://boxd.it/1YYc"
+    },
+    "ghost-in-the-shell-2-innocence-2004": {
+      "title": "Ghost in the Shell 2: Innocence",
+      "year": 2004,
+      "date": "2026-03-01",
+      "url": "https://boxd.it/1SrG"
+    },
+    "gladiator-2000": {
+      "title": "Gladiator",
+      "year": 2000,
+      "date": "2025-12-18",
+      "url": "https://boxd.it/2b9m"
+    },
+    "gladiator-ii-2024": {
+      "title": "Gladiator II",
+      "year": 2024,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/kqQQ"
+    },
+    "good-morning-vietnam-1987": {
+      "title": "Good Morning, Vietnam",
+      "year": 1987,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/29Aq"
+    },
+    "green-snake-1993": {
+      "title": "Green Snake",
+      "year": 1993,
+      "date": "2026-03-31",
+      "url": "https://boxd.it/12Vk"
+    },
+    "grindhouse-2007": {
+      "title": "Grindhouse",
+      "year": 2007,
+      "date": "2026-04-13",
+      "url": "https://boxd.it/8RwY"
+    },
+    "grizzly-man-2005": {
+      "title": "Grizzly Man",
+      "year": 2005,
+      "date": "2026-04-25",
+      "url": "https://boxd.it/2ag2"
+    },
+    "gummo-1997": {
+      "title": "Gummo",
+      "year": 1997,
+      "date": "2026-03-17",
+      "url": "https://boxd.it/1H0Y"
+    },
+    "halloween-1978": {
+      "title": "Halloween",
+      "year": 1978,
+      "date": "2026-03-20",
+      "url": "https://boxd.it/2wRu"
+    },
+    "harakiri-1962": {
+      "title": "Harakiri",
+      "year": 1962,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/1NTU"
+    },
+    "hard-boiled-1992": {
+      "title": "Hard Boiled",
+      "year": 1992,
+      "date": "2026-04-23",
+      "url": "https://boxd.it/1T6a"
+    },
+    "hardcore-1979": {
+      "title": "Hardcore",
+      "year": 1979,
+      "date": "2026-05-23",
+      "url": "https://boxd.it/XyA"
+    },
+    "hearts-of-darkness-a-filmmaker-s-apocalypse-1991": {
+      "title": "Hearts of Darkness: A Filmmaker's Apocalypse",
+      "year": 1991,
+      "date": "2026-03-07",
+      "url": "https://boxd.it/24ai"
+    },
+    "heat-1995": {
+      "title": "Heat",
+      "year": 1995,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/2bg8"
+    },
+    "heavy-metal-1981": {
+      "title": "Heavy Metal",
+      "year": 1981,
+      "date": "2026-08-08",
+      "url": "https://boxd.it/1SZI"
+    },
+    "hereditary-2018": {
+      "title": "Hereditary",
+      "year": 2018,
+      "date": "2026-03-20",
+      "url": "https://boxd.it/hNVe"
+    },
+    "heretic-2024": {
+      "title": "Heretic",
+      "year": 2024,
+      "date": "2026-05-17",
+      "url": "https://boxd.it/H1lY"
+    },
+    "hero-2002": {
+      "title": "Hero",
+      "year": 2002,
+      "date": "2025-12-27",
+      "url": "https://boxd.it/2bcq"
+    },
+    "high-and-low-1963": {
+      "title": "High and Low",
+      "year": 1963,
+      "date": "2026-01-05",
+      "url": "https://boxd.it/1RSc"
+    },
+    "hook-1991": {
+      "title": "Hook",
+      "year": 1991,
+      "date": "2026-07-22",
+      "url": "https://boxd.it/29nQ"
+    },
+    "house-1977": {
+      "title": "House",
+      "year": 1977,
+      "date": "2026-05-22",
+      "url": "https://boxd.it/1vsm"
+    },
+    "house-of-1000-corpses-2003": {
+      "title": "House of 1000 Corpses",
+      "year": 2003,
+      "date": "2026-03-20",
+      "url": "https://boxd.it/26uE"
+    },
+    "house-of-flying-daggers-2004": {
+      "title": "House of Flying Daggers",
+      "year": 2004,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/1YoI"
+    },
+    "in-the-mood-for-love-2000": {
+      "title": "In the Mood for Love",
+      "year": 2000,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/29tE"
+    },
+    "inception-2010": {
+      "title": "Inception",
+      "year": 2010,
+      "date": "2026-02-18",
+      "url": "https://boxd.it/1skk"
+    },
+    "independence-day-1996": {
+      "title": "Independence Day",
+      "year": 1996,
+      "date": "2026-09-06",
+      "url": "https://boxd.it/2a1w"
+    },
+    "indiana-jones-and-the-last-crusade-1989": {
+      "title": "Indiana Jones and the Last Crusade",
+      "year": 1989,
+      "date": "2026-07-22",
+      "url": "https://boxd.it/2baO"
+    },
+    "infernal-affairs-2002": {
+      "title": "Infernal Affairs",
+      "year": 2002,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/1Vqw"
+    },
+    "inglourious-basterds-2009": {
+      "title": "Inglourious Basterds",
+      "year": 2009,
+      "date": "2026-04-13",
+      "url": "https://boxd.it/1JzG"
+    },
+    "inherent-vice-2014": {
+      "title": "Inherent Vice",
+      "year": 2014,
+      "date": "2026-01-26",
+      "url": "https://boxd.it/5hla"
+    },
+    "interstellar-2014": {
+      "title": "Interstellar",
+      "year": 2014,
+      "date": "2026-09-15",
+      "url": "https://boxd.it/4VZ8"
+    },
+    "invasion-of-the-body-snatchers-1978": {
+      "title": "Invasion of the Body Snatchers",
+      "year": 1978,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/1SWk"
+    },
+    "ip-man-2008": {
+      "title": "Ip Man",
+      "year": 2008,
+      "date": "2025-12-26",
+      "url": "https://boxd.it/1NrQ"
+    },
+    "iron-monkey-1993": {
+      "title": "Iron Monkey",
+      "year": 1993,
+      "date": "2026-08-31",
+      "url": "https://boxd.it/1Rfk"
+    },
+    "jackie-brown-1997": {
+      "title": "Jackie Brown",
+      "year": 1997,
+      "date": "2026-04-13",
+      "url": "https://boxd.it/2aVO"
+    },
+    "jaws-1975": {
+      "title": "Jaws",
+      "year": 1975,
+      "date": "2026-07-21",
+      "url": "https://boxd.it/2a5e"
+    },
+    "julien-donkey-boy-1999": {
+      "title": "Julien Donkey-Boy",
+      "year": 1999,
+      "date": "2026-03-17",
+      "url": "https://boxd.it/VNI"
+    },
+    "jumanji-1995": {
+      "title": "Jumanji",
+      "year": 1995,
+      "date": "2026-09-14",
+      "url": "https://boxd.it/1ZLI"
+    },
+    "jurassic-park-1993": {
+      "title": "Jurassic Park",
+      "year": 1993,
+      "date": "2025-12-18",
+      "url": "https://boxd.it/2aA2"
+    },
+    "kemonozume-2006": {
+      "title": "Kemonozume",
+      "year": 2006,
+      "date": "2025-12-26",
+      "url": "https://boxd.it/px3G"
+    },
+    "ken-park-2002": {
+      "title": "Ken Park",
+      "year": 2002,
+      "date": "2026-04-30",
+      "url": "https://boxd.it/21b8"
+    },
+    "kick-heart-2013": {
+      "title": "Kick-Heart",
+      "year": 2013,
+      "date": "2025-12-26",
+      "url": "https://boxd.it/590o"
+    },
+    "kids-1995": {
+      "title": "Kids",
+      "year": 1995,
+      "date": "2026-04-30",
+      "url": "https://boxd.it/1YUY"
+    },
+    "kill-bill-vol-1-2003": {
+      "title": "Kill Bill: Vol. 1",
+      "year": 2003,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/70w"
+    },
+    "kill-bill-vol-2-2004": {
+      "title": "Kill Bill: Vol. 2",
+      "year": 2004,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/2au4"
+    },
+    "king-of-new-york-1990": {
+      "title": "King of New York",
+      "year": 1990,
+      "date": "2026-03-06",
+      "url": "https://boxd.it/1Ynq"
+    },
+    "koyaanisqatsi-1983": {
+      "title": "Koyaanisqatsi",
+      "year": 1982,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/1U9E"
+    },
+    "kubrick-by-kubrick-2020": {
+      "title": "Kubrick by Kubrick",
+      "year": 2020,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/pKXi"
+    },
+    "kwaidan-1965": {
+      "title": "Kwaidan",
+      "year": 1964,
+      "date": "2026-08-14",
+      "url": "https://boxd.it/1kbY"
+    },
+    "la-la-land-2016": {
+      "title": "La La Land",
+      "year": 2016,
+      "date": "2026-03-20",
+      "url": "https://boxd.it/a5fa"
+    },
+    "lady-vengeance-2005": {
+      "title": "Lady Vengeance",
+      "year": 2005,
+      "date": "2026-06-03",
+      "url": "https://boxd.it/248G"
+    },
+    "lawrence-of-arabia-1962": {
+      "title": "Lawrence of Arabia",
+      "year": 1962,
+      "date": "2026-05-11",
+      "url": "https://boxd.it/2wRE"
+    },
+    "le-samourai-1967": {
+      "title": "Le Samouraï",
+      "year": 1967,
+      "date": "2026-04-05",
+      "url": "https://boxd.it/22ZI"
+    },
+    "le-trou-1960": {
+      "title": "Le Trou",
+      "year": 1960,
+      "date": "2026-08-29",
+      "url": "https://boxd.it/1nSw"
+    },
+    "let-the-right-one-in-2008": {
+      "title": "Let the Right One In",
+      "year": 2008,
+      "date": "2025-12-18",
+      "url": "https://boxd.it/1Qr0"
+    },
+    "leviathan-2014": {
+      "title": "Leviathan",
+      "year": 2014,
+      "date": "2026-08-12",
+      "url": "https://boxd.it/7Ub8"
+    },
+    "licorice-pizza-2021": {
+      "title": "Licorice Pizza",
+      "year": 2021,
+      "date": "2025-12-18",
+      "url": "https://boxd.it/qTKY"
+    },
+    "life-of-brian-1979": {
+      "title": "Life of Brian",
+      "year": 1979,
+      "date": "2025-12-18",
+      "url": "https://boxd.it/2a4q"
+    },
+    "little-miss-sunshine-2006": {
+      "title": "Little Miss Sunshine",
+      "year": 2006,
+      "date": "2026-01-29",
+      "url": "https://boxd.it/29EW"
+    },
+    "little-shop-of-horrors-1986": {
+      "title": "Little Shop of Horrors",
+      "year": 1986,
+      "date": "2026-07-14",
+      "url": "https://boxd.it/1Vqm"
+    },
+    "lock-stock-and-two-smoking-barrels-1998": {
+      "title": "Lock, Stock and Two Smoking Barrels",
+      "year": 1998,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/2b92"
+    },
+    "look-back-2024": {
+      "title": "Look Back",
+      "year": 2024,
+      "date": "2026-01-28",
+      "url": "https://boxd.it/LjA6"
+    },
+    "lost-highway-1997": {
+      "title": "Lost Highway",
+      "year": 1997,
+      "date": "2025-12-18",
+      "url": "https://boxd.it/29Wc"
+    },
+    "love-exposure-2008": {
+      "title": "Love Exposure",
+      "year": 2008,
+      "date": "2026-07-03",
+      "url": "https://boxd.it/1pDe"
+    },
+    "lupin-iii-the-first-2019": {
+      "title": "Lupin III: The First",
+      "year": 2019,
+      "date": "2025-12-11",
+      "url": "https://boxd.it/mIEM"
+    },
+    "lupin-the-iiird-goemon-s-blood-spray-2017": {
+      "title": "Lupin the 3rd: Goemon's Blood Spray",
+      "year": 2017,
+      "date": "2025-12-09",
+      "url": "https://boxd.it/giRI"
+    },
+    "lupin-the-third-the-castle-of-cagliostro-1979": {
+      "title": "The Castle of Cagliostro",
+      "year": 1979,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/1Mn4"
+    },
+    "lupin-the-third-the-mystery-of-mamo-1978": {
+      "title": "Lupin the Third: The Mystery of Mamo",
+      "year": 1978,
+      "date": "2025-12-19",
+      "url": "https://boxd.it/1lSk"
+    },
+    "lupin-the-third-tokyo-crisis-1998": {
+      "title": "Lupin the Third: Tokyo Crisis",
+      "year": 1998,
+      "date": "2026-08-15",
+      "url": "https://boxd.it/1iKC"
+    },
+    "m-1931": {
+      "title": "M",
+      "year": 1931,
+      "date": "2026-01-06",
+      "url": "https://boxd.it/29vq"
+    },
+    "m-a-s-h-1970": {
+      "title": "M*A*S*H",
+      "year": 1970,
+      "date": "2026-03-21",
+      "url": "https://boxd.it/29U6"
+    },
+    "mad-max-fury-road-2015": {
+      "title": "Mad Max: Fury Road",
+      "year": 2015,
+      "date": "2026-03-15",
+      "url": "https://boxd.it/2DjO"
+    },
+    "magnolia-1999": {
+      "title": "Magnolia",
+      "year": 1999,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/2aze"
+    },
+    "man-on-wire-2008": {
+      "title": "Man on Wire",
+      "year": 2008,
+      "date": "2026-04-01",
+      "url": "https://boxd.it/1ORK"
+    },
+    "manchester-by-the-sea-2016": {
+      "title": "Manchester by the Sea",
+      "year": 2016,
+      "date": "2026-05-16",
+      "url": "https://boxd.it/b2L0"
+    },
+    "mandy-2018": {
+      "title": "Mandy",
+      "year": 2018,
+      "date": "2025-12-18",
+      "url": "https://boxd.it/gtti"
+    },
+    "mars-attacks-1996": {
+      "title": "Mars Attacks!",
+      "year": 1996,
+      "date": "2026-05-16",
+      "url": "https://boxd.it/2bd4"
+    },
+    "mars-express-2023": {
+      "title": "Mars Express",
+      "year": 2023,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/lATC"
+    },
+    "marty-supreme-2025": {
+      "title": "Marty Supreme",
+      "year": 2025,
+      "date": "2026-02-13",
+      "url": "https://boxd.it/Off0"
+    },
+    "master-and-commander-the-far-side-of-the-world-2003": {
+      "title": "Master and Commander: The Far Side of the World",
+      "year": 2003,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/200S"
+    },
+    "mccabe-mrs-miller-1971": {
+      "title": "McCabe & Mrs. Miller",
+      "year": 1971,
+      "date": "2025-12-18",
+      "url": "https://boxd.it/1ooC"
+    },
+    "memories-1995": {
+      "title": "Memories",
+      "year": 1995,
+      "date": "2025-12-18",
+      "url": "https://boxd.it/Vz2"
+    },
+    "memories-of-murder-2003": {
+      "title": "Memories of Murder",
+      "year": 2003,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/1TSo"
+    },
+    "meru-2015": {
+      "title": "Meru",
+      "year": 2015,
+      "date": "2026-03-23",
+      "url": "https://boxd.it/aixm"
+    },
+    "michael-clayton-2007": {
+      "title": "Michael Clayton",
+      "year": 2007,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/2466"
+    },
+    "microcosmos-1996": {
+      "title": "Microcosmos",
+      "year": 1996,
+      "date": "2026-09-09",
+      "url": "https://boxd.it/1Z0W"
+    },
+    "midnight-cowboy-1969": {
+      "title": "Midnight Cowboy",
+      "year": 1969,
+      "date": "2026-08-25",
+      "url": "https://boxd.it/25Hi"
+    },
+    "midnight-in-paris-2011": {
+      "title": "Midnight in Paris",
+      "year": 2011,
+      "date": "2026-03-08",
+      "url": "https://boxd.it/i4a"
+    },
+    "midnight-run-1988": {
+      "title": "Midnight Run",
+      "year": 1988,
+      "date": "2026-09-13",
+      "url": "https://boxd.it/1ZnQ"
+    },
+    "midsommar-2019": {
+      "title": "Midsommar",
+      "year": 2019,
+      "date": "2026-03-20",
+      "url": "https://boxd.it/jhxe"
+    },
+    "millennium-actress-2001": {
+      "title": "Millennium Actress",
+      "year": 2001,
+      "date": "2026-03-24",
+      "url": "https://boxd.it/1fK0"
+    },
+    "mind-game-2004": {
+      "title": "Mind Game",
+      "year": 2004,
+      "date": "2026-02-04",
+      "url": "https://boxd.it/1Bv2"
+    },
+    "mishima-a-life-in-four-chapters-1985": {
+      "title": "Mishima: A Life in Four Chapters",
+      "year": 1985,
+      "date": "2026-05-20",
+      "url": "https://boxd.it/1sBA"
+    },
+    "mission-impossible-1996": {
+      "title": "Mission: Impossible",
+      "year": 1996,
+      "date": "2026-05-13",
+      "url": "https://boxd.it/29d2"
+    },
+    "moneyball-2011": {
+      "title": "Moneyball",
+      "year": 2011,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/glS"
+    },
+    "monster-2023": {
+      "title": "Monster",
+      "year": 2023,
+      "date": "2026-01-12",
+      "url": "https://boxd.it/DJEM"
+    },
+    "monsters-inc-2001": {
+      "title": "Monsters, Inc.",
+      "year": 2001,
+      "date": "2026-07-07",
+      "url": "https://boxd.it/2a46"
+    },
+    "moonrise-kingdom-2012": {
+      "title": "Moonrise Kingdom",
+      "year": 2012,
+      "date": "2026-03-13",
+      "url": "https://boxd.it/2Wng"
+    },
+    "mulholland-drive-2001": {
+      "title": "Mulholland Drive",
+      "year": 2001,
+      "date": "2025-12-04",
+      "url": "https://boxd.it/297o"
+    },
+    "my-neighbor-totoro-1988": {
+      "title": "My Neighbor Totoro",
+      "year": 1988,
+      "date": "2026-03-27",
+      "url": "https://boxd.it/20eA"
+    },
+    "naked-lunch-1991": {
+      "title": "Naked Lunch",
+      "year": 1991,
+      "date": "2026-07-22",
+      "url": "https://boxd.it/26ow"
+    },
+    "network-1976": {
+      "title": "Network",
+      "year": 1976,
+      "date": "2026-02-28",
+      "url": "https://boxd.it/1VqG"
+    },
+    "new-dragon-gate-inn-1992": {
+      "title": "New Dragon Gate Inn",
+      "year": 1992,
+      "date": "2026-09-15",
+      "url": "https://boxd.it/12dC"
+    },
+    "new-rose-hotel-1999": {
+      "title": "New Rose Hotel",
+      "year": 1998,
+      "date": "2026-08-06",
+      "url": "https://boxd.it/1BVY"
+    },
+    "ninja-scroll-1993": {
+      "title": "Ninja Scroll",
+      "year": 1993,
+      "date": "2026-03-14",
+      "url": "https://boxd.it/1Ooe"
+    },
+    "no-other-choice-2025": {
+      "title": "No Other Choice",
+      "year": 2025,
+      "date": "2026-02-21",
+      "url": "https://boxd.it/nKiA"
+    },
+    "north-by-northwest-1959": {
+      "title": "North by Northwest",
+      "year": 1959,
+      "date": "2026-01-19",
+      "url": "https://boxd.it/2aRM"
+    },
+    "nosferatu-2024": {
+      "title": "Nosferatu",
+      "year": 2024,
+      "date": "2026-03-27",
+      "url": "https://boxd.it/f5eG"
+    },
+    "nosferatu-the-vampyre-1979": {
+      "title": "Nosferatu the Vampyre",
+      "year": 1979,
+      "date": "2026-03-26",
+      "url": "https://boxd.it/21J0"
+    },
+    "nymphomaniac-vol-i-2013": {
+      "title": "Nymphomaniac: Vol. I",
+      "year": 2013,
+      "date": "2026-03-17",
+      "url": "https://boxd.it/7DiG"
+    },
+    "o-brother-where-art-thou-2000": {
+      "title": "O Brother, Where Art Thou?",
+      "year": 2000,
+      "date": "2026-06-11",
+      "url": "https://boxd.it/2b3I"
+    },
+    "obsession-2026": {
+      "title": "Obsession",
+      "year": 2025,
+      "date": "2026-08-23",
+      "url": "https://boxd.it/PNqo"
+    },
+    "ocean-waves-1993": {
+      "title": "Ocean Waves",
+      "year": 1993,
+      "date": "2025-12-26",
+      "url": "https://boxd.it/1CtQ"
+    },
+    "office-space-1999": {
+      "title": "Office Space",
+      "year": 1999,
+      "date": "2026-04-08",
+      "url": "https://boxd.it/28Em"
+    },
+    "old-henry-2021": {
+      "title": "Old Henry",
+      "year": 2021,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/ty1u"
+    },
+    "oldboy-2003": {
+      "title": "Oldboy",
+      "year": 2003,
+      "date": "2026-01-05",
+      "url": "https://boxd.it/29R2"
+    },
+    "on-the-waterfront-1954": {
+      "title": "On the Waterfront",
+      "year": 1954,
+      "date": "2026-05-11",
+      "url": "https://boxd.it/29TC"
+    },
+    "once-upon-a-time-in-china-1991": {
+      "title": "Once Upon a Time in China",
+      "year": 1991,
+      "date": "2026-04-06",
+      "url": "https://boxd.it/1VOy"
+    },
+    "once-upon-a-time-in-hollywood-2019": {
+      "title": "Once Upon a Time... in Hollywood",
+      "year": 2019,
+      "date": "2025-12-18",
+      "url": "https://boxd.it/gH0O"
+    },
+    "once-upon-a-time-in-the-west-1968": {
+      "title": "Once Upon a Time in the West",
+      "year": 1968,
+      "date": "2026-03-10",
+      "url": "https://boxd.it/2az4"
+    },
+    "one-battle-after-another-2025": {
+      "title": "One Battle After Another",
+      "year": 2025,
+      "date": "2025-12-18",
+      "url": "https://boxd.it/DUHM"
+    },
+    "one-cut-of-the-dead-2017": {
+      "title": "One Cut of the Dead",
+      "year": 2017,
+      "date": "2026-05-27",
+      "url": "https://boxd.it/iAFu"
+    },
+    "one-flew-over-the-cuckoo-s-nest-1975": {
+      "title": "One Flew Over the Cuckoo's Nest",
+      "year": 1975,
+      "date": "2026-05-11",
+      "url": "https://boxd.it/2aeA"
+    },
+    "paprika-2006": {
+      "title": "Paprika",
+      "year": 2006,
+      "date": "2025-12-26",
+      "url": "https://boxd.it/23wW"
+    },
+    "parasite-2019": {
+      "title": "Parasite",
+      "year": 2019,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/hTha"
+    },
+    "paris-texas-1984": {
+      "title": "Paris, Texas",
+      "year": 1984,
+      "date": "2026-04-30",
+      "url": "https://boxd.it/29Ts"
+    },
+    "pat-garrett-billy-the-kid-1973": {
+      "title": "Pat Garrett & Billy the Kid",
+      "year": 1973,
+      "date": "2026-09-01",
+      "url": "https://boxd.it/1TvE"
+    },
+    "paths-of-glory-1957": {
+      "title": "Paths of Glory",
+      "year": 1957,
+      "date": "2026-05-11",
+      "url": "https://boxd.it/29b6"
+    },
+    "patlabor-2-the-movie-1993": {
+      "title": "Patlabor 2: The Movie",
+      "year": 1993,
+      "date": "2026-04-12",
+      "url": "https://boxd.it/1NP4"
+    },
+    "patlabor-the-movie-1989": {
+      "title": "Patlabor: The Movie",
+      "year": 1989,
+      "date": "2026-03-24",
+      "url": "https://boxd.it/1NPe"
+    },
+    "patton-1970": {
+      "title": "Patton",
+      "year": 1970,
+      "date": "2026-05-11",
+      "url": "https://boxd.it/1UnQ"
+    },
+    "peking-opera-blues-1986": {
+      "title": "Peking Opera Blues",
+      "year": 1986,
+      "date": "2026-04-17",
+      "url": "https://boxd.it/13fO"
+    },
+    "perfect-blue-1998": {
+      "title": "Perfect Blue",
+      "year": 1997,
+      "date": "2026-03-20",
+      "url": "https://boxd.it/1W7A"
+    },
+    "perfect-days-2023": {
+      "title": "Perfect Days",
+      "year": 2023,
+      "date": "2026-01-13",
+      "url": "https://boxd.it/ATh8"
+    },
+    "persona-1966": {
+      "title": "Persona",
+      "year": 1966,
+      "date": "2026-07-13",
+      "url": "https://boxd.it/29B4"
+    },
+    "phantom-thread-2017": {
+      "title": "Phantom Thread",
+      "year": 2017,
+      "date": "2026-04-04",
+      "url": "https://boxd.it/e4uc"
+    },
+    "ping-pong-the-animation-2014": {
+      "title": "Ping Pong the Animation",
+      "year": 2014,
+      "date": "2025-12-26",
+      "url": "https://boxd.it/oL1s"
+    },
+    "pink-flamingos-1972": {
+      "title": "Pink Flamingos",
+      "year": 1972,
+      "date": "2026-03-17",
+      "url": "https://boxd.it/29NO"
+    },
+    "pirates-of-the-caribbean-the-curse-of-the-black-pearl-2003": {
+      "title": "Pirates of the Caribbean: The Curse of the Black Pearl",
+      "year": 2003,
+      "date": "2025-12-18",
+      "url": "https://boxd.it/70G"
+    },
+    "planes-trains-and-automobiles-1987": {
+      "title": "Planes, Trains and Automobiles",
+      "year": 1987,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/26zE"
+    },
+    "platoon-1986": {
+      "title": "Platoon",
+      "year": 1986,
+      "date": "2026-03-17",
+      "url": "https://boxd.it/29BS"
+    },
+    "playtime-1967": {
+      "title": "PlayTime",
+      "year": 1967,
+      "date": "2026-02-12",
+      "url": "https://boxd.it/1WLK"
+    },
+    "poor-things-2023": {
+      "title": "Poor Things",
+      "year": 2023,
+      "date": "2026-06-21",
+      "url": "https://boxd.it/tNWU"
+    },
+    "porco-rosso-1992": {
+      "title": "Porco Rosso",
+      "year": 1992,
+      "date": "2026-03-26",
+      "url": "https://boxd.it/1Tp2"
+    },
+    "portrait-of-a-lady-on-fire-2019": {
+      "title": "Portrait of a Lady on Fire",
+      "year": 2019,
+      "date": "2026-01-02",
+      "url": "https://boxd.it/jkPq"
+    },
+    "predator-1987": {
+      "title": "Predator",
+      "year": 1987,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/2b84"
+    },
+    "prince-sign-o-the-times-1987": {
+      "title": "Prince: Sign 'o' the Times",
+      "year": 1987,
+      "date": "2026-02-08",
+      "url": "https://boxd.it/16AA"
+    },
+    "princess-mononoke-1997": {
+      "title": "Princess Mononoke",
+      "year": 1997,
+      "date": "2025-12-26",
+      "url": "https://boxd.it/2b4w"
+    },
+    "project-hail-mary-2026": {
+      "title": "Project Hail Mary",
+      "year": 2026,
+      "date": "2026-05-13",
+      "url": "https://boxd.it/pEeQ"
+    },
+    "promare-2019": {
+      "title": "Promare",
+      "year": 2019,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/keFQ"
+    },
+    "pulp-fiction-1994": {
+      "title": "Pulp Fiction",
+      "year": 1994,
+      "date": "2026-04-13",
+      "url": "https://boxd.it/29Pq"
+    },
+    "punch-drunk-love-2002": {
+      "title": "Punch-Drunk Love",
+      "year": 2002,
+      "date": "2025-12-07",
+      "url": "https://boxd.it/20E4"
+    },
+    "raging-bull-1980": {
+      "title": "Raging Bull",
+      "year": 1980,
+      "date": "2025-12-31",
+      "url": "https://boxd.it/28yI"
+    },
+    "raiders-of-the-lost-ark-1981": {
+      "title": "Raiders of the Lost Ark",
+      "year": 1981,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/2bbs"
+    },
+    "raise-the-red-lantern-1991": {
+      "title": "Raise the Red Lantern",
+      "year": 1991,
+      "date": "2026-03-30",
+      "url": "https://boxd.it/1WlC"
+    },
+    "ran-1985": {
+      "title": "Ran",
+      "year": 1985,
+      "date": "2026-05-11",
+      "url": "https://boxd.it/1Tlu"
+    },
+    "ratatouille-2007": {
+      "title": "Ratatouille",
+      "year": 2007,
+      "date": "2025-12-31",
+      "url": "https://boxd.it/27ww"
+    },
+    "red-sorghum-1988": {
+      "title": "Red Sorghum",
+      "year": 1988,
+      "date": "2026-04-21",
+      "url": "https://boxd.it/XYo"
+    },
+    "redline-2009": {
+      "title": "Redline",
+      "year": 2009,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/2pQ0"
+    },
+    "repo-man-1984": {
+      "title": "Repo Man",
+      "year": 1984,
+      "date": "2026-05-12",
+      "url": "https://boxd.it/1Plg"
+    },
+    "requiem-for-a-dream-2000": {
+      "title": "Requiem for a Dream",
+      "year": 2000,
+      "date": "2026-03-17",
+      "url": "https://boxd.it/29VI"
+    },
+    "reservoir-dogs-1992": {
+      "title": "Reservoir Dogs",
+      "year": 1992,
+      "date": "2026-04-13",
+      "url": "https://boxd.it/2agc"
+    },
+    "robocop-1987": {
+      "title": "RoboCop",
+      "year": 1987,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/22Wu"
+    },
+    "robots-2005": {
+      "title": "Robots",
+      "year": 2005,
+      "date": "2026-07-31",
+      "url": "https://boxd.it/1Xve"
+    },
+    "roman-holiday-1953": {
+      "title": "Roman Holiday",
+      "year": 1953,
+      "date": "2026-09-04",
+      "url": "https://boxd.it/29zW"
+    },
+    "rumble-fish-1983": {
+      "title": "Rumble Fish",
+      "year": 1983,
+      "date": "2026-08-01",
+      "url": "https://boxd.it/2aOI"
+    },
+    "running-with-speed-2023": {
+      "title": "Running with Speed",
+      "year": 2023,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/Emwi"
+    },
+    "santa-sangre-1989": {
+      "title": "Santa Sangre",
+      "year": 1989,
+      "date": "2026-04-26",
+      "url": "https://boxd.it/1FrI"
+    },
+    "saving-private-ryan-1998": {
+      "title": "Saving Private Ryan",
+      "year": 1998,
+      "date": "2026-05-11",
+      "url": "https://boxd.it/29ro"
+    },
+    "sexy-beast-2000": {
+      "title": "Sexy Beast",
+      "year": 2000,
+      "date": "2025-12-18",
+      "url": "https://boxd.it/1SZS"
+    },
+    "shanghai-blues-1984": {
+      "title": "Shanghai Blues",
+      "year": 1984,
+      "date": "2026-09-19",
+      "url": "https://boxd.it/4zMG"
+    },
+    "shaolin-soccer-2001": {
+      "title": "Shaolin Soccer",
+      "year": 2001,
+      "date": "2026-06-25",
+      "url": "https://boxd.it/1T86"
+    },
+    "shigurui-death-frenzy-2007": {
+      "title": "Shigurui: Death Frenzy",
+      "year": 2007,
+      "date": "2026-01-11",
+      "url": "https://boxd.it/rEQu"
+    },
+    "short-cuts-1993": {
+      "title": "Short Cuts",
+      "year": 1993,
+      "date": "2025-12-18",
+      "url": "https://boxd.it/29Nk"
+    },
+    "showgirls-1995": {
+      "title": "Showgirls",
+      "year": 1995,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/1Vmk"
+    },
+    "sicario-2015": {
+      "title": "Sicario",
+      "year": 2015,
+      "date": "2026-09-15",
+      "url": "https://boxd.it/8i7u"
+    },
+    "sin-city-2005": {
+      "title": "Sin City",
+      "year": 2005,
+      "date": "2026-03-13",
+      "url": "https://boxd.it/2aVk"
+    },
+    "sinners-2025": {
+      "title": "Sinners",
+      "year": 2025,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/KQMM"
+    },
+    "smile-2022": {
+      "title": "Smile",
+      "year": 2022,
+      "date": "2025-12-18",
+      "url": "https://boxd.it/xjfE"
+    },
+    "snatch-2000": {
+      "title": "Snatch",
+      "year": 2000,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/2b7U"
+    },
+    "society-of-the-snow-2023": {
+      "title": "Society of the Snow",
+      "year": 2023,
+      "date": "2026-09-21",
+      "url": "https://boxd.it/y9aw"
+    },
+    "solaris-1972": {
+      "title": "Solaris",
+      "year": 1972,
+      "date": "2026-02-26",
+      "url": "https://boxd.it/2a2Y"
+    },
+    "some-like-it-hot-1959": {
+      "title": "Some Like It Hot",
+      "year": 1959,
+      "date": "2026-05-11",
+      "url": "https://boxd.it/2aNA"
+    },
+    "sorcerer-1977": {
+      "title": "Sorcerer",
+      "year": 1977,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/14J6"
+    },
+    "speed-1994": {
+      "title": "Speed",
+      "year": 1994,
+      "date": "2026-09-12",
+      "url": "https://boxd.it/28qk"
+    },
+    "speed-racer-2008": {
+      "title": "Speed Racer",
+      "year": 2008,
+      "date": "2026-05-16",
+      "url": "https://boxd.it/20UQ"
+    },
+    "spirited-away-2001": {
+      "title": "Spirited Away",
+      "year": 2001,
+      "date": "2026-03-27",
+      "url": "https://boxd.it/2b4m"
+    },
+    "spring-breakers-2012": {
+      "title": "Spring Breakers",
+      "year": 2012,
+      "date": "2026-03-17",
+      "url": "https://boxd.it/421s"
+    },
+    "spun-2003": {
+      "title": "Spun",
+      "year": 2002,
+      "date": "2026-04-30",
+      "url": "https://boxd.it/1SAo"
+    },
+    "stalker-1979": {
+      "title": "Stalker",
+      "year": 1979,
+      "date": "2026-03-27",
+      "url": "https://boxd.it/28PO"
+    },
+    "starship-troopers-1997": {
+      "title": "Starship Troopers",
+      "year": 1997,
+      "date": "2026-09-07",
+      "url": "https://boxd.it/2a7k"
+    },
+    "still-walking-2008": {
+      "title": "Still Walking",
+      "year": 2008,
+      "date": "2026-08-22",
+      "url": "https://boxd.it/1wvm"
+    },
+    "stop-making-sense-1984": {
+      "title": "Stop Making Sense",
+      "year": 1984,
+      "date": "2026-03-23",
+      "url": "https://boxd.it/1ygo"
+    },
+    "straw-dogs-1971": {
+      "title": "Straw Dogs",
+      "year": 1971,
+      "date": "2026-09-15",
+      "url": "https://boxd.it/2982"
+    },
+    "street-fighter-ii-the-animated-movie-1994": {
+      "title": "Street Fighter II: The Animated Movie",
+      "year": 1994,
+      "date": "2026-05-01",
+      "url": "https://boxd.it/1RzO"
+    },
+    "stripes-1981": {
+      "title": "Stripes",
+      "year": 1981,
+      "date": "2026-07-22",
+      "url": "https://boxd.it/gY6"
+    },
+    "sweet-sweetback-s-baadasssss-song-1971": {
+      "title": "Sweet Sweetback's Baadasssss Song",
+      "year": 1971,
+      "date": "2026-03-26",
+      "url": "https://boxd.it/22xa"
+    },
+    "tampopo-1985": {
+      "title": "Tampopo",
+      "year": 1985,
+      "date": "2026-05-15",
+      "url": "https://boxd.it/1SZe"
+    },
+    "tangled-2010": {
+      "title": "Tangled",
+      "year": 2010,
+      "date": "2025-12-31",
+      "url": "https://boxd.it/15gO"
+    },
+    "taxi-driver-1976": {
+      "title": "Taxi Driver",
+      "year": 1976,
+      "date": "2026-03-17",
+      "url": "https://boxd.it/2b8y"
+    },
+    "the-36th-chamber-of-shaolin-1978": {
+      "title": "The 36th Chamber of Shaolin",
+      "year": 1978,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/1SXC"
+    },
+    "the-8-diagram-pole-fighter-1984": {
+      "title": "The 8 Diagram Pole Fighter",
+      "year": 1984,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/1h2a"
+    },
+    "the-animatrix-2003": {
+      "title": "The Animatrix",
+      "year": 2003,
+      "date": "2026-09-21",
+      "url": "https://boxd.it/qH0"
+    },
+    "the-ballad-of-buster-scruggs-2018": {
+      "title": "The Ballad of Buster Scruggs",
+      "year": 2018,
+      "date": "2026-05-11",
+      "url": "https://boxd.it/jB2q"
+    },
+    "the-banshees-of-inisherin-2022": {
+      "title": "The Banshees of Inisherin",
+      "year": 2022,
+      "date": "2026-05-03",
+      "url": "https://boxd.it/p7XS"
+    },
+    "the-batman-2022": {
+      "title": "The Batman",
+      "year": 2022,
+      "date": "2026-03-05",
+      "url": "https://boxd.it/eDGs"
+    },
+    "the-big-lebowski-1998": {
+      "title": "The Big Lebowski",
+      "year": 1998,
+      "date": "2026-05-11",
+      "url": "https://boxd.it/2b6C"
+    },
+    "the-blade-1995": {
+      "title": "The Blade",
+      "year": 1995,
+      "date": "2026-03-28",
+      "url": "https://boxd.it/VSy"
+    },
+    "the-boy-and-the-heron-2023": {
+      "title": "The Boy and the Heron",
+      "year": 2023,
+      "date": "2025-12-26",
+      "url": "https://boxd.it/ipeM"
+    },
+    "the-breakfast-club-1985": {
+      "title": "The Breakfast Club",
+      "year": 1985,
+      "date": "2026-05-13",
+      "url": "https://boxd.it/27q4"
+    },
+    "the-bridge-on-the-river-kwai-1957": {
+      "title": "The Bridge on the River Kwai",
+      "year": 1957,
+      "date": "2025-12-18",
+      "url": "https://boxd.it/29wo"
+    },
+    "the-brutalist-2024": {
+      "title": "The Brutalist",
+      "year": 2024,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/k4BO"
+    },
+    "the-conjuring-2013": {
+      "title": "The Conjuring",
+      "year": 2013,
+      "date": "2026-05-17",
+      "url": "https://boxd.it/4sr2"
+    },
+    "the-darjeeling-limited-2007": {
+      "title": "The Darjeeling Limited",
+      "year": 2007,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/24as"
+    },
+    "the-day-of-the-jackal-1973": {
+      "title": "The Day of the Jackal",
+      "year": 1973,
+      "date": "2026-09-14",
+      "url": "https://boxd.it/23GM"
+    },
+    "the-deer-hunter-1978": {
+      "title": "The Deer Hunter",
+      "year": 1978,
+      "date": "2026-03-17",
+      "url": "https://boxd.it/1T6O"
+    },
+    "the-departed-2006": {
+      "title": "The Departed",
+      "year": 2006,
+      "date": "2026-03-17",
+      "url": "https://boxd.it/28MA"
+    },
+    "the-drama-2026": {
+      "title": "The Drama",
+      "year": 2026,
+      "date": "2026-08-17",
+      "url": "https://boxd.it/OA2w"
+    },
+    "the-empire-strikes-back-1980": {
+      "title": "The Empire Strikes Back",
+      "year": 1980,
+      "date": "2026-03-19",
+      "url": "https://boxd.it/27Vw"
+    },
+    "the-endless-summer-1966": {
+      "title": "The Endless Summer",
+      "year": 1966,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/70Q"
+    },
+    "the-exorcist-1973": {
+      "title": "The Exorcist",
+      "year": 1973,
+      "date": "2025-12-18",
+      "url": "https://boxd.it/1Yoo"
+    },
+    "the-favourite-2018": {
+      "title": "The Favourite",
+      "year": 2018,
+      "date": "2026-03-18",
+      "url": "https://boxd.it/d2hI"
+    },
+    "the-fifth-element-1997": {
+      "title": "The Fifth Element",
+      "year": 1997,
+      "date": "2026-08-08",
+      "url": "https://boxd.it/71k"
+    },
+    "the-florida-project-2017": {
+      "title": "The Florida Project",
+      "year": 2017,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/dMG0"
+    },
+    "the-flowers-of-war-2011": {
+      "title": "The Flowers of War",
+      "year": 2011,
+      "date": "2026-06-23",
+      "url": "https://boxd.it/2Evc"
+    },
+    "the-fly-1986": {
+      "title": "The Fly",
+      "year": 1986,
+      "date": "2026-03-14",
+      "url": "https://boxd.it/1YIe"
+    },
+    "the-french-connection-1971": {
+      "title": "The French Connection",
+      "year": 1971,
+      "date": "2025-12-04",
+      "url": "https://boxd.it/296g"
+    },
+    "the-french-dispatch-2021": {
+      "title": "The French Dispatch of the Liberty, Kansas Evening Sun",
+      "year": 2021,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/jLP8"
+    },
+    "the-funeral-1996": {
+      "title": "The Funeral",
+      "year": 1996,
+      "date": "2026-03-22",
+      "url": "https://boxd.it/1BC8"
+    },
+    "the-godfather-1972": {
+      "title": "The Godfather",
+      "year": 1972,
+      "date": "2026-05-11",
+      "url": "https://boxd.it/2aNK"
+    },
+    "the-godfather-part-ii-1974": {
+      "title": "The Godfather Part II",
+      "year": 1974,
+      "date": "2026-05-11",
+      "url": "https://boxd.it/2aNq"
+    },
+    "the-grand-budapest-hotel-2014": {
+      "title": "The Grand Budapest Hotel",
+      "year": 2014,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/3ZqO"
+    },
+    "the-great-silence-1968": {
+      "title": "The Great Silence",
+      "year": 1968,
+      "date": "2026-02-17",
+      "url": "https://boxd.it/1ZlA"
+    },
+    "the-handmaiden-2016": {
+      "title": "The Handmaiden",
+      "year": 2016,
+      "date": "2026-02-11",
+      "url": "https://boxd.it/948A"
+    },
+    "the-holy-mountain-1973": {
+      "title": "The Holy Mountain",
+      "year": 1973,
+      "date": "2026-04-05",
+      "url": "https://boxd.it/20mu"
+    },
+    "the-hunt-2012": {
+      "title": "The Hunt",
+      "year": 2012,
+      "date": "2025-12-26",
+      "url": "https://boxd.it/3wEC"
+    },
+    "the-hunt-for-red-october-1990": {
+      "title": "The Hunt for Red October",
+      "year": 1990,
+      "date": "2026-07-21",
+      "url": "https://boxd.it/28lk"
+    },
+    "the-hurt-locker-2008": {
+      "title": "The Hurt Locker",
+      "year": 2008,
+      "date": "2026-05-11",
+      "url": "https://boxd.it/1Soi"
+    },
+    "the-killer-1989": {
+      "title": "The Killer",
+      "year": 1989,
+      "date": "2026-09-08",
+      "url": "https://boxd.it/1Vha"
+    },
+    "the-kingdom-1994": {
+      "title": "The Kingdom",
+      "year": 1994,
+      "date": "2026-04-30",
+      "url": "https://boxd.it/1AZA"
+    },
+    "the-last-of-the-mohicans-1992": {
+      "title": "The Last of the Mohicans",
+      "year": 1992,
+      "date": "2026-01-31",
+      "url": "https://boxd.it/1YSo"
+    },
+    "the-last-temptation-of-christ-1988": {
+      "title": "The Last Temptation of Christ",
+      "year": 1988,
+      "date": "2026-09-06",
+      "url": "https://boxd.it/1ULe"
+    },
+    "the-long-good-friday-1980": {
+      "title": "The Long Good Friday",
+      "year": 1980,
+      "date": "2026-04-25",
+      "url": "https://boxd.it/1NlS"
+    },
+    "the-long-goodbye-1973": {
+      "title": "The Long Goodbye",
+      "year": 1973,
+      "date": "2025-12-18",
+      "url": "https://boxd.it/281O"
+    },
+    "the-maltese-falcon-1941": {
+      "title": "The Maltese Falcon",
+      "year": 1941,
+      "date": "2026-05-11",
+      "url": "https://boxd.it/29c4"
+    },
+    "the-master-2012": {
+      "title": "The Master",
+      "year": 2012,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/2cBG"
+    },
+    "the-matrix-1999": {
+      "title": "The Matrix",
+      "year": 1999,
+      "date": "2026-05-16",
+      "url": "https://boxd.it/2a1m"
+    },
+    "the-matrix-reloaded-2003": {
+      "title": "The Matrix Reloaded",
+      "year": 2003,
+      "date": "2026-05-16",
+      "url": "https://boxd.it/2a1c"
+    },
+    "the-matrix-resurrections-2021": {
+      "title": "The Matrix Resurrections",
+      "year": 2021,
+      "date": "2026-05-16",
+      "url": "https://boxd.it/n87k"
+    },
+    "the-matrix-revolutions-2003": {
+      "title": "The Matrix Revolutions",
+      "year": 2003,
+      "date": "2026-05-16",
+      "url": "https://boxd.it/2a12"
+    },
+    "the-phoenician-scheme-2025": {
+      "title": "The Phoenician Scheme",
+      "year": 2025,
+      "date": "2025-12-18",
+      "url": "https://boxd.it/H0Ca"
+    },
+    "the-player-1992": {
+      "title": "The Player",
+      "year": 1992,
+      "date": "2025-12-18",
+      "url": "https://boxd.it/1WlM"
+    },
+    "the-princess-bride-1987": {
+      "title": "The Princess Bride",
+      "year": 1987,
+      "date": "2026-07-09",
+      "url": "https://boxd.it/26EY"
+    },
+    "the-revenant-2015": {
+      "title": "The Revenant",
+      "year": 2015,
+      "date": "2026-03-16",
+      "url": "https://boxd.it/8H5e"
+    },
+    "the-seventh-seal-1957": {
+      "title": "The Seventh Seal",
+      "year": 1957,
+      "date": "2026-02-24",
+      "url": "https://boxd.it/2ahO"
+    },
+    "the-social-network-2010": {
+      "title": "The Social Network",
+      "year": 2010,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/17ue"
+    },
+    "the-texas-chain-saw-massacre-1974": {
+      "title": "The Texas Chain Saw Massacre",
+      "year": 1974,
+      "date": "2026-03-20",
+      "url": "https://boxd.it/1lcS"
+    },
+    "the-thin-red-line-1998": {
+      "title": "The Thin Red Line",
+      "year": 1998,
+      "date": "2026-05-13",
+      "url": "https://boxd.it/1ZTM"
+    },
+    "the-thing-1982": {
+      "title": "The Thing",
+      "year": 1982,
+      "date": "2025-12-18",
+      "url": "https://boxd.it/294O"
+    },
+    "the-truman-show-1998": {
+      "title": "The Truman Show",
+      "year": 1998,
+      "date": "2025-12-18",
+      "url": "https://boxd.it/18U8"
+    },
+    "the-untouchables-1987": {
+      "title": "The Untouchables",
+      "year": 1987,
+      "date": "2026-07-21",
+      "url": "https://boxd.it/2b6i"
+    },
+    "the-virgin-suicides-1999": {
+      "title": "The Virgin Suicides",
+      "year": 1999,
+      "date": "2026-04-28",
+      "url": "https://boxd.it/28JG"
+    },
+    "the-wailing-2016": {
+      "title": "The Wailing",
+      "year": 2016,
+      "date": "2025-12-26",
+      "url": "https://boxd.it/9fLy"
+    },
+    "the-warriors-1979": {
+      "title": "The Warriors",
+      "year": 1979,
+      "date": "2026-05-15",
+      "url": "https://boxd.it/1TLC"
+    },
+    "the-wild-bunch-1969": {
+      "title": "The Wild Bunch",
+      "year": 1969,
+      "date": "2026-05-11",
+      "url": "https://boxd.it/2a5y"
+    },
+    "the-wizard-of-oz-1939": {
+      "title": "The Wizard of Oz",
+      "year": 1939,
+      "date": "2026-05-11",
+      "url": "https://boxd.it/29Xu"
+    },
+    "the-wolf-of-wall-street-2013": {
+      "title": "The Wolf of Wall Street",
+      "year": 2013,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/3C1m"
+    },
+    "the-zone-of-interest-2023": {
+      "title": "The Zone of Interest",
+      "year": 2023,
+      "date": "2025-12-18",
+      "url": "https://boxd.it/gJsA"
+    },
+    "there-will-be-blood-2007": {
+      "title": "There Will Be Blood",
+      "year": 2007,
+      "date": "2026-06-05",
+      "url": "https://boxd.it/20Z2"
+    },
+    "thief-1981": {
+      "title": "Thief",
+      "year": 1981,
+      "date": "2026-02-02",
+      "url": "https://boxd.it/1TEc"
+    },
+    "thirst-2009": {
+      "title": "Thirst",
+      "year": 2009,
+      "date": "2026-09-20",
+      "url": "https://boxd.it/1Aqq"
+    },
+    "this-is-spinal-tap-1984": {
+      "title": "This Is Spinal Tap",
+      "year": 1984,
+      "date": "2025-12-18",
+      "url": "https://boxd.it/1UOs"
+    },
+    "this-is-the-tom-green-documentary-2025": {
+      "title": "This Is the Tom Green Documentary",
+      "year": 2025,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/Ss6I"
+    },
+    "thx-1138-1971": {
+      "title": "THX 1138",
+      "year": 1971,
+      "date": "2026-07-13",
+      "url": "https://boxd.it/29Ww"
+    },
+    "tinker-tailor-soldier-spy-2011": {
+      "title": "Tinker Tailor Soldier Spy",
+      "year": 2011,
+      "date": "2026-05-09",
+      "url": "https://boxd.it/FRY"
+    },
+    "to-kill-a-mockingbird-1962": {
+      "title": "To Kill a Mockingbird",
+      "year": 1962,
+      "date": "2026-05-11",
+      "url": "https://boxd.it/2a2E"
+    },
+    "to-live-1994": {
+      "title": "To Live",
+      "year": 1994,
+      "date": "2026-04-13",
+      "url": "https://boxd.it/1j6S"
+    },
+    "to-live-and-die-in-l-a-1985": {
+      "title": "To Live and Die in L.A.",
+      "year": 1985,
+      "date": "2026-01-20",
+      "url": "https://boxd.it/1XFo"
+    },
+    "tokyo-gore-police-2008": {
+      "title": "Tokyo Gore Police",
+      "year": 2008,
+      "date": "2026-03-08",
+      "url": "https://boxd.it/1KUq"
+    },
+    "toni-erdmann-2016": {
+      "title": "Toni Erdmann",
+      "year": 2016,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/d0xu"
+    },
+    "top-gun-1986": {
+      "title": "Top Gun",
+      "year": 1986,
+      "date": "2026-09-16",
+      "url": "https://boxd.it/29JC"
+    },
+    "top-gun-maverick-2022": {
+      "title": "Top Gun: Maverick",
+      "year": 2022,
+      "date": "2026-09-16",
+      "url": "https://boxd.it/cjr4"
+    },
+    "touch-of-evil-1958": {
+      "title": "Touch of Evil",
+      "year": 1958,
+      "date": "2026-05-11",
+      "url": "https://boxd.it/28II"
+    },
+    "toy-story-1995": {
+      "title": "Toy Story",
+      "year": 1995,
+      "date": "2025-12-18",
+      "url": "https://boxd.it/29qA"
+    },
+    "toy-story-2-1999": {
+      "title": "Toy Story 2",
+      "year": 1999,
+      "date": "2025-12-18",
+      "url": "https://boxd.it/29qq"
+    },
+    "toy-story-3-2010": {
+      "title": "Toy Story 3",
+      "year": 2010,
+      "date": "2025-12-11",
+      "url": "https://boxd.it/1WRe"
+    },
+    "trainspotting-1996": {
+      "title": "Trainspotting",
+      "year": 1996,
+      "date": "2026-04-30",
+      "url": "https://boxd.it/29XY"
+    },
+    "tropic-thunder-2008": {
+      "title": "Tropic Thunder",
+      "year": 2008,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/20WM"
+    },
+    "true-romance-1993": {
+      "title": "True Romance",
+      "year": 1993,
+      "date": "2026-03-07",
+      "url": "https://boxd.it/2aBa"
+    },
+    "tsukiji-wonderland-2016": {
+      "title": "Tsukiji Wonderland",
+      "year": 2016,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/dRLu"
+    },
+    "twelve-monkeys-1995": {
+      "title": "Twelve Monkeys",
+      "year": 1995,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/2beQ"
+    },
+    "twin-peaks-fire-walk-with-me-1992": {
+      "title": "Twin Peaks: Fire Walk with Me",
+      "year": 1992,
+      "date": "2026-05-13",
+      "url": "https://boxd.it/27Qw"
+    },
+    "uncut-gems-2019": {
+      "title": "Uncut Gems",
+      "year": 2019,
+      "date": "2026-05-17",
+      "url": "https://boxd.it/gXGc"
+    },
+    "under-the-skin-2014": {
+      "title": "Under the Skin",
+      "year": 2013,
+      "date": "2025-12-18",
+      "url": "https://boxd.it/3mDa"
+    },
+    "unforgiven-1992": {
+      "title": "Unforgiven",
+      "year": 1992,
+      "date": "2025-12-02",
+      "url": "https://boxd.it/6Z4"
+    },
+    "vampire-hunter-d-bloodlust-2001": {
+      "title": "Vampire Hunter D: Bloodlust",
+      "year": 2000,
+      "date": "2025-12-20",
+      "url": "https://boxd.it/1L3i"
+    },
+    "vertigo-1958": {
+      "title": "Vertigo",
+      "year": 1958,
+      "date": "2026-08-08",
+      "url": "https://boxd.it/2apI"
+    },
+    "videodrome-1983": {
+      "title": "Videodrome",
+      "year": 1983,
+      "date": "2025-12-18",
+      "url": "https://boxd.it/29uC"
+    },
+    "walkabout-1971": {
+      "title": "Walkabout",
+      "year": 1971,
+      "date": "2026-07-04",
+      "url": "https://boxd.it/1bsG"
+    },
+    "walker-1987": {
+      "title": "Walker",
+      "year": 1987,
+      "date": "2026-05-07",
+      "url": "https://boxd.it/1pzc"
+    },
+    "warfare-2025": {
+      "title": "Warfare",
+      "year": 2025,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/LbRo"
+    },
+    "who-framed-roger-rabbit-1988": {
+      "title": "Who Framed Roger Rabbit",
+      "year": 1988,
+      "date": "2026-08-04",
+      "url": "https://boxd.it/29ry"
+    },
+    "withnail-i-1987": {
+      "title": "Withnail & I",
+      "year": 1987,
+      "date": "2026-04-03",
+      "url": "https://boxd.it/1Qa4"
+    },
+    "yi-yi-2000": {
+      "title": "Yi Yi",
+      "year": 2000,
+      "date": "2026-04-02",
+      "url": "https://boxd.it/1vCw"
+    },
+    "young-frankenstein-1974": {
+      "title": "Young Frankenstein",
+      "year": 1974,
+      "date": "2026-03-16",
+      "url": "https://boxd.it/25To"
+    },
+    "your-name-2016": {
+      "title": "Your Name.",
+      "year": 2016,
+      "date": "2025-12-26",
+      "url": "https://boxd.it/cUqs"
+    },
+    "zodiac-2007": {
+      "title": "Zodiac",
+      "year": 2007,
+      "date": "2025-12-24",
+      "url": "https://boxd.it/27MO"
+    },
+    "zoolander-2001": {
+      "title": "Zoolander",
+      "year": 2001,
+      "date": "2026-03-08",
+      "url": "https://boxd.it/1YMA"
+    }
+  }
+}
