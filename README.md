@@ -1,6 +1,8 @@
 ## Build
 
-Requires the Ruby version in `.ruby-version` (rbenv/asdf will pick it up).
+Requires the Ruby version in `.ruby-version` (rbenv/asdf will pick it up). The `github-pages` gem
+pins Jekyll and its plugins to the versions GitHub Pages builds with, so local output matches
+production; see https://pages.github.com/versions/.
 
 `bin/dev`
 

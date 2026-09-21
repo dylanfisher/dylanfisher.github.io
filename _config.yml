@@ -24,9 +24,6 @@ permalink: /:year/:month/:day/:title
 markdown: kramdown
 sass:
   style: compressed
-  # Legacy Bootstrap 3 Sass uses @import and slash-division; silence those
-  # deprecation warnings (they're informational and don't affect output).
-  silence_deprecations: [import, slash-div, global-builtin, color-functions]
 
 # Excludes
 exclude: ["README.md", "bin"]

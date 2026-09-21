@@ -1,6 +1,5 @@
 source "https://rubygems.org"
 
-gem "jekyll", "~> 4.4"
-
-# `jekyll serve` needs webrick explicitly on Ruby 3+.
-gem "webrick", "~> 1.9"
+# Pins Jekyll and every plugin to the exact versions GitHub Pages builds with,
+# so local builds match production. See https://pages.github.com/versions/
+gem "github-pages", group: :jekyll_plugins
